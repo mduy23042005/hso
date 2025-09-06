@@ -15,42 +15,34 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-
+        UpdateAnimation();
         Debug.Log(movement);
     }
 
     private void FixedUpdate()
     {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        if (movement.x != 0 && movement.y != 0)
+        {
+            if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+                movement.y = 0;
+            else
+                movement.x = 0;
+        }
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        UpdateAnimation();
     }
     private void UpdateAnimation()
     {
-        animator.SetFloat("moveX", movement.x);
-        animator.SetFloat("moveY", movement.y);
-
-        bool isMove = (movement.x != 0 || movement.y != 0);
-        animator.SetBool("isMove", isMove);
-
-        if (isMove)
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        if (movement.x != 0 || movement.y != 0)
         {
-            // Ưu tiên theo hướng
-            if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
-            {
-                if (movement.x > 0)
-                    animator.SetInteger("direction", 3); // Right
-                else
-                    animator.SetInteger("direction", 2); // Left
-            }
-            else
-            {
-                if (movement.y > 0)
-                    animator.SetInteger("direction", 1); // Back
-                else
-                    animator.SetInteger("direction", 0); // Front
-            }
+            animator.SetBool("isMove", true);
+        }
+        else
+        {
+            animator.SetBool("isMove", false);
         }
     }
 }
