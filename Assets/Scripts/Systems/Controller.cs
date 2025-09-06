@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class Controller : MonoBehaviour, IUpdatable
 {
     private float moveSpeed = 4f;
     private Rigidbody2D rb;
@@ -16,17 +16,28 @@ public class Controller : MonoBehaviour
         animator.SetFloat("LastHorizontal", 0);
         animator.SetFloat("LastVertical", -1);
     }
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        UpdateAnimation();
-        Debug.Log(movement);
+        GameManager.Instance.Register(this);
     }
 
-    private void FixedUpdate()
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.Unregister(this);
+    }
+
+    public void OnUpdate()
+    {
+        MoveKeyboard();
+        UpdateAnimation();
+    }
+
+    private void MoveKeyboard()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
         if (movement.x != 0 && movement.y != 0)
         {
             if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
@@ -38,12 +49,22 @@ public class Controller : MonoBehaviour
                 movement.x = 0;
             }
         }
+        MoveStop();
+    }
+
+    private void MoveStop()
+    {
         if (movement != Vector2.zero)
         {
             lastMove = movement;
         }
+    }
+
+    private void FixedUpdate()
+    {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
     private void UpdateAnimation()
     {
         animator.SetFloat("Horizontal", movement.x);
