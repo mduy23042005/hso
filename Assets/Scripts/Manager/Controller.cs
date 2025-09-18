@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using NUnit.Framework;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Controller : MonoBehaviour, IUpdatable
 {
@@ -7,6 +9,39 @@ public class Controller : MonoBehaviour, IUpdatable
     private Vector2 movement;
     private Vector2 lastMove = new Vector2(0, -1);
     private Animator animator;
+
+    /*
+    [SerializeField] private SpriteRenderer tocRenderer;
+    [SerializeField] private List<Sprite> options = new List<Sprite>();
+
+    private int currentIndex = 0;
+    private void NextToc()
+    {
+        currentIndex = currentIndex + 1;
+        if (currentIndex >= options.Count)
+        {
+            currentIndex = 0;
+        }
+        tocRenderer.sprite = options[currentIndex];
+    }
+    public void Next()
+    {
+        NextToc();
+    }
+    private void PrevToc()
+    {
+        currentIndex = currentIndex - 1;
+        if (currentIndex <= 0)
+        {
+            currentIndex = options.Count - 1;
+        }
+        tocRenderer.sprite = options[currentIndex];
+    }
+    public void Prev()
+    {
+        PrevToc();
+    }
+    */
 
     private void Awake()
     {
@@ -20,38 +55,23 @@ public class Controller : MonoBehaviour, IUpdatable
     {
         GameManager.Instance.Register(this);
     }
-
     private void OnDisable()
     {
         if (GameManager.Instance != null)
             GameManager.Instance.Unregister(this);
     }
-
     public void OnUpdate()
     {
         MoveKeyboard();
         UpdateAnimation();
     }
-
     private void MoveKeyboard()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (movement.x != 0 && movement.y != 0)
-        {
-            if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
-            {
-                movement.y = 0;
-            }
-            else
-            {
-                movement.x = 0;
-            }
-        }
         MoveStop();
     }
-
     private void MoveStop()
     {
         if (movement != Vector2.zero)
@@ -59,27 +79,23 @@ public class Controller : MonoBehaviour, IUpdatable
             lastMove = movement;
         }
     }
-
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-
     private void UpdateAnimation()
     {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-
         if (movement.x != 0 || movement.y != 0)
         {
             animator.SetBool("isMove", true);
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
         }
         else
         {
             animator.SetBool("isMove", false);
+            animator.SetFloat("LastHorizontal", lastMove.x);
+            animator.SetFloat("LastVertical", lastMove.y);
         }
-
-        animator.SetFloat("LastHorizontal", lastMove.x);
-        animator.SetFloat("LastVertical", lastMove.y);
     }
 }
