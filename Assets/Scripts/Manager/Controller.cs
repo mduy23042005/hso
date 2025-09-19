@@ -44,7 +44,6 @@ public class Controller : MonoBehaviour, IUpdatable
             hairRenderer.sprite = set.side;
     }
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
