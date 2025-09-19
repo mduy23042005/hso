@@ -39,21 +39,29 @@ public class GameManager : MonoBehaviour
 
     public void Register(IUpdatable obj)
     {
-        if (!updatables.Contains(obj))
+        if (obj != null && !updatables.Contains(obj))
             updatables.Add(obj);
     }
 
     public void Unregister(IUpdatable obj)
     {
-        if (updatables.Contains(obj))
+        if (obj != null && updatables.Contains(obj))
             updatables.Remove(obj);
     }
 
     private void Update()
     {
-        foreach (var obj in updatables)
+        // copy ra list tạm để tránh lỗi khi remove trong foreach
+        for (int i = updatables.Count - 1; i >= 0; i--)
         {
-            obj.OnUpdate();
+            var updatable = updatables[i];
+            // check null hoặc bị destroy
+            if (updatable == null || (updatable is Object unityObj && unityObj == null))
+            {
+                updatables.RemoveAt(i);
+                continue;
+            }
+            updatable.OnUpdate();
         }
     }
 }

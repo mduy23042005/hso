@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Controller : MonoBehaviour, IUpdatable
@@ -10,38 +11,39 @@ public class Controller : MonoBehaviour, IUpdatable
     private Vector2 lastMove = new Vector2(0, -1);
     private Animator animator;
 
-    /*
-    [SerializeField] private SpriteRenderer tocRenderer;
-    [SerializeField] private List<Sprite> options = new List<Sprite>();
+    [SerializeField] private SpriteRenderer hairRenderer;
+    [SerializeField] private List<Hair> hairList;
 
-    private int currentIndex = 0;
-    private void NextToc()
-    {
-        currentIndex = currentIndex + 1;
-        if (currentIndex >= options.Count)
-        {
-            currentIndex = 0;
-        }
-        tocRenderer.sprite = options[currentIndex];
-    }
+    private int currentHair = 0;
     public void Next()
     {
-        NextToc();
+        currentHair++;
+        if (currentHair >= hairList.Count) currentHair = 0;
+        Debug.Log("HairRenderer: " + hairRenderer);
+        UpdateHairSprite();
     }
-    private void PrevToc()
-    {
-        currentIndex = currentIndex - 1;
-        if (currentIndex <= 0)
-        {
-            currentIndex = options.Count - 1;
-        }
-        tocRenderer.sprite = options[currentIndex];
-    }
+
     public void Prev()
     {
-        PrevToc();
+        currentHair--;
+        if (currentHair < 0) currentHair = hairList.Count - 1;
+        Debug.Log("HairRenderer: " + hairRenderer);
+
+        UpdateHairSprite();
     }
-    */
+
+    private void UpdateHairSprite()
+    {
+        Hair set = hairList[currentHair];
+
+        if (lastMove.y > 0)
+            hairRenderer.sprite = set.back;
+        else if (lastMove.y < 0)
+            hairRenderer.sprite = set.front;
+        else if (lastMove.x != 0)
+            hairRenderer.sprite = set.side;
+    }
+
 
     private void Awake()
     {
@@ -58,12 +60,19 @@ public class Controller : MonoBehaviour, IUpdatable
     private void OnDisable()
     {
         if (GameManager.Instance != null)
+        {
             GameManager.Instance.Unregister(this);
+        }
     }
     public void OnUpdate()
     {
         MoveKeyboard();
         UpdateAnimation();
+
+    }
+    private void LateUpdate()
+    {
+        UpdateHairSprite();
     }
     private void MoveKeyboard()
     {
