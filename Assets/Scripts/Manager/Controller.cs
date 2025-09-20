@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using TMPro;
 using UnityEngine;
 
 public class Controller : MonoBehaviour, IUpdatable
@@ -10,44 +11,14 @@ public class Controller : MonoBehaviour, IUpdatable
     private Vector2 movement;
     private Vector2 lastMove = new Vector2(0, -1);
     private Animator animator;
-
-    [SerializeField] private SpriteRenderer hairRenderer;
-    [SerializeField] private List<Hair> hairList;
-
-    private int currentHair = 0;
-    public void Next()
-    {
-        currentHair++;
-        if (currentHair >= hairList.Count) currentHair = 0;
-        Debug.Log("HairRenderer: " + hairRenderer);
-        UpdateHairSprite();
-    }
-
-    public void Prev()
-    {
-        currentHair--;
-        if (currentHair < 0) currentHair = hairList.Count - 1;
-        Debug.Log("HairRenderer: " + hairRenderer);
-
-        UpdateHairSprite();
-    }
-
-    private void UpdateHairSprite()
-    {
-        Hair set = hairList[currentHair];
-
-        if (lastMove.y > 0)
-            hairRenderer.sprite = set.back;
-        else if (lastMove.y < 0)
-            hairRenderer.sprite = set.front;
-        else if (lastMove.x != 0)
-            hairRenderer.sprite = set.side;
-    }
-
+    private Menu menu;
+    private Demo demo;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        menu = FindAnyObjectByType<Menu>();
+        demo = FindAnyObjectByType<Demo>();
 
         animator.SetFloat("LastHorizontal", 0);
         animator.SetFloat("LastVertical", -1);
@@ -67,18 +38,19 @@ public class Controller : MonoBehaviour, IUpdatable
     {
         MoveKeyboard();
         UpdateAnimation();
-
-    }
-    private void LateUpdate()
-    {
-        UpdateHairSprite();
     }
     private void MoveKeyboard()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        MoveStop();
+        if (!menu.getIsActive())
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+            MoveStop();
+        }
+        else
+        {
+            return;
+        }
     }
     private void MoveStop()
     {
@@ -90,6 +62,9 @@ public class Controller : MonoBehaviour, IUpdatable
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+    private void LateUpdate()
+    {
     }
     private void UpdateAnimation()
     {

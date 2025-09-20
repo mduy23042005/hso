@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour, IUpdatable
 {
+    private bool isActive = false;
     public void Start()
     {
         this.gameObject.SetActive(false);
@@ -12,11 +13,18 @@ public class Menu : MonoBehaviour, IUpdatable
     public void ToggleMenu()
     {
         this.gameObject.SetActive(!this.gameObject.activeSelf);
+        if (this.gameObject.activeSelf == true)
+        {
+            isActive = true;
+        }
+        else
+        {
+            isActive = false;
+        }
     }
-
-    public void CloseMenu()
+    public bool getIsActive()
     {
-        this.gameObject.SetActive(false);
+        return isActive;
     }
     private void OnEnable()
     {
