@@ -2874,7 +2874,7 @@ MonoBehaviour:
     atkSide:
     - {fileID: 418987433, guid: bb44a98f31bf86a4280733298e377795, type: 3}
     - {fileID: 1732050746, guid: bb44a98f31bf86a4280733298e377795, type: 3}
-    die: {fileID: 0}
+    die: {fileID: 21300000, guid: 67fff8e2b27ab424387698f388754e2a, type: 3}
   - standBack: {fileID: 618325661, guid: 321b2a57167c4154a9e1784d7bf790d1, type: 3}
     standFront: {fileID: 8701536793483841217, guid: 321b2a57167c4154a9e1784d7bf790d1, type: 3}
     standSide: {fileID: -1852676768, guid: 321b2a57167c4154a9e1784d7bf790d1, type: 3}
@@ -2896,7 +2896,7 @@ MonoBehaviour:
     atkSide:
     - {fileID: 239450696, guid: 321b2a57167c4154a9e1784d7bf790d1, type: 3}
     - {fileID: 5362914, guid: 321b2a57167c4154a9e1784d7bf790d1, type: 3}
-    die: {fileID: 0}
+    die: {fileID: 21300000, guid: 67fff8e2b27ab424387698f388754e2a, type: 3}
 --- !u!50 &1530710331
 Rigidbody2D:
   serializedVersion: 5
