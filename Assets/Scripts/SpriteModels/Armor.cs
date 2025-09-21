@@ -15,4 +15,6 @@ public class Armor
     public Sprite[] atkBack;
     public Sprite[] atkFront;
     public Sprite[] atkSide;
+    // Die sprites
+    public Sprite die;
 }

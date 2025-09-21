@@ -12,13 +12,12 @@ public class Controller : MonoBehaviour, IUpdatable
     private Vector2 lastMove = new Vector2(0, -1);
     private Animator animator;
     private Menu menu;
-    private Demo demo;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         menu = FindAnyObjectByType<Menu>();
-        demo = FindAnyObjectByType<Demo>();
 
         animator.SetFloat("LastHorizontal", 0);
         animator.SetFloat("LastVertical", -1);
