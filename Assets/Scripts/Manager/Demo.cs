@@ -1,64 +1,41 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Demo : MonoBehaviour, IUpdatable
+public class Demo : Controller
 {
-    private Vector2 movement;
-    private Vector2 lastMove = new Vector2(0, -1);
-    private bool isMoving = false;
-    private Animator animator;
+    protected override void MoveKeyboard()
+    {
+        Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        setMovement(movement);
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
+        if (getMovement() != Vector2.zero)
+        {
+            setLastMove(movement);
+        }
 
-        animator.SetFloat("LastHorizontal", 0);
-        animator.SetFloat("LastVertical", -1);
+        UpdateAnimationOnly();
     }
-    private void OnEnable()
+
+    private void UpdateAnimationOnly()
     {
-        GameManager.Instance.Register(this);
-    }
-    private void OnDisable()
-    {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.Unregister(this);
-        }
-    }
-    public void OnUpdate()
-    {
-        MoveKeyboard();
-        UpdateAnimation();
-    }
-    private void MoveKeyboard()
-    {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        isMoving = movement != Vector2.zero;
-        if (isMoving) lastMove = movement;
-        MoveStop();
-    }
-    private void MoveStop()
-    {
-        if (movement != Vector2.zero)
-        {
-            lastMove = movement;
-        }
-    }
-    private void UpdateAnimation()
-    {
-        if (movement.x != 0 || movement.y != 0)
-        {
-            animator.SetBool("isMove", true);
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
-        }
-        else
+        Animator animator = GetComponent<Animator>();
+
+        // Stand
+        if (getMovement() == Vector2.zero)
         {
             animator.SetBool("isMove", false);
-            animator.SetFloat("LastHorizontal", lastMove.x);
-            animator.SetFloat("LastVertical", lastMove.y);
+            animator.SetFloat("LastHorizontal", getLastMove().x);
+            animator.SetFloat("LastVertical", getLastMove().y);
         }
+        // Move
+        else
+        {
+            animator.SetBool("isMove", true);
+            animator.SetFloat("Horizontal", getMovement().x);
+            animator.SetFloat("Vertical", getMovement().y);
+        }
+    }
+    protected override void FixedUpdate()
+    {
+        return;
     }
 }
