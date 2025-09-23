@@ -25,7 +25,6 @@ public class Controller : MonoBehaviour, IUpdatable
     private void OnEnable()
     {
         GameManager.Instance.Register(this);
-        RegisterDontDestroyOnLoad();
     }
     private void OnDisable()
     {
