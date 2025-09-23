@@ -25,6 +25,7 @@ public class Controller : MonoBehaviour, IUpdatable
     private void OnEnable()
     {
         GameManager.Instance.Register(this);
+        RegisterDontDestroyOnLoad();
     }
     private void OnDisable()
     {
@@ -38,6 +39,12 @@ public class Controller : MonoBehaviour, IUpdatable
         MoveKeyboard();
         UpdateAnimation();
     }
+    public void RegisterDontDestroyOnLoad()
+    {
+        GameManager.Instance.RegisterPersistent(this);
+    }
+
+    //Hàm di chuyển bằng bàn phím, có thể override trong Demo.cs
     protected virtual void MoveKeyboard()
     {
         if (menu == null || !menu.getIsActive())
@@ -63,6 +70,7 @@ public class Controller : MonoBehaviour, IUpdatable
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
+    //Getter - Setter cho các biến chuyển động
     public Vector2 getMovement()
     {
         return movement;
@@ -80,6 +88,7 @@ public class Controller : MonoBehaviour, IUpdatable
         lastMove = value;
     }
 
+    //Cập nhật các thông số chuyển động cho animator
     private void UpdateMoveToAnimator()
     {
         animator.SetFloat("Horizontal", movement.x);
@@ -90,7 +99,7 @@ public class Controller : MonoBehaviour, IUpdatable
         animator.SetFloat("LastHorizontal", lastMove.x);
         animator.SetFloat("LastVertical", lastMove.y);
     }
-
+    //Hàm được gọi bằng event trong animation
     private void AttackAnimationEnd()
     {
         animator.SetBool("isAtk", false);
@@ -101,7 +110,7 @@ public class Controller : MonoBehaviour, IUpdatable
         animator.SetBool("isInjured", false);
         UpdateLastMoveToAnimator();
     }
-    //Cập nhat animation tạm thời trước khi có hệ thống animation tương tác hoàn chỉnh
+    //Cập nhật animation tạm thời trước khi có hệ thống animation tương tác hoàn chỉnh
     private void UpdateAnimation()
     {
         // Stand

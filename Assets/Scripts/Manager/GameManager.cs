@@ -4,6 +4,7 @@ using UnityEngine;
 public interface IUpdatable
 {
     void OnUpdate();
+    void RegisterDontDestroyOnLoad();
 }
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
         {
             if (instance == null)
             {
-                instance = FindObjectOfType<GameManager>();
+                instance = FindAnyObjectByType<GameManager>();
             }
             return instance;
         }
@@ -36,18 +37,30 @@ public class GameManager : MonoBehaviour
     public void Register(IUpdatable obj)
     {
         if (obj != null && !updatables.Contains(obj))
+        {
             updatables.Add(obj);
+        }
     }
 
     public void Unregister(IUpdatable obj)
     {
         if (obj != null && updatables.Contains(obj))
+        {
             updatables.Remove(obj);
+        }
+    }
+
+    public void RegisterPersistent(IUpdatable obj)
+    {
+        if (obj != null && obj is MonoBehaviour)
+        {
+            MonoBehaviour mb = (MonoBehaviour)obj;
+            DontDestroyOnLoad(mb.gameObject);
+        }
     }
 
     private void Update()
     {
-        // copy ra list tạm để tránh lỗi khi remove trong foreach
         for (int i = updatables.Count - 1; i >= 0; i--)
         {
             var updatable = updatables[i];

@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class LegArmor : MonoBehaviour
+[System.Serializable]
+public class LegArmor
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Stand & Injured sprites
+    public Sprite standBack;
+    public Sprite standFront;
+    public Sprite standSide;
+    // Move sprites
+    public Sprite[] moveBack;
+    public Sprite[] moveFront;
+    public Sprite[] moveSide;
+    // Attack sprites
+    public Sprite[] atkBack;
+    public Sprite[] atkFront;
+    public Sprite[] atkSide;
 }

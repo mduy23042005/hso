@@ -1,12 +1,7 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class Menu : MonoBehaviour, IUpdatable
+public class CanvasController : MonoBehaviour, IUpdatable
 {
-    private bool isActive = false;
-
     private void OnEnable()
     {
         GameManager.Instance.Register(this);
@@ -26,18 +21,5 @@ public class Menu : MonoBehaviour, IUpdatable
     public void RegisterDontDestroyOnLoad()
     {
         GameManager.Instance.RegisterPersistent(this);
-    }
-    public void ToggleMenu()
-    {
-        isActive = !gameObject.activeSelf;
-        gameObject.SetActive(isActive);
-    }
-    public bool getIsActive()
-    {
-        return isActive;
-    }
-    private void FixedUpdate()
-    {
-
     }
 }

@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+[System.Serializable]
+public class Weapon
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Sprite front;
+    public Sprite back;
+    public Sprite[] side;
 }
