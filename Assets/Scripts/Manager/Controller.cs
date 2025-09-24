@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
@@ -37,6 +38,7 @@ public class Controller : MonoBehaviour, IUpdatable
     {
         MoveKeyboard();
         UpdateAnimation();
+        debug();
     }
     public void RegisterDontDestroyOnLoad()
     {
@@ -103,6 +105,7 @@ public class Controller : MonoBehaviour, IUpdatable
     {
         animator.SetBool("isAtk", false);
         UpdateLastMoveToAnimator();
+        Debug.Log("Có gọi End Atk");
     }
     private void InjuredAnimationEnd()
     {
@@ -137,5 +140,9 @@ public class Controller : MonoBehaviour, IUpdatable
             animator.SetBool("isInjured", true);
             UpdateLastMoveToAnimator();
         }
+    }
+    private void debug()
+    {
+        Debug.Log(animator.GetBool("isAtk"));
     }
 }
