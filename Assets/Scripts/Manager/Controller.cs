@@ -38,7 +38,6 @@ public class Controller : MonoBehaviour, IUpdatable
     {
         MoveKeyboard();
         UpdateAnimation();
-        debug();
     }
     public void RegisterDontDestroyOnLoad()
     {
@@ -104,12 +103,13 @@ public class Controller : MonoBehaviour, IUpdatable
     private void AttackAnimationEnd()
     {
         animator.SetBool("isAtk", false);
+        animator.SetBool("isMove", false);
         UpdateLastMoveToAnimator();
-        Debug.Log("Có gọi End Atk");
     }
     private void InjuredAnimationEnd()
     {
         animator.SetBool("isInjured", false);
+        animator.SetBool("isMove", false);
         UpdateLastMoveToAnimator();
     }
     //Cập nhật animation tạm thời trước khi có hệ thống animation tương tác hoàn chỉnh
@@ -140,9 +140,5 @@ public class Controller : MonoBehaviour, IUpdatable
             animator.SetBool("isInjured", true);
             UpdateLastMoveToAnimator();
         }
-    }
-    private void debug()
-    {
-        Debug.Log(animator.GetBool("isAtk"));
     }
 }
