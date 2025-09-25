@@ -7,19 +7,35 @@ public class SpriteController : MonoBehaviour
     [SerializeField] private SpriteRenderer helmetRenderer;
     [SerializeField] private SpriteRenderer armorRenderer;
     [SerializeField] private SpriteRenderer legArmorRenderer;
+    [SerializeField] private SpriteRenderer hairRenderer;
+    [SerializeField] private SpriteRenderer headRenderer;
+    [SerializeField] private SpriteRenderer eyesRenderer;
+    [SerializeField] private SpriteRenderer[] weaponRenderer;
 
     [Header("Sprite List")]
     [SerializeField] private List<Helmet> helmetList;
     [SerializeField] private List<Armor> armorList;
     [SerializeField] private List<LegArmor> legArmorList;
+    [SerializeField] private List<Hair> hairList;
+    [SerializeField] private List<Head> headList;
+    [SerializeField] private List<Eyes> eyesList;
+    [SerializeField] private List<Weapon> weaponList;
 
     private int currentHelmet = 0;
     private int currentArmor = 0;
     private int currentLegArmor = 0;
+    private int currentHair = 0;
+    private int currentHead = 0;
+    private int currentEyes = 0;
+    private int currentWeapon = 0;
 
     private Armor setArmor;
     private LegArmor setLegArmor;
     private Helmet setHelmet;
+    private Hair setHair;
+    private Head setHead;
+    private Eyes setEyes;
+    private Weapon setWeapon;
 
     #region Change Helmet
     public void NextHelmet()
@@ -60,6 +76,19 @@ public class SpriteController : MonoBehaviour
         currentLegArmor = (currentLegArmor - 1 + legArmorList.Count) % legArmorList.Count;
     }
     #endregion Change Leg Armor
+    #region Change Hair
+    public void NextHair()
+    {
+        if (hairList.Count == 0) return; // tránh lỗi nếu list rỗng
+        currentHair = (currentHair + 1) % hairList.Count;
+    }
+
+    public void PrevHair()
+    {
+        if (hairList.Count == 0) return;
+        currentHair = (currentHair - 1 + hairList.Count) % hairList.Count;
+    }
+    #endregion Change Hair
 
     private void UpdateSpriteID()
     {

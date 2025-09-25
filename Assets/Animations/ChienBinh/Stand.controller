@@ -696,7 +696,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: db88bd542bf5a134094af462800a1ebc, type: 2}
-    m_Threshold: 0.14285715
+    m_Threshold: 0.06666668
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -704,7 +704,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 4bcf1ba2863f3c242a6e0b2f9789ca35, type: 2}
-    m_Threshold: 0.2857143
+    m_Threshold: 0.13333336
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -712,7 +712,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: cd7ab4e9ce0072348bc71208e0eb8966, type: 2}
-    m_Threshold: 0.42857143
+    m_Threshold: 0.20000002
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -720,7 +720,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: db88bd542bf5a134094af462800a1ebc, type: 2}
-    m_Threshold: 0.5714286
+    m_Threshold: 0.2666667
     m_Position: {x: -1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -728,7 +728,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: db88bd542bf5a134094af462800a1ebc, type: 2}
-    m_Threshold: 0.71428573
+    m_Threshold: 0.33333337
     m_Position: {x: 1, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -736,7 +736,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: e14c2e2e3e0e0f74db6c63635e8a133e, type: 2}
-    m_Threshold: 0.85714287
+    m_Threshold: 0.40000004
     m_Position: {x: 1, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -744,7 +744,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: e14c2e2e3e0e0f74db6c63635e8a133e, type: 2}
-    m_Threshold: 1
+    m_Threshold: 0.4666667
     m_Position: {x: -1, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -753,7 +753,7 @@ BlendTree:
   m_BlendParameter: Horizontal
   m_BlendParameterY: Vertical
   m_MinThreshold: 0
-  m_MaxThreshold: 1
+  m_MaxThreshold: 0.4666667
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 1
