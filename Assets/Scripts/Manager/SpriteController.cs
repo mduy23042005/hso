@@ -9,7 +9,6 @@ public class SpriteController : MonoBehaviour
     [SerializeField] private SpriteRenderer legArmorRenderer;
     [SerializeField] private SpriteRenderer hairRenderer;
     [SerializeField] private SpriteRenderer headRenderer;
-    [SerializeField] private SpriteRenderer eyesRenderer;
     [SerializeField] private SpriteRenderer[] weaponRenderer;
 
     [Header("Sprite List")]
@@ -18,7 +17,6 @@ public class SpriteController : MonoBehaviour
     [SerializeField] private List<LegArmor> legArmorList;
     [SerializeField] private List<Hair> hairList;
     [SerializeField] private List<Head> headList;
-    [SerializeField] private List<Eyes> eyesList;
     [SerializeField] private List<Weapon> weaponList;
 
     private int currentHelmet = 0;
@@ -34,7 +32,6 @@ public class SpriteController : MonoBehaviour
     private Helmet setHelmet;
     private Hair setHair;
     private Head setHead;
-    private Eyes setEyes;
     private Weapon setWeapon;
 
     #region Change Helmet
@@ -89,6 +86,32 @@ public class SpriteController : MonoBehaviour
         currentHair = (currentHair - 1 + hairList.Count) % hairList.Count;
     }
     #endregion Change Hair
+    #region Change Head
+    public void NextHead()
+    {
+        if (headList.Count == 0) return; // tránh lỗi nếu list rỗng
+        currentHead = (currentHead + 1) % headList.Count;
+    }
+
+    public void PrevHead()
+    {
+        if (headList.Count == 0) return;
+        currentHead = (currentHead - 1 + headList.Count) % headList.Count;
+    }
+    #endregion Change Head
+    #region Change Weapon
+    public void NextWeapon()
+    {
+        if (weaponList.Count == 0) return; // tránh lỗi nếu list rỗng
+        currentWeapon = (currentWeapon + 1) % weaponList.Count;
+    }
+
+    public void PrevWeapon()
+    {
+        if (weaponList.Count == 0) return;
+        currentWeapon = (currentWeapon - 1 + weaponList.Count) % weaponList.Count;
+    }
+    #endregion Change Weapon
 
     private void UpdateSpriteID()
     {
@@ -96,6 +119,8 @@ public class SpriteController : MonoBehaviour
         setLegArmor = legArmorList[currentLegArmor];
         setHelmet = helmetList[currentHelmet];
         setHair = hairList[currentHair];
+        setHead = headList[currentHead];
+        setWeapon = weaponList[currentWeapon];
     }
 
     #region Update Sprite
@@ -107,6 +132,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.standFront;
         legArmorRenderer.sprite = setLegArmor.standFront;
         hairRenderer.sprite = setHair.front;
+        headRenderer.sprite = setHead.front;
+        weaponRenderer[0].sprite = setWeapon.front;
     }
     public void StandBack()
     {
@@ -115,6 +142,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.standBack;
         legArmorRenderer.sprite = setLegArmor.standBack;
         hairRenderer.sprite = setHair.back;
+        headRenderer.sprite = setHead.back;
+        weaponRenderer[1].sprite = setWeapon.back;
     }
     public void StandSide()
     {
@@ -123,6 +152,9 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.standSide;
         legArmorRenderer.sprite = setLegArmor.standSide;
         hairRenderer.sprite = setHair.side;
+        headRenderer.sprite = setHead.side;
+        weaponRenderer[2].sprite = setWeapon.side[0];
+        weaponRenderer[3].sprite = setWeapon.side[1];
     }
     #endregion Stand
     #region Move
@@ -134,6 +166,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.moveFront[0];
         legArmorRenderer.sprite = setLegArmor.moveFront[0];
         hairRenderer.sprite = setHair.front;
+        headRenderer.sprite = setHead.front;
+        weaponRenderer[0].sprite = setWeapon.front;
     }
     public void MoveFrontFrame1()
     {
@@ -142,6 +176,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.moveFront[1];
         legArmorRenderer.sprite = setLegArmor.moveFront[1];
         hairRenderer.sprite = setHair.front;
+        headRenderer.sprite = setHead.front;
+        weaponRenderer[0].sprite = setWeapon.front;
     }
     //Move Back
     public void MoveBackFrame0()
@@ -151,6 +187,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.moveBack[0];
         legArmorRenderer.sprite = setLegArmor.moveBack[0];
         hairRenderer.sprite = setHair.back;
+        headRenderer.sprite = setHead.back;
+        weaponRenderer[1].sprite = setWeapon.back;
     }
     public void MoveBackFrame1()
     {
@@ -159,6 +197,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.moveBack[1];
         legArmorRenderer.sprite = setLegArmor.moveBack[1];
         hairRenderer.sprite = setHair.back;
+        headRenderer.sprite = setHead.back;
+        weaponRenderer[1].sprite = setWeapon.back;
     }
     //Move Side
     public void MoveSideFrame0()
@@ -168,6 +208,9 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.moveSide[0];
         legArmorRenderer.sprite = setLegArmor.moveSide[0];
         hairRenderer.sprite = setHair.side;
+        headRenderer.sprite = setHead.side;
+        weaponRenderer[2].sprite = setWeapon.side[0];
+        weaponRenderer[3].sprite = setWeapon.side[1];
     }
     public void MoveSideFrame1()
     {
@@ -176,6 +219,9 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.moveSide[1];
         legArmorRenderer.sprite = setLegArmor.moveSide[1];
         hairRenderer.sprite = setHair.side;
+        headRenderer.sprite = setHead.side;
+        weaponRenderer[2].sprite = setWeapon.side[0];
+        weaponRenderer[3].sprite = setWeapon.side[1];
     }
     #endregion Move
     #region Attack
@@ -187,6 +233,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.atkFront[0];
         legArmorRenderer.sprite = setLegArmor.atkFront[0];
         hairRenderer.sprite = setHair.front;
+        headRenderer.sprite = setHead.front;
+        weaponRenderer[0].sprite = setWeapon.front;
     }
     public void AtkFrontFrame1()
     {
@@ -195,6 +243,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.atkFront[1];
         legArmorRenderer.sprite = setLegArmor.atkFront[1];
         hairRenderer.sprite = setHair.front;
+        headRenderer.sprite = setHead.front;
+        weaponRenderer[1].sprite = setWeapon.back;
     }
     //Attack Back
     public void AtkBackFrame0()
@@ -204,6 +254,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.atkBack[0];
         legArmorRenderer.sprite = setLegArmor.atkBack[0];
         hairRenderer.sprite = setHair.back;
+        headRenderer.sprite = setHead.back;
+        weaponRenderer[1].sprite = setWeapon.back;
     }
     public void AtkBackFrame1()
     {
@@ -212,6 +264,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.atkBack[1];
         legArmorRenderer.sprite = setLegArmor.atkBack[1];
         hairRenderer.sprite = setHair.back;
+        headRenderer.sprite = setHead.back;
+        weaponRenderer[0].sprite = setWeapon.front;
     }
     //Attack Side
     public void AtkSideFrame0()
@@ -221,6 +275,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.atkSide[0];
         legArmorRenderer.sprite = setLegArmor.atkSide[0];
         hairRenderer.sprite = setHair.side;
+        headRenderer.sprite = setHead.side;
+        weaponRenderer[0].sprite = setWeapon.front;
     }
     public void AtkSideFrame1()
     {
@@ -229,6 +285,8 @@ public class SpriteController : MonoBehaviour
         armorRenderer.sprite = setArmor.atkSide[1];
         legArmorRenderer.sprite = setLegArmor.atkSide[1];
         hairRenderer.sprite = setHair.side;
+        headRenderer.sprite = setHead.side;
+        weaponRenderer[1].sprite = setWeapon.back;
     }
     #endregion Attack
     #region Die
@@ -237,6 +295,10 @@ public class SpriteController : MonoBehaviour
         UpdateSpriteID();
         armorRenderer.sprite = setArmor.die;
         legArmorRenderer.sprite = null;
+        weaponRenderer[0].sprite = null;
+        weaponRenderer[1].sprite = null;
+        weaponRenderer[2].sprite = null;
+        weaponRenderer[3].sprite = null;
     }
     #endregion Die
     #endregion Update Sprite
