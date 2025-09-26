@@ -3,7 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class Eyes
 {
-    public Sprite front;
-    public Sprite back;
-    public Sprite side;
+    public Sprite openFront;
+    public Sprite closeFront;
+    public Sprite openSide;
+    public Sprite closeSide;
 }
