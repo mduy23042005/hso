@@ -153,8 +153,7 @@ public class SpriteController : MonoBehaviour
         legArmorRenderer.sprite = setLegArmor.standSide;
         hairRenderer.sprite = setHair.side;
         headRenderer.sprite = setHead.side;
-        weaponRenderer[2].sprite = setWeapon.side[0];
-        weaponRenderer[3].sprite = setWeapon.side[1];
+        weaponRenderer[0].sprite = setWeapon.side;
     }
     #endregion Stand
     #region Move
@@ -209,8 +208,7 @@ public class SpriteController : MonoBehaviour
         legArmorRenderer.sprite = setLegArmor.moveSide[0];
         hairRenderer.sprite = setHair.side;
         headRenderer.sprite = setHead.side;
-        weaponRenderer[2].sprite = setWeapon.side[0];
-        weaponRenderer[3].sprite = setWeapon.side[1];
+        weaponRenderer[0].sprite = setWeapon.side;
     }
     public void MoveSideFrame1()
     {
@@ -220,8 +218,7 @@ public class SpriteController : MonoBehaviour
         legArmorRenderer.sprite = setLegArmor.moveSide[1];
         hairRenderer.sprite = setHair.side;
         headRenderer.sprite = setHead.side;
-        weaponRenderer[2].sprite = setWeapon.side[0];
-        weaponRenderer[3].sprite = setWeapon.side[1];
+        weaponRenderer[0].sprite = setWeapon.side;
     }
     #endregion Move
     #region Attack

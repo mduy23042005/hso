@@ -12,6 +12,10 @@ public class Demo : Controller
             setLastMove(movement);
         }
     }
+    protected override void MoveMouse()
+    {
+        return;
+    }
     protected override void FixedUpdate()
     {
         return;

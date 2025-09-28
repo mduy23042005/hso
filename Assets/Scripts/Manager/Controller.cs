@@ -7,10 +7,13 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour, IUpdatable
 {
-    private float moveSpeed = 4f;
+    private float moveSpeed = 6f;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 lastMove = new Vector2(0, -1);
+    private Vector2 targetPosition;
+    private bool movingHorizontalFirst = false;
+    private bool isMovingToTarget = false;
     private Animator animator;
     private Menu menu;
 
@@ -37,6 +40,7 @@ public class Controller : MonoBehaviour, IUpdatable
     public void OnUpdate()
     {
         MoveKeyboard();
+        MoveMouse();
         UpdateAnimation();
     }
     public void RegisterDontDestroyOnLoad()
@@ -44,7 +48,7 @@ public class Controller : MonoBehaviour, IUpdatable
         GameManager.Instance.RegisterPersistent(this);
     }
 
-    //Hàm di chuyển bằng bàn phím, có thể override trong Demo.cs
+    //Hàm di chuyển có thể override trong Demo.cs
     protected virtual void MoveKeyboard()
     {
         if (menu == null || !menu.getIsActive())
@@ -58,6 +62,66 @@ public class Controller : MonoBehaviour, IUpdatable
             return;
         }
     }
+    protected virtual void MoveMouse()
+    {
+        if ((menu == null || !menu.getIsActive()) && Input.GetMouseButtonDown(0))
+        {
+            // Lấy tọa độ click
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            targetPosition = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
+
+            // Quyết định hướng ưu tiên
+            float deltaX = Mathf.Abs(targetPosition.x - rb.position.x);
+            float deltaY = Mathf.Abs(targetPosition.y - rb.position.y);
+            movingHorizontalFirst = deltaX > deltaY;
+
+            isMovingToTarget = true;
+        }
+
+        if (isMovingToTarget)
+        {
+            Vector2 currentPos = rb.position;
+            float deltaX = targetPosition.x - currentPos.x;
+            float deltaY = targetPosition.y - currentPos.y;
+
+            // Nếu còn khoảng cách đáng kể thì tiếp tục di chuyển
+            if (Mathf.Abs(deltaX) > 0.1f || Mathf.Abs(deltaY) > 0.1f)
+            {
+                if (movingHorizontalFirst)
+                {
+                    // Đi ngang trước
+                    if (Mathf.Abs(deltaX) > 0.1f)
+                    {
+                        movement = new Vector2(Mathf.Sign(deltaX), 0);
+                    }
+                    else
+                    {
+                        movement = new Vector2(0, Mathf.Sign(deltaY));
+                    }
+                }
+                else
+                {
+                    // Đi dọc trước
+                    if (Mathf.Abs(deltaY) > 0.1f)
+                    {
+                        movement = new Vector2(0, Mathf.Sign(deltaY));
+                    }
+                    else
+                    {
+                        movement = new Vector2(Mathf.Sign(deltaX), 0);
+                    }
+                }
+            }
+            else
+            {
+                // Đến nơi → dừng lại
+                MoveStop();
+                movement = Vector2.zero;
+                isMovingToTarget = false;
+            }
+        }
+    }
+
     private void MoveStop()
     {
         if (movement != Vector2.zero)
@@ -99,19 +163,6 @@ public class Controller : MonoBehaviour, IUpdatable
         animator.SetFloat("LastHorizontal", lastMove.x);
         animator.SetFloat("LastVertical", lastMove.y);
     }
-    //Hàm được gọi bằng event trong animation
-    private void AttackAnimationEnd()
-    {
-        animator.SetBool("isAtk", false);
-        animator.SetBool("isMove", false);
-        UpdateLastMoveToAnimator();
-    }
-    private void InjuredAnimationEnd()
-    {
-        animator.SetBool("isInjured", false);
-        animator.SetBool("isMove", false);
-        UpdateLastMoveToAnimator();
-    }
     //Cập nhật animation tạm thời trước khi có hệ thống animation tương tác hoàn chỉnh
     private void UpdateAnimation()
     {
@@ -130,14 +181,13 @@ public class Controller : MonoBehaviour, IUpdatable
         // Atk
         if (Input.GetKeyDown(KeyCode.J))
         {
-            animator.SetBool("isMove", false);
-            animator.SetBool("isAtk", true);
+            animator.SetTrigger("Atk");
             UpdateLastMoveToAnimator();
         }
         // Injured
         if (Input.GetKeyDown(KeyCode.K))
         {
-            animator.SetBool("isInjured", true);
+            animator.SetTrigger("Injured");
             UpdateLastMoveToAnimator();
         }
     }
