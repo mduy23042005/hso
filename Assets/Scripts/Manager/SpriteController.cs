@@ -1,302 +1,156 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.U2D.Animation;
 
-public class SpriteController : MonoBehaviour
+public class SpriteController : MonoBehaviour, IUpdatable
 {
-    [Header("Sprite Renderer")]
-    [SerializeField] private SpriteRenderer helmetRenderer;
-    [SerializeField] private SpriteRenderer armorRenderer;
-    [SerializeField] private SpriteRenderer legArmorRenderer;
-    [SerializeField] private SpriteRenderer hairRenderer;
-    [SerializeField] private SpriteRenderer headRenderer;
-    [SerializeField] private SpriteRenderer[] weaponRenderer;
+    private SpriteResolver[] resolvers;
+    private Animator animator;
+    private int lastFrame = -1;
+    private string lastState = "";
 
-    [Header("Sprite List")]
-    [SerializeField] private List<Helmet> helmetList;
-    [SerializeField] private List<Armor> armorList;
-    [SerializeField] private List<LegArmor> legArmorList;
-    [SerializeField] private List<Hair> hairList;
-    [SerializeField] private List<Head> headList;
-    [SerializeField] private List<Weapon> weaponList;
+    [Header("Chỉ định sprite nào của player sẽ bị thay thế")]
+    [SerializeField] private SpriteLibrary spriteLibrary;
 
-    private int currentHelmet = 0;
+    [Header("Danh sách sprite sẽ thay thế")]
+    [SerializeField] private SpriteLibraryAsset[] armorLibraries;
+
     private int currentArmor = 0;
-    private int currentLegArmor = 0;
-    private int currentHair = 0;
-    private int currentHead = 0;
-    private int currentEyes = 0;
-    private int currentWeapon = 0;
 
-    private Armor setArmor;
-    private LegArmor setLegArmor;
-    private Helmet setHelmet;
-    private Hair setHair;
-    private Head setHead;
-    private Weapon setWeapon;
-
-    #region Change Helmet
-    public void NextHelmet()
+    void Awake()
     {
-        if (helmetList.Count == 0) return; // tránh lỗi nếu list rỗng
-        currentHelmet = (currentHelmet + 1) % helmetList.Count;
+        // Lấy tất cả SpriteResolver trong object con
+        resolvers = GetComponentsInChildren<SpriteResolver>();
+        animator = GetComponent<Animator>();
+    }
+    private void OnEnable()
+    {
+        GameManager.Instance.Register(this);
+    }
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.Unregister(this);
+        }
+    }
+    public void RegisterDontDestroyOnLoad()
+    {
+        GameManager.Instance.RegisterPersistent(this);
+    }
+    public void OnUpdate()
+    {
+        UpdateSprite();
     }
 
-    public void PrevHelmet()
-    {
-        if (helmetList.Count == 0) return;
-        currentHelmet = (currentHelmet - 1 + helmetList.Count) % helmetList.Count;
-    }
-    #endregion Change Helmet
-    #region Change Armor
     public void NextArmor()
     {
-        if (armorList.Count == 0) return; // tránh lỗi nếu list rỗng
-        currentArmor = (currentArmor + 1) % armorList.Count;
+        EquipArmor(currentArmor + 1);
     }
 
     public void PrevArmor()
     {
-        if (armorList.Count == 0) return;
-        currentArmor = (currentArmor - 1 + armorList.Count) % armorList.Count;
+        if (currentArmor - 1 < 0)
+        {
+            return;
+        }
+        EquipArmor(currentArmor - 1);
     }
-    #endregion Change Armor
-    #region Change Leg Armor
-    public void NextLegArmor()
+    // Gọi hàm này để đổi Armor
+    private void EquipArmor(int armorIndex)
     {
-        if (legArmorList.Count == 0) return; // tránh lỗi nếu list rỗng
-        currentLegArmor = (currentLegArmor + 1) % legArmorList.Count;
+        if (armorIndex < 0 || armorIndex >= armorLibraries.Length)
+        {
+            Debug.LogWarning("Armor index không hợp lệ!");
+            return;
+        }
+
+        currentArmor = armorIndex;
+        spriteLibrary.spriteLibraryAsset = armorLibraries[armorIndex];
+
+        Debug.Log($"Đã equip Armor {armorIndex}");
+    }
+    private void UpdateSprite()
+    {
+        if (animator == null) return;
+
+        for (int i = 0; i < resolvers.Length; i++)
+        {
+            if (resolvers[i] == null)
+                continue;
+        }
+
+        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+
+        // Lấy hướng từ Animator (LastHorizontal, LastVertical)
+        float h = animator.GetFloat("Horizontal");
+        float v = animator.GetFloat("Vertical");
+
+        string direction = "Front";
+        if (Mathf.Abs(h) > Mathf.Abs(v))
+        {
+            direction = h > 0 ? "Right" : "Left";
+        }
+        else
+        {
+            direction = v > 0 ? "Back" : "Front";
+        }
+
+        // Stand
+        if (state.IsName("Stand"))
+        {
+            if (lastState != "Stand" + direction)
+            {
+                lastFrame = -1;
+                lastState = "Stand" + direction;
+                SetAllResolvers("Stand", $"Stand{direction}");
+            }
+        }
+        // Move
+        if (state.IsName("Move"))
+        {
+            float t = state.normalizedTime % 1f;
+            int frame = (t < 0.5f) ? 0 : 1;
+
+            if (frame != lastFrame || lastState != "Move" + direction)
+            {
+                lastFrame = frame;
+                lastState = "Move" + direction;
+                SetAllResolvers("Move", $"Move{direction}Frame{frame}");
+            }
+        }
+        // Attack
+        if (state.IsName("Atk"))
+        {
+            float t = state.normalizedTime % 1f;
+            int frame = (t < 0.5f) ? 0 : 1;
+
+            if (frame != lastFrame || lastState != "Atk" + direction)
+            {
+                lastFrame = frame;
+                lastState = "Atk" + direction;
+                SetAllResolvers("Atk", $"Atk{direction}Frame{frame}");
+            }
+        }
+        // Die
+        if (state.IsName("Die"))
+        {
+            if (lastState != "Die")
+            {
+                lastFrame = -1;
+                lastState = "Die";
+                SetAllResolvers("Die", $"Die{direction}Frame0");
+            }
+        }
     }
 
-    public void PrevLegArmor()
+    private void SetAllResolvers(string category, string label)
     {
-        if (legArmorList.Count == 0) return;
-        currentLegArmor = (currentLegArmor - 1 + legArmorList.Count) % legArmorList.Count;
+        foreach (var r in resolvers)
+        {
+            if (r != null && r.spriteLibrary != null)  // ✅ Check tránh null
+            {
+                r.SetCategoryAndLabel(category, label);
+            }
+        }
     }
-    #endregion Change Leg Armor
-    #region Change Hair
-    public void NextHair()
-    {
-        if (hairList.Count == 0) return; // tránh lỗi nếu list rỗng
-        currentHair = (currentHair + 1) % hairList.Count;
-    }
-
-    public void PrevHair()
-    {
-        if (hairList.Count == 0) return;
-        currentHair = (currentHair - 1 + hairList.Count) % hairList.Count;
-    }
-    #endregion Change Hair
-    #region Change Head
-    public void NextHead()
-    {
-        if (headList.Count == 0) return; // tránh lỗi nếu list rỗng
-        currentHead = (currentHead + 1) % headList.Count;
-    }
-
-    public void PrevHead()
-    {
-        if (headList.Count == 0) return;
-        currentHead = (currentHead - 1 + headList.Count) % headList.Count;
-    }
-    #endregion Change Head
-    #region Change Weapon
-    public void NextWeapon()
-    {
-        if (weaponList.Count == 0) return; // tránh lỗi nếu list rỗng
-        currentWeapon = (currentWeapon + 1) % weaponList.Count;
-    }
-
-    public void PrevWeapon()
-    {
-        if (weaponList.Count == 0) return;
-        currentWeapon = (currentWeapon - 1 + weaponList.Count) % weaponList.Count;
-    }
-    #endregion Change Weapon
-
-    private void UpdateSpriteID()
-    {
-        setArmor = armorList[currentArmor];
-        setLegArmor = legArmorList[currentLegArmor];
-        setHelmet = helmetList[currentHelmet];
-        setHair = hairList[currentHair];
-        setHead = headList[currentHead];
-        setWeapon = weaponList[currentWeapon];
-    }
-
-    #region Update Sprite
-    #region Stand
-    public void StandFront()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.front;
-        armorRenderer.sprite = setArmor.standFront;
-        legArmorRenderer.sprite = setLegArmor.standFront;
-        hairRenderer.sprite = setHair.front;
-        headRenderer.sprite = setHead.front;
-        weaponRenderer[0].sprite = setWeapon.front;
-    }
-    public void StandBack()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.back;
-        armorRenderer.sprite = setArmor.standBack;
-        legArmorRenderer.sprite = setLegArmor.standBack;
-        hairRenderer.sprite = setHair.back;
-        headRenderer.sprite = setHead.back;
-        weaponRenderer[1].sprite = setWeapon.back;
-    }
-    public void StandSide()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.side;
-        armorRenderer.sprite = setArmor.standSide;
-        legArmorRenderer.sprite = setLegArmor.standSide;
-        hairRenderer.sprite = setHair.side;
-        headRenderer.sprite = setHead.side;
-        weaponRenderer[0].sprite = setWeapon.side;
-    }
-    #endregion Stand
-    #region Move
-    //Move Front
-    public void MoveFrontFrame0()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.front;
-        armorRenderer.sprite = setArmor.moveFront[0];
-        legArmorRenderer.sprite = setLegArmor.moveFront[0];
-        hairRenderer.sprite = setHair.front;
-        headRenderer.sprite = setHead.front;
-        weaponRenderer[0].sprite = setWeapon.front;
-    }
-    public void MoveFrontFrame1()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.front;
-        armorRenderer.sprite = setArmor.moveFront[1];
-        legArmorRenderer.sprite = setLegArmor.moveFront[1];
-        hairRenderer.sprite = setHair.front;
-        headRenderer.sprite = setHead.front;
-        weaponRenderer[0].sprite = setWeapon.front;
-    }
-    //Move Back
-    public void MoveBackFrame0()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.back;
-        armorRenderer.sprite = setArmor.moveBack[0];
-        legArmorRenderer.sprite = setLegArmor.moveBack[0];
-        hairRenderer.sprite = setHair.back;
-        headRenderer.sprite = setHead.back;
-        weaponRenderer[1].sprite = setWeapon.back;
-    }
-    public void MoveBackFrame1()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.back;
-        armorRenderer.sprite = setArmor.moveBack[1];
-        legArmorRenderer.sprite = setLegArmor.moveBack[1];
-        hairRenderer.sprite = setHair.back;
-        headRenderer.sprite = setHead.back;
-        weaponRenderer[1].sprite = setWeapon.back;
-    }
-    //Move Side
-    public void MoveSideFrame0()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.side;
-        armorRenderer.sprite = setArmor.moveSide[0];
-        legArmorRenderer.sprite = setLegArmor.moveSide[0];
-        hairRenderer.sprite = setHair.side;
-        headRenderer.sprite = setHead.side;
-        weaponRenderer[0].sprite = setWeapon.side;
-    }
-    public void MoveSideFrame1()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.side;
-        armorRenderer.sprite = setArmor.moveSide[1];
-        legArmorRenderer.sprite = setLegArmor.moveSide[1];
-        hairRenderer.sprite = setHair.side;
-        headRenderer.sprite = setHead.side;
-        weaponRenderer[0].sprite = setWeapon.side;
-    }
-    #endregion Move
-    #region Attack
-    //Attack Front
-    public void AtkFrontFrame0()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.front;
-        armorRenderer.sprite = setArmor.atkFront[0];
-        legArmorRenderer.sprite = setLegArmor.atkFront[0];
-        hairRenderer.sprite = setHair.front;
-        headRenderer.sprite = setHead.front;
-        weaponRenderer[0].sprite = setWeapon.front;
-    }
-    public void AtkFrontFrame1()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.front;
-        armorRenderer.sprite = setArmor.atkFront[1];
-        legArmorRenderer.sprite = setLegArmor.atkFront[1];
-        hairRenderer.sprite = setHair.front;
-        headRenderer.sprite = setHead.front;
-        weaponRenderer[1].sprite = setWeapon.back;
-    }
-    //Attack Back
-    public void AtkBackFrame0()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.back;
-        armorRenderer.sprite = setArmor.atkBack[0];
-        legArmorRenderer.sprite = setLegArmor.atkBack[0];
-        hairRenderer.sprite = setHair.back;
-        headRenderer.sprite = setHead.back;
-        weaponRenderer[1].sprite = setWeapon.back;
-    }
-    public void AtkBackFrame1()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.back;
-        armorRenderer.sprite = setArmor.atkBack[1];
-        legArmorRenderer.sprite = setLegArmor.atkBack[1];
-        hairRenderer.sprite = setHair.back;
-        headRenderer.sprite = setHead.back;
-        weaponRenderer[0].sprite = setWeapon.front;
-    }
-    //Attack Side
-    public void AtkSideFrame0()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.side;
-        armorRenderer.sprite = setArmor.atkSide[0];
-        legArmorRenderer.sprite = setLegArmor.atkSide[0];
-        hairRenderer.sprite = setHair.side;
-        headRenderer.sprite = setHead.side;
-        weaponRenderer[0].sprite = setWeapon.front;
-    }
-    public void AtkSideFrame1()
-    {
-        UpdateSpriteID();
-        helmetRenderer.sprite = setHelmet.side;
-        armorRenderer.sprite = setArmor.atkSide[1];
-        legArmorRenderer.sprite = setLegArmor.atkSide[1];
-        hairRenderer.sprite = setHair.side;
-        headRenderer.sprite = setHead.side;
-        weaponRenderer[1].sprite = setWeapon.back;
-    }
-    #endregion Attack
-    #region Die
-    public void DieFrame0()
-    {
-        UpdateSpriteID();
-        armorRenderer.sprite = setArmor.die;
-        legArmorRenderer.sprite = null;
-        weaponRenderer[0].sprite = null;
-        weaponRenderer[1].sprite = null;
-        weaponRenderer[2].sprite = null;
-        weaponRenderer[3].sprite = null;
-    }
-    #endregion Die
-    #endregion Update Sprite
 }

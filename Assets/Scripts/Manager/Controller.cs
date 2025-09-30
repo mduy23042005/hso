@@ -131,7 +131,7 @@ public class Controller : MonoBehaviour, IUpdatable
     }
     protected virtual void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
     }
 
     //Getter - Setter cho các biến chuyển động
