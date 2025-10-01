@@ -60,9 +60,9 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: 269396582, guid: 7686345ff7060754a9dbf8b59395bb5b, type: 3}
     - m_Name: MoveBackFrame1
       m_Hash: 853483334
-      m_Sprite: {fileID: -466351629, guid: 7686345ff7060754a9dbf8b59395bb5b, type: 3}
+      m_Sprite: {fileID: -830701690, guid: 7686345ff7060754a9dbf8b59395bb5b, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -466351629, guid: 7686345ff7060754a9dbf8b59395bb5b, type: 3}
+      m_SpriteOverride: {fileID: -830701690, guid: 7686345ff7060754a9dbf8b59395bb5b, type: 3}
     - m_Name: MoveLeftFrame0
       m_Hash: 529247276
       m_Sprite: {fileID: 1007795318, guid: 7686345ff7060754a9dbf8b59395bb5b, type: 3}
@@ -143,5 +143,5 @@ MonoBehaviour:
     m_FromMain: 0
     m_EntryOverrideCount: 1
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638948250911206125
+  m_ModificationHash: 638949334631722818
   m_Version: 1

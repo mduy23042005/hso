@@ -3498,7 +3498,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2104cdb8bc9097444b06448431b18710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteLibrary: {fileID: 1298893093}
+  spriteLibrary:
+  - {fileID: 1453728685}
+  - {fileID: 1298893093}
+  legArmorLibraries:
+  - {fileID: 7108339969198208228, guid: 6eaccffb954bf624d87afd37b4a96f0a, type: 3}
+  - {fileID: 7108339969198208228, guid: 9df1dde97cfb12741b7dc83fef1c7f80, type: 3}
+  - {fileID: 7108339969198208228, guid: 5fff3a24a789f9547b2ab9586c413226, type: 3}
+  - {fileID: 7108339969198208228, guid: f4076866e59c702428c6ae829fe0d7df, type: 3}
+  - {fileID: 7108339969198208228, guid: 960f502980296b541b588571feb01061, type: 3}
+  - {fileID: 7108339969198208228, guid: 4636376885b00bf4da3cddb2a011b9f9, type: 3}
+  - {fileID: 7108339969198208228, guid: 9b26f468053885142ab2b66cb638cd33, type: 3}
+  - {fileID: 7108339969198208228, guid: b6a6f650101482b4ca50704655dfb6cd, type: 3}
+  - {fileID: 7108339969198208228, guid: a05efd87f87d45a4c82b7a2326b63b0f, type: 3}
+  - {fileID: 7108339969198208228, guid: 46d7c9fe7f672944481e03573710b1a2, type: 3}
+  - {fileID: 7108339969198208228, guid: c83ecac4b9985c64dac61189efe4ebc5, type: 3}
+  - {fileID: 7108339969198208228, guid: d0f1e4026865ca9479d5294309df6837, type: 3}
   armorLibraries:
   - {fileID: 7108339969198208228, guid: 2b1308565b40b264d9d7d78c983b0b42, type: 3}
   - {fileID: 7108339969198208228, guid: 271758b1d6382334e921e86791fe9e89, type: 3}
@@ -4946,7 +4961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: c1b4931c529d05a418bf4bd3ba1651b3, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 6eaccffb954bf624d87afd37b4a96f0a, type: 3}
 --- !u!114 &1453728686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5435,7 +5450,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2104cdb8bc9097444b06448431b18710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteLibrary: {fileID: 1141561761}
+  spriteLibrary:
+  - {fileID: 1685300563}
+  - {fileID: 1141561761}
+  legArmorLibraries:
+  - {fileID: 7108339969198208228, guid: 6eaccffb954bf624d87afd37b4a96f0a, type: 3}
+  - {fileID: 7108339969198208228, guid: 9df1dde97cfb12741b7dc83fef1c7f80, type: 3}
+  - {fileID: 7108339969198208228, guid: 5fff3a24a789f9547b2ab9586c413226, type: 3}
+  - {fileID: 7108339969198208228, guid: f4076866e59c702428c6ae829fe0d7df, type: 3}
+  - {fileID: 7108339969198208228, guid: 960f502980296b541b588571feb01061, type: 3}
+  - {fileID: 7108339969198208228, guid: 4636376885b00bf4da3cddb2a011b9f9, type: 3}
+  - {fileID: 7108339969198208228, guid: 9b26f468053885142ab2b66cb638cd33, type: 3}
+  - {fileID: 7108339969198208228, guid: b6a6f650101482b4ca50704655dfb6cd, type: 3}
+  - {fileID: 7108339969198208228, guid: a05efd87f87d45a4c82b7a2326b63b0f, type: 3}
+  - {fileID: 7108339969198208228, guid: 46d7c9fe7f672944481e03573710b1a2, type: 3}
+  - {fileID: 7108339969198208228, guid: c83ecac4b9985c64dac61189efe4ebc5, type: 3}
+  - {fileID: 7108339969198208228, guid: d0f1e4026865ca9479d5294309df6837, type: 3}
   armorLibraries:
   - {fileID: 7108339969198208228, guid: 2b1308565b40b264d9d7d78c983b0b42, type: 3}
   - {fileID: 7108339969198208228, guid: 271758b1d6382334e921e86791fe9e89, type: 3}
@@ -5877,7 +5907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: c1b4931c529d05a418bf4bd3ba1651b3, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 6eaccffb954bf624d87afd37b4a96f0a, type: 3}
 --- !u!114 &1685300564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23542,7 +23572,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevLegArmor
         m_Mode: 1
@@ -23554,7 +23584,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevLegArmor
         m_Mode: 1
@@ -23901,7 +23931,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextLegArmor
         m_Mode: 1
@@ -23913,7 +23943,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextLegArmor
         m_Mode: 1

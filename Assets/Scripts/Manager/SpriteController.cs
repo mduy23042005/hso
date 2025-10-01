@@ -9,12 +9,14 @@ public class SpriteController : MonoBehaviour, IUpdatable
     private string lastState = "";
 
     [Header("Chỉ định sprite nào của player sẽ bị thay thế")]
-    [SerializeField] private SpriteLibrary spriteLibrary;
+    [SerializeField] private SpriteLibrary[] spriteLibrary;
 
     [Header("Danh sách sprite sẽ thay thế")]
+    [SerializeField] private SpriteLibraryAsset[] legArmorLibraries;
     [SerializeField] private SpriteLibraryAsset[] armorLibraries;
 
     private int currentArmor = 0;
+    private int currentLegArmor = 0;
 
     void Awake()
     {
@@ -42,11 +44,22 @@ public class SpriteController : MonoBehaviour, IUpdatable
         UpdateSprite();
     }
 
+    public void NextLegArmor()
+    {
+        EquipLegArmor(currentLegArmor + 1);
+    }
+    public void PrevLegArmor()
+    {
+        if (currentLegArmor - 1 < 0)
+        {
+            return;
+        }
+        EquipLegArmor(currentLegArmor - 1);
+    }
     public void NextArmor()
     {
         EquipArmor(currentArmor + 1);
     }
-
     public void PrevArmor()
     {
         if (currentArmor - 1 < 0)
@@ -55,7 +68,20 @@ public class SpriteController : MonoBehaviour, IUpdatable
         }
         EquipArmor(currentArmor - 1);
     }
-    // Gọi hàm này để đổi Armor
+
+    private void EquipLegArmor(int legArmorIndex)
+    {
+        if (legArmorIndex < 0 || legArmorIndex >= legArmorLibraries.Length)
+        {
+            Debug.LogWarning("LegArmor index không hợp lệ!");
+            return;
+        }
+
+        currentLegArmor = legArmorIndex;
+        spriteLibrary[0].spriteLibraryAsset = legArmorLibraries[legArmorIndex];
+
+        Debug.Log($"Đã equip LegArmor {legArmorIndex}");
+    }
     private void EquipArmor(int armorIndex)
     {
         if (armorIndex < 0 || armorIndex >= armorLibraries.Length)
@@ -65,10 +91,11 @@ public class SpriteController : MonoBehaviour, IUpdatable
         }
 
         currentArmor = armorIndex;
-        spriteLibrary.spriteLibraryAsset = armorLibraries[armorIndex];
+        spriteLibrary[1].spriteLibraryAsset = armorLibraries[armorIndex];
 
         Debug.Log($"Đã equip Armor {armorIndex}");
     }
+
     private void UpdateSprite()
     {
         if (animator == null) return;
@@ -142,7 +169,6 @@ public class SpriteController : MonoBehaviour, IUpdatable
             }
         }
     }
-
     private void SetAllResolvers(string category, string label)
     {
         foreach (var r in resolvers)
