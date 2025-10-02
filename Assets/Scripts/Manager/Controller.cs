@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Controller : MonoBehaviour, IUpdatable
 {
@@ -55,6 +56,14 @@ public class Controller : MonoBehaviour, IUpdatable
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
+            if (movement.x != 0)
+            {
+                movement.y = 0;
+            }
+            if (movement.y != 0)
+            {
+                movement.x = 0;
+            }
             MoveStop();
         }
         else
@@ -64,7 +73,11 @@ public class Controller : MonoBehaviour, IUpdatable
     }
     protected virtual void MoveMouse()
     {
-        if ((menu == null || !menu.getIsActive()) && Input.GetMouseButtonDown(0))
+        if ((menu != null && menu.getIsActive()) || EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+        if (Input.GetMouseButtonDown(0))
         {
             // Lấy tọa độ click
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -115,8 +128,8 @@ public class Controller : MonoBehaviour, IUpdatable
             else
             {
                 // Đến nơi → dừng lại
-                MoveStop();
                 movement = Vector2.zero;
+                MoveStop(); 
                 isMovingToTarget = false;
             }
         }
@@ -139,7 +152,7 @@ public class Controller : MonoBehaviour, IUpdatable
     {
         return movement;
     }
-    public Vector2 getLastMove()
+    public Vector2 getLastMovement()
     {
         return lastMove;
     }
@@ -147,9 +160,13 @@ public class Controller : MonoBehaviour, IUpdatable
     {
         movement = value;
     }
-    public void setLastMove(Vector2 value)
+    public void setLastMovement(Vector2 value)
     {
         lastMove = value;
+    }
+    public bool getIsMovingToTarget()
+    {
+        return isMovingToTarget;
     }
 
     //Cập nhật các thông số chuyển động cho animator

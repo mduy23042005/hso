@@ -321,7 +321,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevHead
         m_Mode: 1
@@ -333,7 +333,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevHead
         m_Mode: 1
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextWeapon
         m_Mode: 1
@@ -614,7 +614,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextWeapon
         m_Mode: 1
@@ -961,7 +961,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextHelmet
         m_Mode: 1
@@ -973,7 +973,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextHelmet
         m_Mode: 1
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevWeapon
         m_Mode: 1
@@ -1118,7 +1118,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevWeapon
         m_Mode: 1
@@ -1733,7 +1733,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1808891219
   m_SortingLayer: 2
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_Sprite: {fileID: -1983266204, guid: da9954e3eb27e4c4a89cdcd20fe47880, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextHair
         m_Mode: 1
@@ -1870,7 +1870,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextHair
         m_Mode: 1
@@ -2921,12 +2921,12 @@ SpriteRenderer:
   m_SortingLayerID: 1808891219
   m_SortingLayer: 2
   m_SortingOrder: 3
-  m_Sprite: {fileID: -500753769, guid: 416225ef5451fa7458b54217b0e88ba4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.625, y: 0.375}
+  m_Size: {x: 0.4375, y: 0.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2959,9 +2959,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 2.1529441e-16
-  m_labelHash: 9.299372e-31
+  m_labelHash: 7.415619e-20
   m_SpriteKey: 0
-  m_SpriteHash: 1016411106
+  m_SpriteHash: 144354426
 --- !u!1 &906516599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,7 +3069,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 199732367
   m_SortingLayer: 3
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
@@ -3501,6 +3501,11 @@ MonoBehaviour:
   spriteLibrary:
   - {fileID: 1453728685}
   - {fileID: 1298893093}
+  - {fileID: 1884199437}
+  - {fileID: 751261018}
+  - {fileID: 875636006}
+  - {fileID: 556773190}
+  - {fileID: 906516601}
   legArmorLibraries:
   - {fileID: 7108339969198208228, guid: 6eaccffb954bf624d87afd37b4a96f0a, type: 3}
   - {fileID: 7108339969198208228, guid: 9df1dde97cfb12741b7dc83fef1c7f80, type: 3}
@@ -3527,6 +3532,81 @@ MonoBehaviour:
   - {fileID: 7108339969198208228, guid: f9fbe54f6941c414ab9b375a68e89f01, type: 3}
   - {fileID: 7108339969198208228, guid: 942e6211de3f36f48895fe5d40c1fb38, type: 3}
   - {fileID: 7108339969198208228, guid: 4736e5bc8369b504a9f37b7593511e53, type: 3}
+  headLibraries:
+  - {fileID: 7108339969198208228, guid: a0f6ea57ad8671e47b51e91d7e4eb42a, type: 3}
+  - {fileID: 7108339969198208228, guid: 184100b4658fd1547934d23e9bc9c51a, type: 3}
+  helmetLibraries:
+  - {fileID: 7108339969198208228, guid: 838bcd55809d9024dbf2eba482cf0227, type: 3}
+  - {fileID: 7108339969198208228, guid: 3715a32dbbfb6e54e98d2a4ee195227d, type: 3}
+  - {fileID: 7108339969198208228, guid: b0d740b2196b2f545ae3e3042280017d, type: 3}
+  - {fileID: 7108339969198208228, guid: 118bdc4483488704db7a29f18ca7c2d7, type: 3}
+  - {fileID: 7108339969198208228, guid: 572d51ed533f06147a6447a6cffc71bc, type: 3}
+  - {fileID: 7108339969198208228, guid: e796e58cf8bd5d6489dccff63a12ee9f, type: 3}
+  - {fileID: 7108339969198208228, guid: d71116e2d953c4e4993b8bd4559ab9ee, type: 3}
+  - {fileID: 7108339969198208228, guid: d89e4dbe81fcf214ab9686b152114c9d, type: 3}
+  - {fileID: 7108339969198208228, guid: 170c92498788f6347a93e6c76f509b17, type: 3}
+  - {fileID: 7108339969198208228, guid: 162fafc789281d5419ed8945eab61e16, type: 3}
+  - {fileID: 7108339969198208228, guid: 298e20b2898740a4dbc52ba412467bbf, type: 3}
+  - {fileID: 7108339969198208228, guid: 5fb689cc04b05b844b3aa17a56e4391d, type: 3}
+  hairLibraries:
+  - {fileID: 7108339969198208228, guid: ff6623d51e33aa147ac78403d957e5e5, type: 3}
+  - {fileID: 7108339969198208228, guid: 7f53bd8b52e72ed47aa13f0ba218d9f0, type: 3}
+  - {fileID: 7108339969198208228, guid: 8b113c2d0c24c5d419f07b9d7ebe15b1, type: 3}
+  - {fileID: 7108339969198208228, guid: be851b2ddbf31b24881511418dcfd633, type: 3}
+  - {fileID: 7108339969198208228, guid: 5c0254a04c739874dad3b603f2cc3c29, type: 3}
+  - {fileID: 7108339969198208228, guid: 284541a666bd9d24abce3c8e1c8c742b, type: 3}
+  - {fileID: 7108339969198208228, guid: df027672371e6b94199494b0acd627fc, type: 3}
+  - {fileID: 7108339969198208228, guid: 0a122fc9449ce014ba68bf107f6d42db, type: 3}
+  - {fileID: 7108339969198208228, guid: c83d38738803d7340aaaa9787d2a702b, type: 3}
+  weaponLibraries:
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: a96b4172843d2f8489082725e4afe784, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: a960cea00f0e61b42819986484f5899e, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 45139502b61bf1d4fbfec359f8f23356, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 15f67a90835aae741889d66607894091, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 75da55a25daa0b24082926b33ccc6b4f, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 3891a7f1a21089a439628635cc781a95, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 4d71199245cf80941a01124cd7ffcdbc, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 15a1f7e8b212f3c4d897d78c7e546a32, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 2ecaeb5e37f42c4448eb5828b92d4a98, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 7104888b3c5072c45bd6b2578da3b78f, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: f4bd493bca76b5842904343d90b81cea, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 22a725469258dc3448049c1f92b755f9, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: c72c278a0e1c0704e8b1b1287aaa4c30, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: e7f3b2f9a77aa1a4aac12c8578e66e5a, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: c32ede224bef87a4d83668fd4463d49b, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 32fc34b2a8a1e664da80d0814a65957f, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: d8e2f83251a99014c9cf7bf74e7e1db9, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: d6450e0c11f392846bdedccd58cedb43, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 63b6936f398be334dbfe4d276cf474f6, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: c3ab6b41538f22d45a6d2d46c006df32, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 944cd3567e9b5c94eb2ae3e38d2cffc2, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1586ab8f3c617b849a84198f94f5daa3, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 1839fd593110e374a89014e61d9a80f7, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1579a86c4be8cc5439e5bf35b97d1c9e, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 5fade12727889de43adf33d8fec4df72, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: ec6e64996222903449f19ad86985654f, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 7bb5a3ce3bac7634e8d35edafae7a2fe, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 4e4bfc684f963e24da582444c9362f18, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: fe2af06d3c3c0f04e91937adc7f68149, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1ecd2d44f8c822f4cb2137578fa9f3a2, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 63c8ec8c8cc6e3c4c88fed131ba0ffb3, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: e182c9f8aac42e547bd352d9484baf29, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 95353a52bf04afe4dbb8cf664849ea28, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 259380531f9703240a7a6c6134e2c794, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 4e7e8e90ccd4d7c4dbfc75201cb5e67b, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 0ee57f610aafef84cad8de700e276077, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: e4cbb5315b69c8f44be3419d49c53ff2, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: ea7f59e51a148a74ebe85f402ffcc079, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: fd5af378947b29d4cad73ed10947df66, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 946cac65c8e246c4eb46032f40e7fda2, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 9cba10e4053fb6c4784fc5ecb3b0d9f7, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: f968325a57fd6654297010f1b2c69b65, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: a58f6d71036a3c147aea2a02bb58410d, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: a65216f486c50cd44ae18340447f4b1f, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 9b7abfa4b8c8b0c4caa7c4a8edc620e9, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: a35df144e096bf349baf09a930acd364, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: c5af6cb3145dfbf45a835c384572ace0, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: dbb8ba21d3fd719498d203c8975b897a, type: 3}
 --- !u!114 &1079886261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4305,7 +4385,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevHair
         m_Mode: 1
@@ -4317,7 +4397,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevHair
         m_Mode: 1
@@ -5116,7 +5196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextHead
         m_Mode: 1
@@ -5128,7 +5208,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: NextHead
         m_Mode: 1
@@ -5453,6 +5533,11 @@ MonoBehaviour:
   spriteLibrary:
   - {fileID: 1685300563}
   - {fileID: 1141561761}
+  - {fileID: 157696423}
+  - {fileID: 87509228}
+  - {fileID: 1340098609}
+  - {fileID: 1765588018}
+  - {fileID: 549592830}
   legArmorLibraries:
   - {fileID: 7108339969198208228, guid: 6eaccffb954bf624d87afd37b4a96f0a, type: 3}
   - {fileID: 7108339969198208228, guid: 9df1dde97cfb12741b7dc83fef1c7f80, type: 3}
@@ -5479,6 +5564,81 @@ MonoBehaviour:
   - {fileID: 7108339969198208228, guid: f9fbe54f6941c414ab9b375a68e89f01, type: 3}
   - {fileID: 7108339969198208228, guid: 942e6211de3f36f48895fe5d40c1fb38, type: 3}
   - {fileID: 7108339969198208228, guid: 4736e5bc8369b504a9f37b7593511e53, type: 3}
+  headLibraries:
+  - {fileID: 7108339969198208228, guid: a0f6ea57ad8671e47b51e91d7e4eb42a, type: 3}
+  - {fileID: 7108339969198208228, guid: 184100b4658fd1547934d23e9bc9c51a, type: 3}
+  helmetLibraries:
+  - {fileID: 7108339969198208228, guid: 838bcd55809d9024dbf2eba482cf0227, type: 3}
+  - {fileID: 7108339969198208228, guid: 3715a32dbbfb6e54e98d2a4ee195227d, type: 3}
+  - {fileID: 7108339969198208228, guid: b0d740b2196b2f545ae3e3042280017d, type: 3}
+  - {fileID: 7108339969198208228, guid: 118bdc4483488704db7a29f18ca7c2d7, type: 3}
+  - {fileID: 7108339969198208228, guid: 572d51ed533f06147a6447a6cffc71bc, type: 3}
+  - {fileID: 7108339969198208228, guid: e796e58cf8bd5d6489dccff63a12ee9f, type: 3}
+  - {fileID: 7108339969198208228, guid: d71116e2d953c4e4993b8bd4559ab9ee, type: 3}
+  - {fileID: 7108339969198208228, guid: d89e4dbe81fcf214ab9686b152114c9d, type: 3}
+  - {fileID: 7108339969198208228, guid: 170c92498788f6347a93e6c76f509b17, type: 3}
+  - {fileID: 7108339969198208228, guid: 162fafc789281d5419ed8945eab61e16, type: 3}
+  - {fileID: 7108339969198208228, guid: 298e20b2898740a4dbc52ba412467bbf, type: 3}
+  - {fileID: 7108339969198208228, guid: 5fb689cc04b05b844b3aa17a56e4391d, type: 3}
+  hairLibraries:
+  - {fileID: 7108339969198208228, guid: ff6623d51e33aa147ac78403d957e5e5, type: 3}
+  - {fileID: 7108339969198208228, guid: 7f53bd8b52e72ed47aa13f0ba218d9f0, type: 3}
+  - {fileID: 7108339969198208228, guid: 8b113c2d0c24c5d419f07b9d7ebe15b1, type: 3}
+  - {fileID: 7108339969198208228, guid: be851b2ddbf31b24881511418dcfd633, type: 3}
+  - {fileID: 7108339969198208228, guid: 5c0254a04c739874dad3b603f2cc3c29, type: 3}
+  - {fileID: 7108339969198208228, guid: 284541a666bd9d24abce3c8e1c8c742b, type: 3}
+  - {fileID: 7108339969198208228, guid: df027672371e6b94199494b0acd627fc, type: 3}
+  - {fileID: 7108339969198208228, guid: 0a122fc9449ce014ba68bf107f6d42db, type: 3}
+  - {fileID: 7108339969198208228, guid: c83d38738803d7340aaaa9787d2a702b, type: 3}
+  weaponLibraries:
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: a96b4172843d2f8489082725e4afe784, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: a960cea00f0e61b42819986484f5899e, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 45139502b61bf1d4fbfec359f8f23356, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 15f67a90835aae741889d66607894091, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 75da55a25daa0b24082926b33ccc6b4f, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 3891a7f1a21089a439628635cc781a95, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 4d71199245cf80941a01124cd7ffcdbc, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 15a1f7e8b212f3c4d897d78c7e546a32, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 2ecaeb5e37f42c4448eb5828b92d4a98, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 7104888b3c5072c45bd6b2578da3b78f, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: f4bd493bca76b5842904343d90b81cea, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 22a725469258dc3448049c1f92b755f9, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: c72c278a0e1c0704e8b1b1287aaa4c30, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: e7f3b2f9a77aa1a4aac12c8578e66e5a, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: c32ede224bef87a4d83668fd4463d49b, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 32fc34b2a8a1e664da80d0814a65957f, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: d8e2f83251a99014c9cf7bf74e7e1db9, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: d6450e0c11f392846bdedccd58cedb43, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 63b6936f398be334dbfe4d276cf474f6, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: c3ab6b41538f22d45a6d2d46c006df32, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 944cd3567e9b5c94eb2ae3e38d2cffc2, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1586ab8f3c617b849a84198f94f5daa3, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 1839fd593110e374a89014e61d9a80f7, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1579a86c4be8cc5439e5bf35b97d1c9e, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 5fade12727889de43adf33d8fec4df72, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: ec6e64996222903449f19ad86985654f, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 7bb5a3ce3bac7634e8d35edafae7a2fe, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 4e4bfc684f963e24da582444c9362f18, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: fe2af06d3c3c0f04e91937adc7f68149, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1ecd2d44f8c822f4cb2137578fa9f3a2, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 63c8ec8c8cc6e3c4c88fed131ba0ffb3, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: e182c9f8aac42e547bd352d9484baf29, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 95353a52bf04afe4dbb8cf664849ea28, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 259380531f9703240a7a6c6134e2c794, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 4e7e8e90ccd4d7c4dbfc75201cb5e67b, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 0ee57f610aafef84cad8de700e276077, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: e4cbb5315b69c8f44be3419d49c53ff2, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: ea7f59e51a148a74ebe85f402ffcc079, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: fd5af378947b29d4cad73ed10947df66, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: 946cac65c8e246c4eb46032f40e7fda2, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 9cba10e4053fb6c4784fc5ecb3b0d9f7, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: f968325a57fd6654297010f1b2c69b65, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: a58f6d71036a3c147aea2a02bb58410d, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: a65216f486c50cd44ae18340447f4b1f, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: 9b7abfa4b8c8b0c4caa7c4a8edc620e9, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: a35df144e096bf349baf09a930acd364, type: 3}
+  - weaponBackLibraries: {fileID: 7108339969198208228, guid: c5af6cb3145dfbf45a835c384572ace0, type: 3}
+    weaponFrontLibraries: {fileID: 7108339969198208228, guid: dbb8ba21d3fd719498d203c8975b897a, type: 3}
 --- !u!1 &1545098107
 GameObject:
   m_ObjectHideFlags: 0
@@ -5607,7 +5767,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1530710334}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevHelmet
         m_Mode: 1
@@ -5619,7 +5779,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1079886260}
         m_TargetAssemblyTypeName: SpriteController, Assembly-CSharp
         m_MethodName: PrevHelmet
         m_Mode: 1

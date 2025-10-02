@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.U2D.Animation;
 
+[System.Serializable]
+public class WeaponLibraries
+{
+    public SpriteLibraryAsset weaponBackLibraries;
+    public SpriteLibraryAsset weaponFrontLibraries;
+}
 public class SpriteController : MonoBehaviour, IUpdatable
 {
     private SpriteResolver[] resolvers;
     private Animator animator;
     private int lastFrame = -1;
     private string lastState = "";
+    private Controller controller;
 
     [Header("Chỉ định sprite nào của player sẽ bị thay thế")]
     [SerializeField] private SpriteLibrary[] spriteLibrary;
@@ -14,15 +21,24 @@ public class SpriteController : MonoBehaviour, IUpdatable
     [Header("Danh sách sprite sẽ thay thế")]
     [SerializeField] private SpriteLibraryAsset[] legArmorLibraries;
     [SerializeField] private SpriteLibraryAsset[] armorLibraries;
+    [SerializeField] private SpriteLibraryAsset[] headLibraries;
+    [SerializeField] private SpriteLibraryAsset[] helmetLibraries;
+    [SerializeField] private SpriteLibraryAsset[] hairLibraries;
+    [SerializeField] private WeaponLibraries[] weaponLibraries;
 
     private int currentArmor = 0;
     private int currentLegArmor = 0;
+    private int currentHead = 0;
+    private int currentHelmet = 0;
+    private int currentHair = 0;
+    private int currentWeapon = 0;
 
     void Awake()
     {
         // Lấy tất cả SpriteResolver trong object con
         resolvers = GetComponentsInChildren<SpriteResolver>();
         animator = GetComponent<Animator>();
+        controller = GetComponent<Controller>();
     }
     private void OnEnable()
     {
@@ -68,6 +84,54 @@ public class SpriteController : MonoBehaviour, IUpdatable
         }
         EquipArmor(currentArmor - 1);
     }
+    public void NextHead()
+    {
+        EquipHead(currentHead + 1);
+    }
+    public void PrevHead()
+    {
+        if (currentHead - 1 < 0)
+        {
+            return;
+        }
+        EquipHead(currentHead - 1);
+    }
+    public void NextHelmet()
+    {
+        EquipHelmet(currentHelmet + 1);
+    }
+    public void PrevHelmet()
+    {
+        if (currentHelmet - 1 < 0)
+        {
+            return;
+        }
+        EquipHelmet(currentHelmet - 1);
+    }
+    public void NextHair()
+    {
+        EquipHair(currentHair + 1);
+    }
+    public void PrevHair()
+    {
+        if (currentHair - 1 < 0)
+        {
+            return;
+        }
+        EquipHair(currentHair - 1);
+    }
+    public void NextWeapon()
+    {
+        EquipWeapon(currentWeapon + 1);
+    }
+    public void PrevWeapon()
+    {
+        if (currentWeapon - 1 < 0)
+        {
+            return;
+        }
+        EquipWeapon(currentWeapon - 1);
+    }
 
     private void EquipLegArmor(int legArmorIndex)
     {
@@ -95,7 +159,70 @@ public class SpriteController : MonoBehaviour, IUpdatable
 
         Debug.Log($"Đã equip Armor {armorIndex}");
     }
+    private void EquipHead(int headIndex)
+    {
+        if (headIndex < 0 || headIndex >= headLibraries.Length)
+        {
+            Debug.LogWarning("Head index không hợp lệ!");
+            return;
+        }
 
+        currentHead = headIndex;
+        spriteLibrary[2].spriteLibraryAsset = headLibraries[headIndex];
+
+        Debug.Log($"Đã equip Head {headIndex}");
+    }
+    private void EquipHelmet(int helmetIndex)
+    {
+        if (helmetIndex < 0 || helmetIndex >= helmetLibraries.Length)
+        {
+            Debug.LogWarning("Helmet index không hợp lệ!");
+            return;
+        }
+
+        currentHelmet = helmetIndex;
+        spriteLibrary[3].spriteLibraryAsset = helmetLibraries[helmetIndex];
+
+        Debug.Log($"Đã equip Helmet {helmetIndex}");
+    }
+    private void EquipHair(int hairIndex)
+    {
+        if (hairIndex < 0 || hairIndex >= hairLibraries.Length)
+        {
+            Debug.LogWarning("Hair index không hợp lệ!");
+            return;
+        }
+
+        currentHair = hairIndex;
+        spriteLibrary[4].spriteLibraryAsset = hairLibraries[hairIndex];
+
+        Debug.Log($"Đã equip Hair {hairIndex}");
+    }
+    private void EquipWeapon(int weaponIndex)
+    {
+        if (weaponIndex < 0 || weaponIndex >= weaponLibraries.Length)
+        {
+            Debug.LogWarning("Weapon index không hợp lệ!");
+            return;
+        }
+
+        currentWeapon = weaponIndex;
+        spriteLibrary[5].spriteLibraryAsset = weaponLibraries[weaponIndex].weaponFrontLibraries;
+        spriteLibrary[6].spriteLibraryAsset = weaponLibraries[weaponIndex].weaponBackLibraries;
+
+        Debug.Log($"Đã equip Weapon {weaponIndex}");
+    }
+
+    private string GetDirection(float h, float v)
+    {
+        if (Mathf.Abs(h) == 0 && Mathf.Abs(v) == 0)
+            return "Front";
+
+        if (Mathf.Abs(v) > 0.01f)
+            return v > 0 ? "Back" : "Front";
+
+        return h > 0 ? "Right" : "Left";
+    }
     private void UpdateSprite()
     {
         if (animator == null) return;
@@ -108,20 +235,21 @@ public class SpriteController : MonoBehaviour, IUpdatable
 
         AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
 
-        // Lấy hướng từ Animator (LastHorizontal, LastVertical)
-        float h = animator.GetFloat("Horizontal");
-        float v = animator.GetFloat("Vertical");
-
-        string direction = "Front";
-        if (Mathf.Abs(h) > Mathf.Abs(v))
+        float h;
+        float v;
+        if (controller.getIsMovingToTarget())
         {
-            direction = h > 0 ? "Right" : "Left";
+            h = controller.getMovement().x;
+            v = controller.getMovement().y;
         }
         else
         {
-            direction = v > 0 ? "Back" : "Front";
+            h = controller.getLastMovement().x;
+            v = controller.getLastMovement().y;
         }
 
+        string direction = GetDirection(h, v);
+        
         // Stand
         if (state.IsName("Stand"))
         {
@@ -165,7 +293,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
             {
                 lastFrame = -1;
                 lastState = "Die";
-                SetAllResolvers("Die", $"Die{direction}Frame0");
+                SetAllResolvers("Die", $"DieFrame0");
             }
         }
     }
@@ -173,7 +301,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
     {
         foreach (var r in resolvers)
         {
-            if (r != null && r.spriteLibrary != null)  // ✅ Check tránh null
+            if (r != null && r.spriteLibrary != null)
             {
                 r.SetCategoryAndLabel(category, label);
             }
