@@ -34,9 +34,9 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: -1460896024, guid: f8dd3e2997c9f5d46a27317ad1a4d9fa, type: 3}
     - m_Name: StandRight
       m_Hash: 996323384
-      m_Sprite: {fileID: 1570130377, guid: f8dd3e2997c9f5d46a27317ad1a4d9fa, type: 3}
+      m_Sprite: {fileID: -1460896024, guid: f8dd3e2997c9f5d46a27317ad1a4d9fa, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1570130377, guid: f8dd3e2997c9f5d46a27317ad1a4d9fa, type: 3}
+      m_SpriteOverride: {fileID: -1460896024, guid: f8dd3e2997c9f5d46a27317ad1a4d9fa, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 4
   - m_Name: Move
@@ -143,5 +143,5 @@ MonoBehaviour:
     m_FromMain: 0
     m_EntryOverrideCount: 1
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638949379732454236
+  m_ModificationHash: 638951973584826096
   m_Version: 1
