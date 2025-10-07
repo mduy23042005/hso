@@ -7,6 +7,13 @@ public class WeaponLibraries
     public SpriteLibraryAsset weaponBackLibraries;
     public SpriteLibraryAsset weaponFrontLibraries;
 }
+[System.Serializable]
+public class HelmetLibraries
+{
+    public SpriteLibraryAsset helmetLibrariesAsset;
+    public bool isHiddenHair = false;
+}
+
 public class SpriteController : MonoBehaviour, IUpdatable
 {
     private SpriteResolver[] resolvers;
@@ -22,7 +29,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
     [SerializeField] private SpriteLibraryAsset[] legArmorLibraries;
     [SerializeField] private SpriteLibraryAsset[] armorLibraries;
     [SerializeField] private SpriteLibraryAsset[] headLibraries;
-    [SerializeField] private SpriteLibraryAsset[] helmetLibraries;
+    [SerializeField] private HelmetLibraries[] helmetLibraries;
     [SerializeField] private SpriteLibraryAsset[] hairLibraries;
     [SerializeField] private WeaponLibraries[] weaponLibraries;
 
@@ -177,11 +184,21 @@ public class SpriteController : MonoBehaviour, IUpdatable
         if (helmetIndex < 0 || helmetIndex >= helmetLibraries.Length)
         {
             Debug.LogWarning("Helmet index không hợp lệ!");
+            Debug.Log(helmetLibraries.Length);
             return;
         }
 
         currentHelmet = helmetIndex;
-        spriteLibrary[3].spriteLibraryAsset = helmetLibraries[helmetIndex];
+        spriteLibrary[3].spriteLibraryAsset = helmetLibraries[helmetIndex].helmetLibrariesAsset;
+
+        if (helmetLibraries[helmetIndex].isHiddenHair)
+        {
+            spriteLibrary[4].gameObject.SetActive(false);
+        }
+        else
+        {
+            spriteLibrary[4].gameObject.SetActive(true);
+        }
 
         Debug.Log($"Đã equip Helmet {helmetIndex}");
     }
@@ -195,7 +212,6 @@ public class SpriteController : MonoBehaviour, IUpdatable
 
         currentHair = hairIndex;
         spriteLibrary[4].spriteLibraryAsset = hairLibraries[hairIndex];
-
         Debug.Log($"Đã equip Hair {hairIndex}");
     }
     private void EquipWeapon(int weaponIndex)
@@ -249,7 +265,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         }
 
         string direction = GetDirection(h, v);
-        
+
         // Stand
         if (state.IsName("Stand"))
         {
