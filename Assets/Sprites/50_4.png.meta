@@ -176,12 +176,12 @@ TextureImporter:
       name: 50_4_2
       rect:
         serializedVersion: 2
-        x: 54
+        x: 0
         y: 0
-        width: 7
+        width: 27
         height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.22271205, y: 0.77817583}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -198,12 +198,12 @@ TextureImporter:
       name: 50_4_3
       rect:
         serializedVersion: 2
-        x: 61
+        x: 27
         y: 0
-        width: 14
+        width: 27
         height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.77739644, y: 0.7782943}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
