@@ -1,3 +1,4 @@
+﻿
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IUpdatable
@@ -16,7 +17,6 @@ public class PlayerController : MonoBehaviour, IUpdatable
     }
     public void OnUpdate()
     {
-
     }
     public void RegisterDontDestroyOnLoad()
     {
