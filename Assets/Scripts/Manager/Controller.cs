@@ -144,7 +144,7 @@ public class Controller : MonoBehaviour, IUpdatable
     }
     protected virtual void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+        //rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
     }
 
     //Getter - Setter cho các biến chuyển động
@@ -199,12 +199,14 @@ public class Controller : MonoBehaviour, IUpdatable
         if (Input.GetKeyDown(KeyCode.J))
         {
             animator.SetTrigger("Atk");
+            animator.SetBool("isMove", false);
             UpdateLastMoveToAnimator();
         }
         // Injured
         if (Input.GetKeyDown(KeyCode.K))
         {
             animator.SetTrigger("Injured");
+            animator.SetBool("isMove", false);
             UpdateLastMoveToAnimator();
         }
     }
