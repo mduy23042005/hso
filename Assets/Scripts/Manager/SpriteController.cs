@@ -64,7 +64,14 @@ public class SpriteController : MonoBehaviour, IUpdatable
     }
     public void OnUpdate()
     {
+
+    }
+    public void OnLateUpdate()
+    {
         UpdateSprite();
+    }
+    public void OnFixedUpdate()
+    {
     }
 
     public void NextLegArmor()
@@ -239,6 +246,19 @@ public class SpriteController : MonoBehaviour, IUpdatable
 
         return h > 0 ? "Right" : "Left";
     }
+    private int GetFrameByTime(float t, float[] changeTimes)
+    {
+        t %= 1f;
+
+        for (int i = 0; i < changeTimes.Length; i++)
+        {
+            if (t < changeTimes[i])
+                return Mathf.Max(0, i - 1);
+        }
+
+        return changeTimes.Length - 1;
+    }
+
     private void UpdateSprite()
     {
         if (animator == null) return;
@@ -280,7 +300,10 @@ public class SpriteController : MonoBehaviour, IUpdatable
         if (state.IsName("Move"))
         {
             float t = state.normalizedTime % 1f;
-            int frame = (t < 0.5f) ? 0 : 1;
+
+            float[] moveChangeTimes = { 0.0f, 0.5f }; // Clip dài 0:40 giây, đổi frame ở 0 / 0.4, 0.2 / 0.4
+
+            int frame = GetFrameByTime(t, moveChangeTimes);
 
             if (frame != lastFrame || lastState != "Move" + direction)
             {
@@ -293,7 +316,10 @@ public class SpriteController : MonoBehaviour, IUpdatable
         if (state.IsName("Atk"))
         {
             float t = state.normalizedTime % 1f;
-            int frame = (t < 0.5f) ? 0 : 1;
+
+            float[] moveChangeTimes = { 0.0f, 0.6667f }; // Clip dài 0:15 giây, đổi frame ở 0/0.5, 0.1/0.15
+
+            int frame = GetFrameByTime(t, moveChangeTimes);
 
             if (frame != lastFrame || lastState != "Atk" + direction)
             {
@@ -313,6 +339,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
             }
         }
     }
+
     private void SetAllResolvers(string category, string label)
     {
         foreach (var r in resolvers)
@@ -320,6 +347,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
             if (r != null && r.spriteLibrary != null)
             {
                 r.SetCategoryAndLabel(category, label);
+                r.ResolveSpriteToSpriteRenderer();
             }
         }
     }

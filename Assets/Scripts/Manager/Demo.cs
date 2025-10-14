@@ -10,7 +10,7 @@ public class Demo : Controller
     {
         return;
     }
-    protected override void FixedUpdate()
+    public override void OnFixedUpdate()
     {
         return;
     }

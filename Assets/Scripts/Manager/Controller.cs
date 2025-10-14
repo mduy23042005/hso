@@ -44,6 +44,14 @@ public class Controller : MonoBehaviour, IUpdatable
         MoveMouse();
         UpdateAnimation();
     }
+    public void OnLateUpdate()
+    {
+
+    }    
+    public virtual void OnFixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
     public void RegisterDontDestroyOnLoad()
     {
         GameManager.Instance.RegisterPersistent(this);
@@ -141,10 +149,6 @@ public class Controller : MonoBehaviour, IUpdatable
         {
             lastMove = movement;
         }
-    }
-    protected virtual void FixedUpdate()
-    {
-        //rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
     }
 
     //Getter - Setter cho các biến chuyển động

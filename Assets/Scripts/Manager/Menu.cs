@@ -22,6 +22,12 @@ public class Menu : MonoBehaviour, IUpdatable
     {
 
     }
+    public void OnLateUpdate()
+    {
+    }
+    public void OnFixedUpdate()
+    {
+    }
     public void RegisterDontDestroyOnLoad()
     {
         GameManager.Instance.RegisterPersistent(this);

@@ -4,6 +4,8 @@ using UnityEngine;
 public interface IUpdatable
 {
     void OnUpdate();
+    void OnLateUpdate();
+    void OnFixedUpdate();
     void RegisterDontDestroyOnLoad();
 }
 public class GameManager : MonoBehaviour
@@ -71,6 +73,34 @@ public class GameManager : MonoBehaviour
                 continue;
             }
             updatable.OnUpdate();
+        }
+    }
+    private void LateUpdate()
+    {
+        for (int i = updatables.Count - 1; i >= 0; i--)
+        {
+            var updatable = updatables[i];
+            // check null hoặc bị destroy
+            if (updatable == null || (updatable is Object unityObj && unityObj == null))
+            {
+                updatables.RemoveAt(i);
+                continue;
+            }
+            updatable.OnLateUpdate();
+        }
+    }
+    private void FixedUpdate()
+    {
+        for (int i = updatables.Count - 1; i >= 0; i--)
+        {
+            var updatable = updatables[i];
+            // check null hoặc bị destroy
+            if (updatable == null || (updatable is Object unityObj && unityObj == null))
+            {
+                updatables.RemoveAt(i);
+                continue;
+            }
+            updatable.OnFixedUpdate();
         }
     }
 }

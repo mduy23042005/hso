@@ -2316,8 +2316,8 @@ MonoBehaviour:
   - helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 706aad3b95b428941ae67931ed9a52ee, type: 3}
     isHiddenHair: 0
   hairLibraries:
-  - {fileID: 7108339969198208228, guid: 10620e7398b41e243a10ca51caed3c9c, type: 3}
-  - {fileID: 7108339969198208228, guid: b01061ee5eff4814fbb9be1f2a0304e2, type: 3}
+  - {fileID: 7108339969198208228, guid: 59cc82332afebff4a9ebdbbfba5ce148, type: 3}
+  - {fileID: 7108339969198208228, guid: 1131679bddd14f941b71f31d489437c5, type: 3}
   - {fileID: 7108339969198208228, guid: e39a0ddfb554ac34e8b5c31cf0fca5dd, type: 3}
   - {fileID: 7108339969198208228, guid: 44bc5cbd54720f84ea8e4f31621a09ea, type: 3}
   - {fileID: 7108339969198208228, guid: d06af94ea96aed04ca27a7542cee794c, type: 3}
@@ -4797,8 +4797,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045941214}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6934738, y: 0.67999995, z: 0.0139193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25886,7 +25886,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.875, y: 0.375}
+  m_Size: {x: 0.5625, y: 0.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

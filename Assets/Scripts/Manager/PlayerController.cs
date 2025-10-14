@@ -18,6 +18,13 @@ public class PlayerController : MonoBehaviour, IUpdatable
     public void OnUpdate()
     {
     }
+    public void OnLateUpdate()
+    {
+    }
+    public void OnFixedUpdate()
+    {
+    }
+
     public void RegisterDontDestroyOnLoad()
     {
         GameManager.Instance.RegisterPersistent(this);
