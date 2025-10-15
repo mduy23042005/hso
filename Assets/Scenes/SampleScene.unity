@@ -2318,13 +2318,13 @@ MonoBehaviour:
   hairLibraries:
   - {fileID: 7108339969198208228, guid: 59cc82332afebff4a9ebdbbfba5ce148, type: 3}
   - {fileID: 7108339969198208228, guid: 1131679bddd14f941b71f31d489437c5, type: 3}
-  - {fileID: 7108339969198208228, guid: e39a0ddfb554ac34e8b5c31cf0fca5dd, type: 3}
-  - {fileID: 7108339969198208228, guid: 44bc5cbd54720f84ea8e4f31621a09ea, type: 3}
-  - {fileID: 7108339969198208228, guid: d06af94ea96aed04ca27a7542cee794c, type: 3}
-  - {fileID: 7108339969198208228, guid: afe3f0da12aaf2942a213c86e8b02dc3, type: 3}
-  - {fileID: 7108339969198208228, guid: 245d3589594d68d42a991a93bc40768a, type: 3}
-  - {fileID: 7108339969198208228, guid: ce8f93cd5389e7543b6e005cbf1ec31e, type: 3}
-  - {fileID: 7108339969198208228, guid: 6e7132e4cd6135c4cab61114e095ed1e, type: 3}
+  - {fileID: 7108339969198208228, guid: 8f295de07263c804696f76d1dc46075d, type: 3}
+  - {fileID: 7108339969198208228, guid: 12ad3bf82b850f44dbba53316ad28d64, type: 3}
+  - {fileID: 7108339969198208228, guid: 8408415e9c328e545aea5ef6f925a3c4, type: 3}
+  - {fileID: 7108339969198208228, guid: 9438abff592b24c4dba8ed12a93bbe0e, type: 3}
+  - {fileID: 7108339969198208228, guid: 06f3a3101abf87c4cb51415e20ed81ff, type: 3}
+  - {fileID: 7108339969198208228, guid: 3328206449cee874780e6043652ab171, type: 3}
+  - {fileID: 7108339969198208228, guid: bf1329db5a3b1b44cafe63eedbe8018d, type: 3}
   weaponLibraries:
   - weaponBackLibraries: {fileID: 7108339969198208228, guid: f4b0614adef4e6843a7c13453a4e5420, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 7a9d32b25d21a9f44b64de70b783fb5c, type: 3}
