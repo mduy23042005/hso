@@ -1,9 +1,4 @@
-﻿using NUnit.Framework;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Controller : MonoBehaviour, IUpdatable
@@ -57,6 +52,39 @@ public class Controller : MonoBehaviour, IUpdatable
         GameManager.Instance.RegisterPersistent(this);
     }
 
+    private void LeftClick()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Lấy vị trí chuột trong thế giới
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 clickPos = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
+
+            RaycastHit2D hit = Physics2D.Raycast(clickPos, Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                // Nếu collider có tag "Mob" thì chỉ debug, không di chuyển
+                if (hit.collider.CompareTag("Mob"))
+                {
+                    Debug.Log($"Clicked on Mob: {hit.collider.name}");
+                    isMovingToTarget = false;
+                    return;
+                }
+            }
+
+            // Nếu không click vào mob thì tiến hành di chuyển đến vị trí click
+            targetPosition = clickPos;
+
+            // Quyết định hướng ưu tiên
+            float deltaX = Mathf.Abs(targetPosition.x - rb.position.x);
+            float deltaY = Mathf.Abs(targetPosition.y - rb.position.y);
+            movingHorizontalFirst = deltaX > deltaY;
+
+            isMovingToTarget = true;
+        }
+    }
+
     //Hàm di chuyển có thể override trong Demo.cs
     protected virtual void MoveKeyboard()
     {
@@ -85,20 +113,7 @@ public class Controller : MonoBehaviour, IUpdatable
         {
             return;
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Lấy tọa độ click
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            targetPosition = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
-
-            // Quyết định hướng ưu tiên
-            float deltaX = Mathf.Abs(targetPosition.x - rb.position.x);
-            float deltaY = Mathf.Abs(targetPosition.y - rb.position.y);
-            movingHorizontalFirst = deltaX > deltaY;
-
-            isMovingToTarget = true;
-        }
-
+        LeftClick();
         if (isMovingToTarget)
         {
             Vector2 currentPos = rb.position;
@@ -132,13 +147,12 @@ public class Controller : MonoBehaviour, IUpdatable
                         movement = new Vector2(Mathf.Sign(deltaX), 0);
                     }
                 }
+                MoveStop();
             }
             else
             {
-                // Đến nơi → dừng lại
-                movement = Vector2.zero;
-                MoveStop(); 
                 isMovingToTarget = false;
+                return;
             }
         }
     }
