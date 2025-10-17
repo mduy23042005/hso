@@ -33,13 +33,13 @@ public class Controller : MonoBehaviour, IUpdatable
             GameManager.Instance.Unregister(this);
         }
     }
-    public void OnUpdate()
+    public virtual void OnUpdate()
     {
         MoveKeyboard();
         MoveMouse();
         UpdateAnimation();
     }
-    public void OnLateUpdate()
+    public virtual void OnLateUpdate()
     {
 
     }    
@@ -52,7 +52,7 @@ public class Controller : MonoBehaviour, IUpdatable
         GameManager.Instance.RegisterPersistent(this);
     }
 
-    private void LeftClick()
+    protected virtual void LeftClick()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -166,23 +166,23 @@ public class Controller : MonoBehaviour, IUpdatable
     }
 
     //Getter - Setter cho các biến chuyển động
-    public Vector2 getMovement()
+    public Vector2 GetMovement()
     {
         return movement;
     }
-    public Vector2 getLastMovement()
+    public Vector2 GetLastMovement()
     {
         return lastMove;
     }
-    public void setMovement(Vector2 value)
+    public void SetMovement(Vector2 value)
     {
         movement = value;
     }
-    public void setLastMovement(Vector2 value)
+    public void SetLastMovement(Vector2 value)
     {
         lastMove = value;
     }
-    public bool getIsMovingToTarget()
+    public bool GetIsMovingToTarget()
     {
         return isMovingToTarget;
     }
@@ -199,7 +199,7 @@ public class Controller : MonoBehaviour, IUpdatable
         animator.SetFloat("LastVertical", lastMove.y);
     }
     //Cập nhật animation tạm thời trước khi có hệ thống animation tương tác hoàn chỉnh
-    private void UpdateAnimation()
+    protected virtual void UpdateAnimation()
     {
         // Stand
         if (movement.x == 0 && movement.y == 0)

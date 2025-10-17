@@ -15,7 +15,7 @@ public class MobsController : MonoBehaviour, IUpdatable
     private Transform playerTarget = null;
     private bool isAttacking = false;
 
-    void Start()
+    private void Awake()
     {
         transform = GetComponent<Transform>();
         flipSprite = GetComponent<SpriteRenderer>();

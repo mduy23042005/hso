@@ -273,15 +273,15 @@ public class SpriteController : MonoBehaviour, IUpdatable
 
         float h;
         float v;
-        if (controller.getIsMovingToTarget())
+        if (controller.GetIsMovingToTarget())
         {
-            h = controller.getMovement().x;
-            v = controller.getMovement().y;
+            h = controller.GetMovement().x;
+            v = controller.GetMovement().y;
         }
         else
         {
-            h = controller.getLastMovement().x;
-            v = controller.getLastMovement().y;
+            h = controller.GetLastMovement().x;
+            v = controller.GetLastMovement().y;
         }
 
         string direction = GetDirection(h, v);
