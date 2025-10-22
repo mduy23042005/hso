@@ -12,7 +12,6 @@ public class MobsController : MonoBehaviour, IUpdatable
     private SpriteRenderer flipSprite;
     private float changeTargetCooldown = 0f;
     private Animator animator;
-    private Transform playerTarget = null;
     private bool isAttacking = false;
 
     private void Awake()
@@ -125,7 +124,6 @@ public class MobsController : MonoBehaviour, IUpdatable
     {
         if (other.CompareTag("Player"))
         {
-            playerTarget = null;
             isAttacking = false;
             animator.ResetTrigger("Atk");
             waitAfterMove = 0.5f;
