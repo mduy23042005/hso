@@ -1,13 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUpdatable
-{
-    void OnUpdate();
-    void OnLateUpdate();
-    void OnFixedUpdate();
-    void RegisterDontDestroyOnLoad();
-}
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
