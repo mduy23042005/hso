@@ -1,11 +1,14 @@
-﻿using UnityEngine;
-using HSOEntities.Models;
+﻿using HSOEntities.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using UnityEngine;
 
 public class SQLConnectionManager : MonoBehaviour, IUpdatable
 {
     private static HSOEntities.Models.HSOEntities data;
 
-    void Awake()
+    async void Awake()
     {
         // Đảm bảo chỉ có một instance duy nhất tồn tại
         if (data == null)
@@ -21,14 +24,20 @@ public class SQLConnectionManager : MonoBehaviour, IUpdatable
                                   trustservercertificate=True;
                                   MultipleActiveResultSets=True;
                                   App=EntityFramework'";
-
             data = new HSOEntities.Models.HSOEntities(connection);
+            data.Configuration.ProxyCreationEnabled = false;
+            data.Configuration.LazyLoadingEnabled = false;
             Debug.Log("SQL Server connected successfully!");
         }
         else
         {
             Debug.Log("SQLConnectionManager already initialized.");
         }
+        await Task.Run(() =>
+        {
+            _ = data.Accounts.FirstOrDefault(); //Sau này tìm cách load dữ liệu 1 tài khoản đang đăng nhập vào game
+        });
+        Debug.Log("Database preloaded.");
     }
     private void OnEnable()
     {
@@ -55,7 +64,6 @@ public class SQLConnectionManager : MonoBehaviour, IUpdatable
     {
         GameManager.Instance.RegisterPersistent(this);
     }
-
     public static HSOEntities.Models.HSOEntities GetData()
     {
         if (data == null)
@@ -63,5 +71,14 @@ public class SQLConnectionManager : MonoBehaviour, IUpdatable
             Debug.LogError("Database context not initialized!");
         }
         return data;
+    }
+    private void OnApplicationQuit()
+    {
+        if (data != null)
+        {
+            data.Dispose();
+            data = null;
+            Debug.Log("DbContext disposed.");
+        }
     }
 }
