@@ -5,10 +5,21 @@ public class Demo : Controller
 {
     private Animator animatorChild;
     private GameObject player;
+    private Animator uiPickChienBinh;
+    private Animator uiPickSatThu;
+    private Animator uiPickPhapSu;
+    private Animator uiPickXaThu;
     private Demo demo;
     private void Awake()
     {
         animatorChild = GetComponent<Animator>();
+        if (GameObject.Find("CharaterSelectionUI"))
+        {
+            uiPickChienBinh = GameObject.Find("UIPickChienBinh").GetComponent<Animator>();
+            uiPickSatThu = GameObject.Find("UIPickSatThu").GetComponent<Animator>();
+            uiPickPhapSu = GameObject.Find("UIPickPhapSu").GetComponent<Animator>();
+            uiPickXaThu = GameObject.Find("UIPickXaThu").GetComponent<Animator>();
+        }
     }
     private void OnEnable()
     {
@@ -61,6 +72,42 @@ public class Demo : Controller
                     player = hit.collider.gameObject;
                     //Tạo biến demo hứng component demo từ player
                     demo = player.GetComponent<Demo>();
+                    if (GameObject.Find("CharaterSelectionUI"))
+                    {
+                        switch (player.name)
+                        {
+                            case "ChienBinh":
+                                uiPickChienBinh.SetBool("isPicked", true);
+                                uiPickSatThu.SetBool("isPicked", false);
+                                uiPickPhapSu.SetBool("isPicked", false);
+                                uiPickXaThu.SetBool("isPicked", false);
+                                break;
+                            case "SatThu":
+                                uiPickChienBinh.SetBool("isPicked", false);
+                                uiPickSatThu.SetBool("isPicked", true);
+                                uiPickPhapSu.SetBool("isPicked", false);
+                                uiPickXaThu.SetBool("isPicked", false);
+                                break;
+                            case "PhapSu":
+                                uiPickChienBinh.SetBool("isPicked", false);
+                                uiPickSatThu.SetBool("isPicked", false);
+                                uiPickPhapSu.SetBool("isPicked", true);
+                                uiPickXaThu.SetBool("isPicked", false);
+                                break;
+                            case "XaThu":
+                                uiPickChienBinh.SetBool("isPicked", false);
+                                uiPickSatThu.SetBool("isPicked", false);
+                                uiPickPhapSu.SetBool("isPicked", false);
+                                uiPickXaThu.SetBool("isPicked", true);
+                                break;
+                            default:
+                                uiPickChienBinh.SetBool("isPicked", false);
+                                uiPickSatThu.SetBool("isPicked", false);
+                                uiPickPhapSu.SetBool("isPicked", false);
+                                uiPickXaThu.SetBool("isPicked", false);
+                                break;
+                        }
+                    }
                     demo.UpdateAnimation();
                     return;
                 }
