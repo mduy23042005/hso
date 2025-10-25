@@ -10,6 +10,8 @@ public class Demo : Controller
     private Animator uiPickPhapSu;
     private Animator uiPickXaThu;
     private Demo demo;
+    private static string school;
+
     private void Awake()
     {
         animatorChild = GetComponent<Animator>();
@@ -32,15 +34,6 @@ public class Demo : Controller
             GameManager.Instance.Unregister(this);
         }
     }
-    protected override void MoveKeyboard()
-    {
-        return;
-    }
-    protected override void MoveMouse()
-    {
-        return;
-    }
-
     public override void OnUpdate()
     {
         LeftClick();
@@ -81,24 +74,28 @@ public class Demo : Controller
                                 uiPickSatThu.SetBool("isPicked", false);
                                 uiPickPhapSu.SetBool("isPicked", false);
                                 uiPickXaThu.SetBool("isPicked", false);
+                                school = "ChienBinh";
                                 break;
                             case "SatThu":
                                 uiPickChienBinh.SetBool("isPicked", false);
                                 uiPickSatThu.SetBool("isPicked", true);
                                 uiPickPhapSu.SetBool("isPicked", false);
                                 uiPickXaThu.SetBool("isPicked", false);
+                                school = "SatThu";
                                 break;
                             case "PhapSu":
                                 uiPickChienBinh.SetBool("isPicked", false);
                                 uiPickSatThu.SetBool("isPicked", false);
                                 uiPickPhapSu.SetBool("isPicked", true);
                                 uiPickXaThu.SetBool("isPicked", false);
+                                school = "PhapSu";
                                 break;
                             case "XaThu":
                                 uiPickChienBinh.SetBool("isPicked", false);
                                 uiPickSatThu.SetBool("isPicked", false);
                                 uiPickPhapSu.SetBool("isPicked", false);
                                 uiPickXaThu.SetBool("isPicked", true);
+                                school = "XaThu";
                                 break;
                             default:
                                 uiPickChienBinh.SetBool("isPicked", false);
@@ -113,6 +110,10 @@ public class Demo : Controller
                 }
             }
         }
+    }
+    public static string GetSchool()
+    {
+        return school;
     }
     protected override void UpdateAnimation()
     {
