@@ -18,13 +18,12 @@ public class Controller : MonoBehaviour, IUpdatable
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         menu = FindAnyObjectByType<Menu>(FindObjectsInactive.Include);
-
-        animator.SetFloat("LastHorizontal", 0);
-        animator.SetFloat("LastVertical", -1);
     }
     private void OnEnable()
     {
         GameManager.Instance.Register(this);
+        animator.SetFloat("LastHorizontal", 0);
+        animator.SetFloat("LastVertical", -1);
     }
     private void OnDisable()
     {
