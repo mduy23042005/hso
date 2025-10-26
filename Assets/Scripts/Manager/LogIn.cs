@@ -9,7 +9,7 @@ public class LogIn : MonoBehaviour
     [SerializeField] private TMP_InputField inputPassword;
     [SerializeField] private TMP_Text textMessage;
     private HSOEntities.Models.HSOEntities db;
-    private static string school;
+    private static int idSchool;
 
     public void ClickLogIn()
     {
@@ -23,7 +23,7 @@ public class LogIn : MonoBehaviour
             var loggedInAccount = account.FirstOrDefault(acc => acc.Username == username && acc.Password == password);
             textMessage.color = Color.green;
             textMessage.text = $"Đăng nhập {loggedInAccount.NameChar} thành công!";
-            school = loggedInAccount.School;
+            idSchool = loggedInAccount.IDSchool ?? 0;
             SceneManager.LoadScene("Map1");
         }
         else
@@ -36,8 +36,8 @@ public class LogIn : MonoBehaviour
     {
         SceneManager.LoadScene("SelectCharacterScene");
     }
-    public static string GetSchool()
+    public static int GetIDSchool()
     {
-        return school;
+        return idSchool;
     }
 }

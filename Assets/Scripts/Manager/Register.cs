@@ -17,7 +17,7 @@ public class Register : MonoBehaviour
     [SerializeField] private Animator uiPickPhapSu;
     [SerializeField] private Animator uiPickXaThu;
 
-    private string school;
+    private int idSchool;
     HSOEntities.Models.HSOEntities db;
 
     private void Awake()
@@ -33,12 +33,12 @@ public class Register : MonoBehaviour
 
     public void ClickRegister()
     {
-        school = Demo.GetSchool();
+        idSchool = Demo.GetIDSchool();
         string nameChar = inputNameChar.text;
         string username = inputUsername.text;
         string password = inputPassword.text;
 
-        if (CheckInfo(school, inputNameChar, inputUsername, inputPassword))
+        if (CheckInfo(idSchool, inputNameChar, inputUsername, inputPassword))
         {
             db = SQLConnectionManager.GetData();
             db.Accounts.Add(new HSOEntities.Models.Account
@@ -46,22 +46,23 @@ public class Register : MonoBehaviour
                 NameChar = nameChar,
                 Username = username,
                 Password = password,
-                School = school
+                IDSchool = idSchool
             });
             db.SaveChanges();
             Debug.Log("Đăng ký thành công!");  
         }
     }
-    private bool CheckInfo(string school, TMP_InputField nameChar, TMP_InputField username, TMP_InputField password)
+    private bool CheckInfo(int idSchool, TMP_InputField nameChar, TMP_InputField username, TMP_InputField password)
     {
         bool isValid = true;
 
         //Kiểm tra trường phái
-        if (string.IsNullOrEmpty(school))
+        if (idSchool == null || idSchool == 0)
         {
             SendErrorSchool();
             isValid = false;
         }
+
         //Kiểm tra tên nhân vật
         if (string.IsNullOrEmpty(nameChar.text))
         {

@@ -10,7 +10,7 @@ public class Demo : Controller
     private Animator uiPickPhapSu;
     private Animator uiPickXaThu;
     private Demo demo;
-    private static string school;
+    private static int idSchool;
 
     private void Awake()
     {
@@ -74,28 +74,28 @@ public class Demo : Controller
                                 uiPickSatThu.SetBool("isPicked", false);
                                 uiPickPhapSu.SetBool("isPicked", false);
                                 uiPickXaThu.SetBool("isPicked", false);
-                                school = "ChienBinh";
+                                idSchool = 1;
                                 break;
                             case "SatThu":
                                 uiPickChienBinh.SetBool("isPicked", false);
                                 uiPickSatThu.SetBool("isPicked", true);
                                 uiPickPhapSu.SetBool("isPicked", false);
                                 uiPickXaThu.SetBool("isPicked", false);
-                                school = "SatThu";
+                                idSchool = 2;
                                 break;
                             case "PhapSu":
                                 uiPickChienBinh.SetBool("isPicked", false);
                                 uiPickSatThu.SetBool("isPicked", false);
                                 uiPickPhapSu.SetBool("isPicked", true);
                                 uiPickXaThu.SetBool("isPicked", false);
-                                school = "PhapSu";
+                                idSchool = 3;
                                 break;
                             case "XaThu":
                                 uiPickChienBinh.SetBool("isPicked", false);
                                 uiPickSatThu.SetBool("isPicked", false);
                                 uiPickPhapSu.SetBool("isPicked", false);
                                 uiPickXaThu.SetBool("isPicked", true);
-                                school = "XaThu";
+                                idSchool = 4;
                                 break;
                             default:
                                 uiPickChienBinh.SetBool("isPicked", false);
@@ -111,9 +111,9 @@ public class Demo : Controller
             }
         }
     }
-    public static string GetSchool()
+    public static int GetIDSchool()
     {
-        return school;
+        return idSchool;
     }
     protected override void UpdateAnimation()
     {

@@ -39,7 +39,6 @@ public class PlayerDemoController : Controller
 
     public override void OnUpdate()
     {
-        LeftClick();
     }
     public override void OnLateUpdate()
     {
@@ -54,22 +53,22 @@ public class PlayerDemoController : Controller
     {
         if (GameObject.Find("Player"))
         {
-            var school = LogIn.GetSchool();
-            switch (school)
+            var idSchool = LogIn.GetIDSchool();
+            switch (idSchool)
             {
-                case "ChienBinh":
+                case 1:
                     chienBinhDemo.SetActive(true);
                     satThuDemo.SetActive(false);
                     phapSuDemo.SetActive(false);
                     //xaThuDemo.SetActive(false);
                     break;
-                case "SatThu":
+                case 2:
                     chienBinhDemo.SetActive(false);
                     satThuDemo.SetActive(true);
                     phapSuDemo.SetActive(false);
                     //xaThuDemo.SetActive(false);
                     break;
-                case "PhapSu":
+                case 3:
                     chienBinhDemo.SetActive(false);
                     satThuDemo.SetActive(false);
                     phapSuDemo.SetActive(true);
@@ -78,5 +77,4 @@ public class PlayerDemoController : Controller
             }
         }
     }
-
 }

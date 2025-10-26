@@ -49,22 +49,22 @@ public class PlayerController : MonoBehaviour, IUpdatable
     {
         if (GameObject.Find("Player"))
         {
-            var school = LogIn.GetSchool();
-            switch (school)
+            var idSchool = LogIn.GetIDSchool();
+            switch (idSchool)
             {
-                case "ChienBinh":
+                case 1:
                     chienBinh.SetActive(true);
                     satThu.SetActive(false);
                     phapSu.SetActive(false);
                     //xaThu.SetActive(false);
                     break;
-                case "SatThu":
+                case 2:
                     chienBinh.SetActive(false);
                     satThu.SetActive(true);
                     phapSu.SetActive(false);
                     //xaThu.SetActive(false);
                     break;
-                case "PhapSu":
+                case 3:
                     chienBinh.SetActive(false);
                     satThu.SetActive(false);
                     phapSu.SetActive(true);
