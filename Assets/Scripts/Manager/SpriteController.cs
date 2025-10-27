@@ -1,19 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.U2D.Animation;
 
-[System.Serializable]
-public class WeaponLibraries
-{
-    public SpriteLibraryAsset weaponBackLibraries;
-    public SpriteLibraryAsset weaponFrontLibraries;
-}
-[System.Serializable]
-public class HelmetLibraries
-{
-    public SpriteLibraryAsset helmetLibrariesAsset;
-    public bool isHiddenHair = false;
-}
-
 public class SpriteController : MonoBehaviour, IUpdatable
 {
     private SpriteResolver[] resolvers;
@@ -23,14 +10,14 @@ public class SpriteController : MonoBehaviour, IUpdatable
     private Controller controller;
 
     [Header("Chỉ định sprite nào của player sẽ bị thay thế")]
-    [SerializeField] private SpriteLibrary[] spriteLibrary;
+    [SerializeField] private UnityEngine.U2D.Animation.SpriteLibrary[] spriteLibrary;
 
     [Header("Danh sách sprite sẽ thay thế")]
-    [SerializeField] private SpriteLibraryAsset[] legArmorLibraries;
-    [SerializeField] private SpriteLibraryAsset[] armorLibraries;
-    [SerializeField] private SpriteLibraryAsset[] headLibraries;
+    [SerializeField] private LegArmorLibraries[] legArmorLibraries;
+    [SerializeField] private ArmorLibraries[] armorLibraries;
+    [SerializeField] private HeadLibraries[] headLibraries;
     [SerializeField] private HelmetLibraries[] helmetLibraries;
-    [SerializeField] private SpriteLibraryAsset[] hairLibraries;
+    [SerializeField] private HairLibraries[] hairLibraries;
     [SerializeField] private WeaponLibraries[] weaponLibraries;
 
     private int currentArmor = 0;
@@ -156,7 +143,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         }
 
         currentLegArmor = legArmorIndex;
-        spriteLibrary[0].spriteLibraryAsset = legArmorLibraries[legArmorIndex];
+        spriteLibrary[0].spriteLibraryAsset = legArmorLibraries[legArmorIndex].legArmorLibrariesAsset;
 
         Debug.Log($"Đã equip LegArmor {legArmorIndex}");
     }
@@ -169,7 +156,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         }
 
         currentArmor = armorIndex;
-        spriteLibrary[1].spriteLibraryAsset = armorLibraries[armorIndex];
+        spriteLibrary[1].spriteLibraryAsset = armorLibraries[armorIndex].armorLibrariesAsset;
 
         Debug.Log($"Đã equip Armor {armorIndex}");
     }
@@ -182,7 +169,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         }
 
         currentHead = headIndex;
-        spriteLibrary[2].spriteLibraryAsset = headLibraries[headIndex];
+        spriteLibrary[2].spriteLibraryAsset = headLibraries[headIndex].headLibrariesAsset;
 
         Debug.Log($"Đã equip Head {headIndex}");
     }
@@ -218,7 +205,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         }
 
         currentHair = hairIndex;
-        spriteLibrary[4].spriteLibraryAsset = hairLibraries[hairIndex];
+        spriteLibrary[4].spriteLibraryAsset = hairLibraries[hairIndex].hairLibrariesAsset;
         Debug.Log($"Đã equip Hair {hairIndex}");
     }
     private void EquipWeapon(int weaponIndex)
