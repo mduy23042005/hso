@@ -7371,6 +7371,8 @@ MonoBehaviour:
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 6eaccffb954bf624d87afd37b4a96f0a, type: 3}
   - IDLegArmor: 29
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 9df1dde97cfb12741b7dc83fef1c7f80, type: 3}
+  - IDLegArmor: 29
+    legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 9df1dde97cfb12741b7dc83fef1c7f80, type: 3}
   armorLibraries:
   - IDArmor: 0
     armorLibrariesAsset: {fileID: 0}
