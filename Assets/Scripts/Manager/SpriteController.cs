@@ -22,12 +22,12 @@ public class SpriteController : MonoBehaviour, IUpdatable
     [SerializeField] private HairLibraries[] hairLibraries;
     [SerializeField] private WeaponLibraries[] weaponLibraries;
 
-    private int currentLegArmor = 0;
-    private int currentArmor = 0;
-    private int currentHead = 0;
-    private int currentHelmet = 0;
-    private int currentHair = 0;
-    private int currentWeapon = 0;
+    private int currentLegArmor = 1;
+    private int currentArmor = 1;
+    private int currentHead = 1;
+    private int currentHelmet = 1;
+    private int currentHair = 1;
+    private int currentWeapon = 1;
 
     public static SpriteController instance;
     private HSOEntities.Models.HSOEntities db;
