@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ public class LogIn : MonoBehaviour
     [SerializeField] private TMP_Text textMessage;
     private HSOEntities.Models.HSOEntities db;
     private static int idSchool;
+    private static int idAccount;
 
     public void ClickLogIn()
     {
@@ -24,6 +26,7 @@ public class LogIn : MonoBehaviour
             textMessage.color = Color.green;
             textMessage.text = $"Đăng nhập {loggedInAccount.NameChar} thành công!";
             idSchool = loggedInAccount.IDSchool ?? 0;
+            idAccount = loggedInAccount.IDAccount;
             SceneManager.LoadScene("Map1");
         }
         else
@@ -39,5 +42,9 @@ public class LogIn : MonoBehaviour
     public static int GetIDSchool()
     {
         return idSchool;
+    }
+    public static int GetIDAccount()
+    {
+        return idAccount;
     }
 }

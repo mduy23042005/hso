@@ -38,6 +38,7 @@ public class Register : MonoBehaviour
         string username = inputUsername.text;
         string password = inputPassword.text;
 
+
         if (CheckInfo(idSchool, inputNameChar, inputUsername, inputPassword))
         {
             db = SQLConnectionManager.GetData();

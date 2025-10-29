@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using HSOEntities.Models;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.U2D.Animation;
 
 public class SpriteController : MonoBehaviour, IUpdatable
@@ -20,12 +22,15 @@ public class SpriteController : MonoBehaviour, IUpdatable
     [SerializeField] private HairLibraries[] hairLibraries;
     [SerializeField] private WeaponLibraries[] weaponLibraries;
 
-    private int currentArmor = 0;
     private int currentLegArmor = 0;
+    private int currentArmor = 0;
     private int currentHead = 0;
     private int currentHelmet = 0;
     private int currentHair = 0;
     private int currentWeapon = 0;
+
+    public static SpriteController instance;
+    private HSOEntities.Models.HSOEntities db;
 
     void Awake()
     {
@@ -33,10 +38,16 @@ public class SpriteController : MonoBehaviour, IUpdatable
         resolvers = GetComponentsInChildren<SpriteResolver>();
         animator = GetComponent<Animator>();
         controller = GetComponent<Controller>();
+        db = SQLConnectionManager.GetData();
     }
+    void Start()
+    {
+        ReadDatabase();
+    }
+
     private void OnEnable()
     {
-        GameManager.Instance.Register(this);
+        GameManager.Instance.Register(this); 
     }
     private void OnDisable()
     {
@@ -61,127 +72,51 @@ public class SpriteController : MonoBehaviour, IUpdatable
     {
     }
 
-    public void NextLegArmor()
+    public void CheckIncrease()
     {
-        EquipLegArmor(currentLegArmor + 1);
+        EquipLegArmor((currentLegArmor + 1) % legArmorLibraries.Length);
+        EquipArmor((currentArmor + 1) % armorLibraries.Length);
+        EquipHelmet((currentHelmet + 1) % helmetLibraries.Length);
+        EquipWeapon((currentWeapon + 1) % weaponLibraries.Length);
+
+        UpdateDatabase();
     }
-    public void PrevLegArmor()
+    public void CheckDecrease()
     {
-        if (currentLegArmor - 1 < 0)
-        {
-            return;
-        }
-        EquipLegArmor(currentLegArmor - 1);
+        EquipLegArmor((currentLegArmor - 1 + legArmorLibraries.Length) % legArmorLibraries.Length);
+        EquipArmor((currentArmor - 1 + armorLibraries.Length) % armorLibraries.Length);
+        EquipHelmet((currentHelmet - 1 + helmetLibraries.Length) % helmetLibraries.Length);
+        EquipWeapon((currentWeapon - 1 + weaponLibraries.Length) % weaponLibraries.Length);
+
+        UpdateDatabase();
     }
-    public void NextArmor()
-    {
-        EquipArmor(currentArmor + 1);
-    }
-    public void PrevArmor()
-    {
-        if (currentArmor - 1 < 0)
-        {
-            return;
-        }
-        EquipArmor(currentArmor - 1);
-    }
+
     public void NextHead()
     {
         EquipHead(currentHead + 1);
-    }
-    public void PrevHead()
-    {
-        if (currentHead - 1 < 0)
-        {
-            return;
-        }
-        EquipHead(currentHead - 1);
-    }
-    public void NextHelmet()
-    {
-        EquipHelmet(currentHelmet + 1);
-    }
-    public void PrevHelmet()
-    {
-        if (currentHelmet - 1 < 0)
-        {
-            return;
-        }
-        EquipHelmet(currentHelmet - 1);
     }
     public void NextHair()
     {
         EquipHair(currentHair + 1);
     }
-    public void PrevHair()
-    {
-        if (currentHair - 1 < 0)
-        {
-            return;
-        }
-        EquipHair(currentHair - 1);
-    }
-    public void NextWeapon()
-    {
-        EquipWeapon(currentWeapon + 1);
-    }
-    public void PrevWeapon()
-    {
-        if (currentWeapon - 1 < 0)
-        {
-            return;
-        }
-        EquipWeapon(currentWeapon - 1);
-    }
 
     private void EquipLegArmor(int legArmorIndex)
     {
-        if (legArmorIndex < 0 || legArmorIndex >= legArmorLibraries.Length)
-        {
-            Debug.LogWarning("LegArmor index không hợp lệ!");
-            return;
-        }
-
         currentLegArmor = legArmorIndex;
         spriteLibrary[0].spriteLibraryAsset = legArmorLibraries[legArmorIndex].legArmorLibrariesAsset;
-
-        Debug.Log($"Đã equip LegArmor {legArmorIndex}");
     }
     private void EquipArmor(int armorIndex)
     {
-        if (armorIndex < 0 || armorIndex >= armorLibraries.Length)
-        {
-            Debug.LogWarning("Armor index không hợp lệ!");
-            return;
-        }
-
         currentArmor = armorIndex;
         spriteLibrary[1].spriteLibraryAsset = armorLibraries[armorIndex].armorLibrariesAsset;
-
-        Debug.Log($"Đã equip Armor {armorIndex}");
     }
     private void EquipHead(int headIndex)
     {
-        if (headIndex < 0 || headIndex >= headLibraries.Length)
-        {
-            Debug.LogWarning("Head index không hợp lệ!");
-            return;
-        }
-
         currentHead = headIndex;
         spriteLibrary[2].spriteLibraryAsset = headLibraries[headIndex].headLibrariesAsset;
-
-        Debug.Log($"Đã equip Head {headIndex}");
     }
     private void EquipHelmet(int helmetIndex)
     {
-        if (helmetIndex < 0 || helmetIndex >= helmetLibraries.Length)
-        {
-            Debug.LogWarning("Helmet index không hợp lệ!");
-            Debug.Log(helmetLibraries.Length);
-            return;
-        }
-
         currentHelmet = helmetIndex;
         spriteLibrary[3].spriteLibraryAsset = helmetLibraries[helmetIndex].helmetLibrariesAsset;
 
@@ -193,34 +128,83 @@ public class SpriteController : MonoBehaviour, IUpdatable
         {
             spriteLibrary[4].gameObject.SetActive(true);
         }
-
-        Debug.Log($"Đã equip Helmet {helmetIndex}");
     }
     private void EquipHair(int hairIndex)
     {
-        if (hairIndex < 0 || hairIndex >= hairLibraries.Length)
-        {
-            Debug.LogWarning("Hair index không hợp lệ!");
-            return;
-        }
-
         currentHair = hairIndex;
         spriteLibrary[4].spriteLibraryAsset = hairLibraries[hairIndex].hairLibrariesAsset;
-        Debug.Log($"Đã equip Hair {hairIndex}");
     }
     private void EquipWeapon(int weaponIndex)
     {
-        if (weaponIndex < 0 || weaponIndex >= weaponLibraries.Length)
-        {
-            Debug.LogWarning("Weapon index không hợp lệ!");
-            return;
-        }
-
         currentWeapon = weaponIndex;
         spriteLibrary[5].spriteLibraryAsset = weaponLibraries[weaponIndex].weaponFrontLibraries;
         spriteLibrary[6].spriteLibraryAsset = weaponLibraries[weaponIndex].weaponBackLibraries;
+    }
 
-        Debug.Log($"Đã equip Weapon {weaponIndex}");
+    private void UpdateDatabase()
+    {
+        // 1. Lấy item LegArmor theo IDItem0
+        int idLegArmor = legArmorLibraries[currentLegArmor].idLegArmor;
+        int idArmor = armorLibraries[currentArmor].idArmor;
+        int idHelmet = helmetLibraries[currentHelmet].idHelmet;
+        int idWeapon = weaponLibraries[currentWeapon].idWeapon;
+
+        var legArmorData = db.Item0.FirstOrDefault(item => item.IDItem0 == idLegArmor);
+        var armorData = db.Item0.FirstOrDefault(item => item.IDItem0 == idArmor);
+        var helmetData = db.Item0.FirstOrDefault(item => item.IDItem0 == idHelmet);
+        var weaponData = db.Item0.FirstOrDefault(item => item.IDItem0 == idWeapon);
+
+        legArmorLibraries[currentLegArmor].nameLegArmor = legArmorData != null ? legArmorData.NameItem0 : "Unknown LegArmor";
+        armorLibraries[currentArmor].nameArmor = armorData != null ? armorData.NameItem0 : "Unknown Armor";
+        helmetLibraries[currentHelmet].nameHelmet = helmetData != null ? helmetData.NameItem0 : "Unknown Helmet";
+        weaponLibraries[currentWeapon].nameWeapon = weaponData != null ? weaponData.NameItem0 : "Unknown Weapon";
+
+        Debug.Log($"Đang sử dụng LegArmor: {legArmorLibraries[currentLegArmor].nameLegArmor}");
+        Debug.Log($"Đang sử dụng Armor: {armorLibraries[currentArmor].nameArmor}");
+        Debug.Log($"Đang sử dụng Helmet: {helmetLibraries[currentHelmet].nameHelmet}");
+        Debug.Log($"Đang sử dụng Weapon: {weaponLibraries[currentWeapon].nameWeapon}");
+
+        // 2. Lấy account đúng theo IDAccount
+        int idAccount = LogIn.GetIDAccount();
+        var account = db.Accounts.FirstOrDefault(acc => acc.IDAccount == idAccount);
+
+        // 3. Cập nhật cột LegArmor trong bảng Account
+        if (account != null)
+        {
+            account.LegArmor = legArmorData.IDItem0;
+            account.Armor = armorData.IDItem0;
+            account.Helmet = helmetData.IDItem0;
+            account.Weapon = weaponData.IDItem0;
+            db.SaveChanges();
+            Debug.Log("Cập nhật trang bị nhân vật thành công trong bảng Account.");
+        }
+    }
+    private void ReadDatabase()
+    {
+        int idAccount = LogIn.GetIDAccount();
+        var account = db.Accounts.FirstOrDefault(acc => acc.IDAccount == idAccount);
+        if (account != null)
+        {
+            var legArmorData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.LegArmor);
+            var armorData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.Armor);
+            var helmetData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.Helmet);
+            var weaponData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.Weapon);
+
+            currentLegArmor = legArmorLibraries.ToList().FindIndex(la => la.idLegArmor == legArmorData.IDItem0);
+            currentArmor = armorLibraries.ToList().FindIndex(a => a.idArmor == armorData.IDItem0);
+            currentHelmet = helmetLibraries.ToList().FindIndex(h => h.idHelmet == helmetData.IDItem0);
+            currentWeapon = weaponLibraries.ToList().FindIndex(w => w.idWeapon == weaponData.IDItem0);
+
+            if (currentLegArmor < 0) currentLegArmor = 0;
+            if (currentArmor < 0) currentArmor = 0;
+            if (currentHelmet < 0) currentHelmet = 0;
+            if (currentWeapon < 0) currentWeapon = 0;
+
+            EquipLegArmor(currentLegArmor);
+            EquipArmor(currentArmor);
+            EquipHelmet(currentHelmet);
+            EquipWeapon(currentWeapon);
+        }
     }
 
     private string GetDirection(float h, float v)

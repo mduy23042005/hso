@@ -54,21 +54,21 @@ public class PlayerController : MonoBehaviour, IUpdatable
             {
                 case 1:
                     chienBinh.SetActive(true);
-                    satThu.SetActive(false);
-                    phapSu.SetActive(false);
-                    //xaThu.SetActive(false);
+                    Destroy(satThu);
+                    Destroy(phapSu);
+                    //Destroy(xaThu);
                     break;
                 case 2:
-                    chienBinh.SetActive(false);
+                    Destroy(chienBinh);
                     satThu.SetActive(true);
-                    phapSu.SetActive(false);
-                    //xaThu.SetActive(false);
+                    Destroy(phapSu);
+                    //Destroy(xaThu);
                     break;
                 case 3:
-                    chienBinh.SetActive(false);
-                    satThu.SetActive(false);
+                    Destroy(chienBinh);
+                    Destroy(satThu);
                     phapSu.SetActive(true);
-                    //xaThu.SetActive(false);
+                    //Destroy(xaThu);
                     break;
             }
         }
