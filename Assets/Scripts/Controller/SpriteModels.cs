@@ -44,6 +44,5 @@ public class LegArmorLibraries
 [System.Serializable]
 public class HairLibraries
 {
-    public int idHair;
     public SpriteLibraryAsset hairLibrariesAsset;
 }

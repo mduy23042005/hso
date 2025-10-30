@@ -1,24 +1,40 @@
-﻿using TMPro;
+﻿using System;
+using System.Collections;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D.Animation;
 
-public class Register : MonoBehaviour
+public class RegisterController : MonoBehaviour
 {
     [Header("Quản lý Input")]
     [SerializeField] private TMP_InputField inputNameChar;
     [SerializeField] private TMP_InputField inputUsername;
     [SerializeField] private TMP_InputField inputPassword;
+    [SerializeField] private TMP_Text inputNameHair;
+    [SerializeField] private TMP_Text inputNameBlessing;
+
+    [Header("Quản lý danh sách kiểu tóc")]
+    [SerializeField] private SpriteLibrary[] spriteLibrary;
+    private HairLibraries[] hairLibraries;
+
     [Header("Xuất thông báo lỗi")]
     [SerializeField] private TMP_Text textMessageNameChar;
     [SerializeField] private TMP_Text textMessageUsername;
     [SerializeField] private TMP_Text textMessagePassword;
+
     [Header("Thông báo Error School")]
     [SerializeField] private Animator uiPickChienBinh;
     [SerializeField] private Animator uiPickSatThu;
     [SerializeField] private Animator uiPickPhapSu;
     [SerializeField] private Animator uiPickXaThu;
 
-    private int idSchool;
+    private int idSchool = 0;
+    private string nameSchool;
+    private int[] idHair = new int[4];
+    private int idBlessing = 0;
+    private string[] nameBlessing;
     HSOEntities.Models.HSOEntities db;
 
     private void Awake()
@@ -30,50 +46,133 @@ public class Register : MonoBehaviour
             uiPickPhapSu = GameObject.Find("UIPickPhapSu").GetComponent<Animator>();
             uiPickXaThu = GameObject.Find("UIPickXaThu").GetComponent<Animator>();
         }
+        nameBlessing = new string[] { "Ánh sáng", "Bóng tối" };
     }
+    #region ChangeHair
+    private bool CheckOptionSchool()
+    {
+        if (idSchool == 0) return false;
+        switch (idSchool)
+        {
+            case 1: nameSchool = "ChienBinh"; break;
+            case 2: nameSchool = "SatThu"; break;
+            case 3: nameSchool = "PhapSu"; break;
+            case 4: nameSchool = "XaThu"; break;
+            default: return false;
+        }
+
+        hairLibraries = GameObject.Find(nameSchool).GetComponent<SpriteController>().GetHair();
+        EquipHair(idHair[idSchool - 1]);
+        UpdateNameHair();
+        return true;
+    }
+    public void OnSelectSchool()
+    {
+        idSchool = DemoController.GetIDSchool();
+        if (CheckOptionSchool())
+        {
+            EquipHair(idHair[idSchool - 1]);
+            UpdateNameHair();
+        }
+    }
+    public void NextHair()
+    {
+        if (idSchool == 0)
+        {   
+            SendErrorSchool();
+            return; 
+        }
+        idHair[idSchool - 1] = (idHair[idSchool - 1] + 1) % hairLibraries.Length;
+        EquipHair(idHair[idSchool - 1]);
+        UpdateNameHair();
+    }
+    public void PrevHair()
+    {
+        if (idSchool == 0)
+        {
+            SendErrorSchool();
+            return;
+        }
+        idHair[idSchool - 1] = (idHair[idSchool - 1] - 1 + hairLibraries.Length) % hairLibraries.Length;
+        EquipHair(idHair[idSchool - 1]);
+        UpdateNameHair();
+    }
+
+    private void EquipHair(int hairIndex)
+    {
+        spriteLibrary[idSchool - 1].spriteLibraryAsset = hairLibraries[hairIndex].hairLibrariesAsset;
+    }
+    private void UpdateNameHair()
+    {
+        inputNameHair.text = $"Kiểu: {idHair[idSchool - 1]}";
+    }
+    #endregion ChangeHair
+    #region ChangeBlessing
+    public void NextBlessing()
+    {
+        idBlessing = (idBlessing + 1) % nameBlessing.Length;
+        inputNameBlessing.text = $"{nameBlessing[idBlessing]}";
+    }
+    public void PrevBlessing()
+    {
+        idBlessing = (idBlessing - 1 + nameBlessing.Length) % nameBlessing.Length;
+        inputNameBlessing.text = $"{nameBlessing[idBlessing]}";
+    }
+    #endregion ChangeBlessing
 
     public void ClickRegister()
     {
-        idSchool = Demo.GetIDSchool();
-        string nameChar = inputNameChar.text;
-        string username = inputUsername.text;
-        string password = inputPassword.text;
+        idSchool = DemoController.GetIDSchool();
+        if (idSchool == 0)
+        {
+            SendErrorSchool();
+            return;
+        }
+        string nameChar = inputNameChar.text.Trim();
+        string username = inputUsername.text.Trim();
+        string password = inputPassword.text.Trim();
         int weapon = 0;
         int helmet = 0;
         int armor = 0;
         int legArmor = 0;
+        int hair = idHair[idSchool - 1];
+        int blessingPoints = idBlessing;
+        db = SQLConnectionManager.GetData();
+
+        bool usernameExists = db.Accounts.Any(a => a.Username == username);
+        if (usernameExists)
+        {
+            textMessageUsername.color = Color.white;
+            textMessageUsername.text = "!";
+            return;
+        }
+
+        bool nameCharExists = db.Accounts.Any(a => a.NameChar == nameChar);
+        if (nameCharExists)
+        {
+            textMessageNameChar.color = Color.white;
+            textMessageNameChar.text = "!";
+            return;
+        }
 
         switch (idSchool)
         {
             case 1:
-                weapon = 1;
-                helmet = 9;
-                armor = 17;
-                legArmor = 25;
+                weapon = 1; helmet = 9; armor = 17; legArmor = 25;
                 break;
             case 2:
-                weapon = 2;
-                helmet = 10;
-                armor = 18;
-                legArmor = 26;
+                weapon = 2; helmet = 10; armor = 18; legArmor = 26;
                 break;
             case 3:
-                weapon = 3;
-                helmet = 11;
-                armor = 19;
-                legArmor = 27;
+                weapon = 3; helmet = 11; armor = 19; legArmor = 27;
                 break;
             case 4:
-                weapon = 4;
-                helmet = 12;
-                armor = 20;
-                legArmor = 28;
+                weapon = 4; helmet = 12; armor = 20; legArmor = 28;
                 break;
         }
 
-        if (CheckInfo(idSchool, inputNameChar, inputUsername, inputPassword))
+        if (CheckAllInfo(idSchool, inputNameChar, inputUsername, inputPassword))
         {
-            db = SQLConnectionManager.GetData();
             db.Accounts.Add(new HSOEntities.Models.Account
             {
                 NameChar = nameChar,
@@ -84,6 +183,8 @@ public class Register : MonoBehaviour
                 Helmet = helmet,
                 Armor = armor,
                 LegArmor = legArmor,
+                Hair = hair,
+                BlessingPoints = blessingPoints,
                 #region DefaultValueForColumn
                 Level = 1,
                 SkillPoints = 0,
@@ -130,20 +231,19 @@ public class Register : MonoBehaviour
                 Skill18 = 0,
                 Skill19 = 0,
                 Skill20 = 0,
-                BlessingPoints = 0
                 #endregion
             });
             db.SaveChanges();
             Debug.Log("Đăng ký thành công!");
-            SceneManager.LoadScene("LogIn");
+            SceneManager.LoadScene("Main");
         }
     }
-    private bool CheckInfo(int idSchool, TMP_InputField nameChar, TMP_InputField username, TMP_InputField password)
+    private bool CheckAllInfo(int idSchool, TMP_InputField nameChar, TMP_InputField username, TMP_InputField password)
     {
         bool isValid = true;
 
         //Kiểm tra trường phái
-        if (idSchool == null || idSchool == 0)
+        if (idSchool == 0)
         {
             SendErrorSchool();
             isValid = false;
@@ -164,7 +264,7 @@ public class Register : MonoBehaviour
         if (string.IsNullOrEmpty(username.text))
         {
             textMessageUsername.color = Color.red;
-            textMessageUsername.text = "!";
+            textMessageNameChar.text = "!";
             isValid = false;
         }
         else
@@ -175,7 +275,7 @@ public class Register : MonoBehaviour
         if (string.IsNullOrEmpty(password.text))
         {
             textMessagePassword.color = Color.red;
-            textMessagePassword.text = "!";
+            textMessageNameChar.text = "!";
             isValid = false;
         }
         else

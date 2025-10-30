@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-public class Demo : Controller
+public class DemoController : Controller
 {
     private Animator animatorChild;
     private GameObject player;
@@ -9,12 +9,14 @@ public class Demo : Controller
     private Animator uiPickSatThu;
     private Animator uiPickPhapSu;
     private Animator uiPickXaThu;
-    private Demo demo;
+    private DemoController demo;
+    private RegisterController register;
     private static int idSchool;
 
     private void Awake()
     {
         animatorChild = GetComponent<Animator>();
+        register = GameObject.Find("Register").GetComponent<RegisterController>();
         if (GameObject.Find("CharaterSelectionUI"))
         {
             uiPickChienBinh = GameObject.Find("UIPickChienBinh").GetComponent<Animator>();
@@ -64,7 +66,7 @@ public class Demo : Controller
                     //Tiếp nhận gameobject player bị click
                     player = hit.collider.gameObject;
                     //Tạo biến demo hứng component demo từ player
-                    demo = player.GetComponent<Demo>();
+                    demo = player.GetComponent<DemoController>();
                     if (GameObject.Find("CharaterSelectionUI"))
                     {
                         switch (player.name)
@@ -105,6 +107,7 @@ public class Demo : Controller
                                 break;
                         }
                     }
+                    register.OnSelectSchool();
                     demo.UpdateAnimation();
                     return;
                 }

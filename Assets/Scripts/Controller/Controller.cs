@@ -11,13 +11,13 @@ public class Controller : MonoBehaviour, IUpdatable
     private bool movingHorizontalFirst = false;
     private bool isMovingToTarget = false;
     private Animator animator;
-    private Menu menu;
+    private MenuController menu;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        menu = FindAnyObjectByType<Menu>(FindObjectsInactive.Include);
+        menu = FindAnyObjectByType<MenuController>(FindObjectsInactive.Include);
     }
     private void OnEnable()
     {

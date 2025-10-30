@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class Menu : MonoBehaviour, IUpdatable
+public class MenuController : MonoBehaviour, IUpdatable
 {
     private GameObject playerDemo;
     private GameObject chienBinhDemo;
@@ -24,7 +24,7 @@ public class Menu : MonoBehaviour, IUpdatable
     {
         if (GameObject.Find("Player"))
         {
-            var idSchool = LogIn.GetIDSchool();
+            var idSchool = LogInController.GetIDSchool();
             switch (idSchool)
             {
                 case 1:

@@ -22,12 +22,12 @@ public class SpriteController : MonoBehaviour, IUpdatable
     [SerializeField] private HairLibraries[] hairLibraries;
     [SerializeField] private WeaponLibraries[] weaponLibraries;
 
-    private int currentLegArmor = 1;
-    private int currentArmor = 1;
-    private int currentHead = 1;
-    private int currentHelmet = 1;
-    private int currentHair = 1;
-    private int currentWeapon = 1;
+    private int currentLegArmor = 0;
+    private int currentArmor = 0;
+    private int currentHead = 0;
+    private int currentHelmet = 0;
+    private int currentHair = 0;
+    private int currentWeapon = 0;
 
     public static SpriteController instance;
     private HSOEntities.Models.HSOEntities db;
@@ -78,6 +78,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         EquipArmor((currentArmor + 1) % armorLibraries.Length);
         EquipHelmet((currentHelmet + 1) % helmetLibraries.Length);
         EquipWeapon((currentWeapon + 1) % weaponLibraries.Length);
+        EquipHair((currentHair + 1) % hairLibraries.Length);
 
         UpdateDatabase();
     }
@@ -87,6 +88,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         EquipArmor((currentArmor - 1 + armorLibraries.Length) % armorLibraries.Length);
         EquipHelmet((currentHelmet - 1 + helmetLibraries.Length) % helmetLibraries.Length);
         EquipWeapon((currentWeapon - 1 + weaponLibraries.Length) % weaponLibraries.Length);
+        EquipHair((currentHair - 1 + hairLibraries.Length) % hairLibraries.Length);
 
         UpdateDatabase();
     }
@@ -95,9 +97,9 @@ public class SpriteController : MonoBehaviour, IUpdatable
     {
         EquipHead(currentHead + 1);
     }
-    public void NextHair()
+    public HairLibraries[] GetHair()
     {
-        EquipHair(currentHair + 1);
+        return hairLibraries;
     }
 
     private void EquipLegArmor(int legArmorIndex)
@@ -148,6 +150,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         int idArmor = armorLibraries[currentArmor].idArmor;
         int idHelmet = helmetLibraries[currentHelmet].idHelmet;
         int idWeapon = weaponLibraries[currentWeapon].idWeapon;
+        int idHair = hairLibraries[currentHair] != null ? currentHair : 0;
 
         var legArmorData = db.Item0.FirstOrDefault(item => item.IDItem0 == idLegArmor);
         var armorData = db.Item0.FirstOrDefault(item => item.IDItem0 == idArmor);
@@ -163,9 +166,10 @@ public class SpriteController : MonoBehaviour, IUpdatable
         Debug.Log($"Đang sử dụng Armor: {armorLibraries[currentArmor].nameArmor}");
         Debug.Log($"Đang sử dụng Helmet: {helmetLibraries[currentHelmet].nameHelmet}");
         Debug.Log($"Đang sử dụng Weapon: {weaponLibraries[currentWeapon].nameWeapon}");
+        Debug.Log($"Đang sử dụng Hair: {currentHair}");
 
         // 2. Lấy account đúng theo IDAccount
-        int idAccount = LogIn.GetIDAccount();
+        int idAccount = LogInController.GetIDAccount();
         var account = db.Accounts.FirstOrDefault(acc => acc.IDAccount == idAccount);
 
         // 3. Cập nhật cột LegArmor trong bảng Account
@@ -175,13 +179,14 @@ public class SpriteController : MonoBehaviour, IUpdatable
             account.Armor = armorData.IDItem0;
             account.Helmet = helmetData.IDItem0;
             account.Weapon = weaponData.IDItem0;
+            account.Hair = idHair;
             db.SaveChanges();
             Debug.Log("Cập nhật trang bị nhân vật thành công trong bảng Account.");
         }
     }
     private void ReadDatabase()
     {
-        int idAccount = LogIn.GetIDAccount();
+        int idAccount = LogInController.GetIDAccount();
         var account = db.Accounts.FirstOrDefault(acc => acc.IDAccount == idAccount);
         if (account != null)
         {
@@ -194,16 +199,19 @@ public class SpriteController : MonoBehaviour, IUpdatable
             currentArmor = armorLibraries.ToList().FindIndex(a => a.idArmor == armorData.IDItem0);
             currentHelmet = helmetLibraries.ToList().FindIndex(h => h.idHelmet == helmetData.IDItem0);
             currentWeapon = weaponLibraries.ToList().FindIndex(w => w.idWeapon == weaponData.IDItem0);
+            if (account.Hair >= 0 && account.Hair < hairLibraries.Length) currentHair = account.Hair ?? 0;
 
             if (currentLegArmor < 0) currentLegArmor = 0;
             if (currentArmor < 0) currentArmor = 0;
             if (currentHelmet < 0) currentHelmet = 0;
             if (currentWeapon < 0) currentWeapon = 0;
+            if (currentHair < 0) currentHair = 0;
 
             EquipLegArmor(currentLegArmor);
             EquipArmor(currentArmor);
             EquipHelmet(currentHelmet);
             EquipWeapon(currentWeapon);
+            EquipHair(currentHair);
         }
     }
 

@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour, IUpdatable
     {
         if (GameObject.Find("Player"))
         {
-            var idSchool = LogIn.GetIDSchool();
+            var idSchool = LogInController.GetIDSchool();
             switch (idSchool)
             {
                 case 1:
