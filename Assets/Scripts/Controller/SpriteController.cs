@@ -1,26 +1,27 @@
 ﻿using HSOEntities.Models;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
 public class SpriteController : MonoBehaviour, IUpdatable
 {
-    private SpriteResolver[] resolvers;
+    private List<SpriteResolver> resolvers;
     private Animator animator;
     private int lastFrame = -1;
     private string lastState = "";
     private Controller controller;
 
     [Header("Chỉ định sprite nào của player sẽ bị thay thế")]
-    [SerializeField] private UnityEngine.U2D.Animation.SpriteLibrary[] spriteLibrary;
+    [SerializeField] private List<SpriteLibrary> spriteLibrary;
 
     [Header("Danh sách sprite sẽ thay thế")]
-    [SerializeField] private LegArmorLibraries[] legArmorLibraries;
-    [SerializeField] private ArmorLibraries[] armorLibraries;
-    [SerializeField] private HeadLibraries[] headLibraries;
-    [SerializeField] private HelmetLibraries[] helmetLibraries;
-    [SerializeField] private HairLibraries[] hairLibraries;
-    [SerializeField] private WeaponLibraries[] weaponLibraries;
+    [SerializeField] private List<LegArmorLibraries> legArmorLibraries;
+    [SerializeField] private List<ArmorLibraries> armorLibraries;
+    [SerializeField] private List<HeadLibraries> headLibraries;
+    [SerializeField] private List<HelmetLibraries> helmetLibraries;
+    [SerializeField] private List<HairLibraries> hairLibraries;
+    [SerializeField] private List<WeaponLibraries> weaponLibraries;
 
     private int currentLegArmor = 0;
     private int currentArmor = 0;
@@ -29,13 +30,12 @@ public class SpriteController : MonoBehaviour, IUpdatable
     private int currentHair = 0;
     private int currentWeapon = 0;
 
-    public static SpriteController instance;
     private HSOEntities.Models.HSOEntities db;
 
     void Awake()
     {
         // Lấy tất cả SpriteResolver trong object con
-        resolvers = GetComponentsInChildren<SpriteResolver>();
+        resolvers = GetComponentsInChildren<SpriteResolver>().ToList();
         animator = GetComponent<Animator>();
         controller = GetComponent<Controller>();
         db = SQLConnectionManager.GetData();
@@ -47,7 +47,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
 
     private void OnEnable()
     {
-        GameManager.Instance.Register(this); 
+        GameManager.Instance.Register(this);
     }
     private void OnDisable()
     {
@@ -60,35 +60,30 @@ public class SpriteController : MonoBehaviour, IUpdatable
     {
         GameManager.Instance.RegisterPersistent(this);
     }
-    public void OnUpdate()
-    {
-
-    }
+    public void OnUpdate() { }
     public void OnLateUpdate()
     {
         UpdateSprite();
     }
-    public void OnFixedUpdate()
-    {
-    }
+    public void OnFixedUpdate() { }
 
     public void CheckIncrease()
     {
-        EquipLegArmor((currentLegArmor + 1) % legArmorLibraries.Length);
-        EquipArmor((currentArmor + 1) % armorLibraries.Length);
-        EquipHelmet((currentHelmet + 1) % helmetLibraries.Length);
-        EquipWeapon((currentWeapon + 1) % weaponLibraries.Length);
-        EquipHair((currentHair + 1) % hairLibraries.Length);
+        EquipLegArmor((currentLegArmor + 1) % legArmorLibraries.Count);
+        EquipArmor((currentArmor + 1) % armorLibraries.Count);
+        EquipHelmet((currentHelmet + 1) % helmetLibraries.Count);
+        EquipWeapon((currentWeapon + 1) % weaponLibraries.Count);
+        EquipHair((currentHair + 1) % hairLibraries.Count);
 
         UpdateDatabase();
     }
     public void CheckDecrease()
     {
-        EquipLegArmor((currentLegArmor - 1 + legArmorLibraries.Length) % legArmorLibraries.Length);
-        EquipArmor((currentArmor - 1 + armorLibraries.Length) % armorLibraries.Length);
-        EquipHelmet((currentHelmet - 1 + helmetLibraries.Length) % helmetLibraries.Length);
-        EquipWeapon((currentWeapon - 1 + weaponLibraries.Length) % weaponLibraries.Length);
-        EquipHair((currentHair - 1 + hairLibraries.Length) % hairLibraries.Length);
+        EquipLegArmor((currentLegArmor - 1 + legArmorLibraries.Count) % legArmorLibraries.Count);
+        EquipArmor((currentArmor - 1 + armorLibraries.Count) % armorLibraries.Count);
+        EquipHelmet((currentHelmet - 1 + helmetLibraries.Count) % helmetLibraries.Count);
+        EquipWeapon((currentWeapon - 1 + weaponLibraries.Count) % weaponLibraries.Count);
+        EquipHair((currentHair - 1 + hairLibraries.Count) % hairLibraries.Count);
 
         UpdateDatabase();
     }
@@ -97,7 +92,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
     {
         EquipHead(currentHead + 1);
     }
-    public HairLibraries[] GetHair()
+    public List<HairLibraries> GetHair()
     {
         return hairLibraries;
     }
@@ -157,17 +152,6 @@ public class SpriteController : MonoBehaviour, IUpdatable
         var helmetData = db.Item0.FirstOrDefault(item => item.IDItem0 == idHelmet);
         var weaponData = db.Item0.FirstOrDefault(item => item.IDItem0 == idWeapon);
 
-        legArmorLibraries[currentLegArmor].nameLegArmor = legArmorData != null ? legArmorData.NameItem0 : "Unknown LegArmor";
-        armorLibraries[currentArmor].nameArmor = armorData != null ? armorData.NameItem0 : "Unknown Armor";
-        helmetLibraries[currentHelmet].nameHelmet = helmetData != null ? helmetData.NameItem0 : "Unknown Helmet";
-        weaponLibraries[currentWeapon].nameWeapon = weaponData != null ? weaponData.NameItem0 : "Unknown Weapon";
-
-        Debug.Log($"Đang sử dụng LegArmor: {legArmorLibraries[currentLegArmor].nameLegArmor}");
-        Debug.Log($"Đang sử dụng Armor: {armorLibraries[currentArmor].nameArmor}");
-        Debug.Log($"Đang sử dụng Helmet: {helmetLibraries[currentHelmet].nameHelmet}");
-        Debug.Log($"Đang sử dụng Weapon: {weaponLibraries[currentWeapon].nameWeapon}");
-        Debug.Log($"Đang sử dụng Hair: {currentHair}");
-
         // 2. Lấy account đúng theo IDAccount
         int idAccount = LogInController.GetIDAccount();
         var account = db.Accounts.FirstOrDefault(acc => acc.IDAccount == idAccount);
@@ -195,11 +179,11 @@ public class SpriteController : MonoBehaviour, IUpdatable
             var helmetData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.Helmet);
             var weaponData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.Weapon);
 
-            currentLegArmor = legArmorLibraries.ToList().FindIndex(la => la.idLegArmor == legArmorData.IDItem0);
-            currentArmor = armorLibraries.ToList().FindIndex(a => a.idArmor == armorData.IDItem0);
-            currentHelmet = helmetLibraries.ToList().FindIndex(h => h.idHelmet == helmetData.IDItem0);
-            currentWeapon = weaponLibraries.ToList().FindIndex(w => w.idWeapon == weaponData.IDItem0);
-            if (account.Hair >= 0 && account.Hair < hairLibraries.Length) currentHair = account.Hair ?? 0;
+            currentLegArmor = legArmorLibraries.FindIndex(la => la.idLegArmor == legArmorData.IDItem0);
+            currentArmor = armorLibraries.FindIndex(a => a.idArmor == armorData.IDItem0);
+            currentHelmet = helmetLibraries.FindIndex(h => h.idHelmet == helmetData.IDItem0);
+            currentWeapon = weaponLibraries.FindIndex(w => w.idWeapon == weaponData.IDItem0);
+            if (account.Hair >= 0 && account.Hair < hairLibraries.Count) currentHair = account.Hair ?? 0;
 
             if (currentLegArmor < 0) currentLegArmor = 0;
             if (currentArmor < 0) currentArmor = 0;
@@ -237,12 +221,11 @@ public class SpriteController : MonoBehaviour, IUpdatable
 
         return changeTimes.Length - 1;
     }
-
     private void UpdateSprite()
     {
         if (animator == null) return;
 
-        for (int i = 0; i < resolvers.Length; i++)
+        for (int i = 0; i < resolvers.Count; i++)
         {
             if (resolvers[i] == null)
                 continue;

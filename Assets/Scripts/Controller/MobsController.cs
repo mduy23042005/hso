@@ -7,7 +7,6 @@ public class MobsController : MonoBehaviour, IUpdatable
     [SerializeField] private BoxCollider2D attackArea;
 
     private Vector2 targetPos;
-    private Transform transform;
     private float waitAfterMove = 0f; // thời gian chờ sau khi di chuyển xong
     private SpriteRenderer flipSprite;
     private float changeTargetCooldown = 0f;
@@ -16,7 +15,6 @@ public class MobsController : MonoBehaviour, IUpdatable
 
     private void Awake()
     {
-        transform = GetComponent<Transform>();
         flipSprite = GetComponent<SpriteRenderer>();
         targetPos = GetRandomPosition();
         animator = GetComponent<Animator>();

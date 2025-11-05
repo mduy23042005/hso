@@ -74,17 +74,18 @@ public class MenuController : MonoBehaviour, IUpdatable
     {
         GameManager.Instance.RegisterPersistent(this);
     }
-    public void ToggleMenu()
+    public void OpenMenu()
     {
-        isActive = !gameObject.activeSelf;
+        isActive = true;
+        gameObject.SetActive(isActive);
+    }
+    public void CloseMenu()
+    {
+        isActive = false;
         gameObject.SetActive(isActive);
     }
     public bool getIsActive()
     {
         return isActive;
-    }
-    private void FixedUpdate()
-    {
-
     }
 }

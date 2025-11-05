@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -16,8 +15,8 @@ public class RegisterController : MonoBehaviour
     [SerializeField] private TMP_Text inputNameBlessing;
 
     [Header("Quản lý danh sách kiểu tóc")]
-    [SerializeField] private SpriteLibrary[] spriteLibrary;
-    private HairLibraries[] hairLibraries;
+    [SerializeField] private List<SpriteLibrary> spriteLibrary;
+    private List<HairLibraries> hairLibraries;
 
     [Header("Xuất thông báo lỗi")]
     [SerializeField] private TMP_Text textMessageNameChar;
@@ -82,7 +81,7 @@ public class RegisterController : MonoBehaviour
             SendErrorSchool();
             return; 
         }
-        idHair[idSchool - 1] = (idHair[idSchool - 1] + 1) % hairLibraries.Length;
+        idHair[idSchool - 1] = (idHair[idSchool - 1] + 1) % hairLibraries.Count;
         EquipHair(idHair[idSchool - 1]);
         UpdateNameHair();
     }
@@ -93,7 +92,7 @@ public class RegisterController : MonoBehaviour
             SendErrorSchool();
             return;
         }
-        idHair[idSchool - 1] = (idHair[idSchool - 1] - 1 + hairLibraries.Length) % hairLibraries.Length;
+        idHair[idSchool - 1] = (idHair[idSchool - 1] - 1 + hairLibraries.Count) % hairLibraries.Count;
         EquipHair(idHair[idSchool - 1]);
         UpdateNameHair();
     }

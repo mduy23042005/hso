@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2931,173 +2931,117 @@ MonoBehaviour:
   - {fileID: 978959683}
   legArmorLibraries:
   - idLegArmor: 26
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: d5a290724f1b6584a817537b36e19b07, type: 3}
   - idLegArmor: 30
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: d5a290724f1b6584a817537b36e19b07, type: 3}
   - idLegArmor: 90
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 8268fe614d0ab7c41aaa8870614d392f, type: 3}
   - idLegArmor: 94
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 8268fe614d0ab7c41aaa8870614d392f, type: 3}
   - idLegArmor: 154
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: b57236ee6f7b228479396daee9e633b4, type: 3}
   - idLegArmor: 158
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: b57236ee6f7b228479396daee9e633b4, type: 3}
   - idLegArmor: 218
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 33bfbd095d2abd3449c669846712b71c, type: 3}
   - idLegArmor: 222
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 33bfbd095d2abd3449c669846712b71c, type: 3}
   - idLegArmor: 282
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: f0932f7da03aa9941a18edc4f65097d2, type: 3}
   - idLegArmor: 286
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: f0932f7da03aa9941a18edc4f65097d2, type: 3}
   - idLegArmor: 346
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 46d664d775431724c818779372b561a9, type: 3}
   - idLegArmor: 350
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 46d664d775431724c818779372b561a9, type: 3}
   - idLegArmor: 410
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 419188e8adf28f84181a4cdf7accc932, type: 3}
   - idLegArmor: 414
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 419188e8adf28f84181a4cdf7accc932, type: 3}
   - idLegArmor: 474
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 8186dc9dbfb71a24fb279d9aced6f1a3, type: 3}
   - idLegArmor: 478
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 8186dc9dbfb71a24fb279d9aced6f1a3, type: 3}
   - idLegArmor: 538
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 4b96d6752223f1a41aa13db138cf8c96, type: 3}
   - idLegArmor: 542
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 4b96d6752223f1a41aa13db138cf8c96, type: 3}
   - idLegArmor: 602
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 3dbe1cba224607541a835d08418d0c63, type: 3}
   - idLegArmor: 606
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 3dbe1cba224607541a835d08418d0c63, type: 3}
   - idLegArmor: 666
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 5f774e001f58901468b6d2f36ffd070c, type: 3}
   - idLegArmor: 670
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 5f774e001f58901468b6d2f36ffd070c, type: 3}
   - idLegArmor: 730
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 37cd686d8ee4acb4190cf5773d8d049d, type: 3}
   - idLegArmor: 734
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 37cd686d8ee4acb4190cf5773d8d049d, type: 3}
   - idLegArmor: 794
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: b57236ee6f7b228479396daee9e633b4, type: 3}
   - idLegArmor: 798
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: b57236ee6f7b228479396daee9e633b4, type: 3}
   - idLegArmor: 858
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: f0932f7da03aa9941a18edc4f65097d2, type: 3}
   - idLegArmor: 862
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: f0932f7da03aa9941a18edc4f65097d2, type: 3}
   armorLibraries:
   - idArmor: 18
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: ea1cd703e2e70df4ba8243fdf0d31e91, type: 3}
   - idArmor: 22
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: ea1cd703e2e70df4ba8243fdf0d31e91, type: 3}
   - idArmor: 82
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 57acfca0ecd93d247b52923c3f5f3f30, type: 3}
   - idArmor: 86
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 57acfca0ecd93d247b52923c3f5f3f30, type: 3}
   - idArmor: 146
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: cd5e3d01045be4c47aabaf62617c9f66, type: 3}
   - idArmor: 150
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: cd5e3d01045be4c47aabaf62617c9f66, type: 3}
   - idArmor: 210
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: f12ef930e07eacf4bb63b31224324cb7, type: 3}
   - idArmor: 214
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: f12ef930e07eacf4bb63b31224324cb7, type: 3}
   - idArmor: 274
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: c0af54c8397eed54aa8e08e3dd33c8fd, type: 3}
   - idArmor: 278
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: c0af54c8397eed54aa8e08e3dd33c8fd, type: 3}
   - idArmor: 338
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 6efee0c6e726cb247bd1193033468fed, type: 3}
   - idArmor: 342
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 6efee0c6e726cb247bd1193033468fed, type: 3}
   - idArmor: 402
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: ce7093005d0d70d49b5fe6c4ddcf9945, type: 3}
   - idArmor: 406
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: ce7093005d0d70d49b5fe6c4ddcf9945, type: 3}
   - idArmor: 466
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: dae3c7b71f283da49baaa387bb241904, type: 3}
   - idArmor: 470
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: dae3c7b71f283da49baaa387bb241904, type: 3}
   - idArmor: 530
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 0676cee9a82335b44b32fa76c5a5e870, type: 3}
   - idArmor: 534
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 0676cee9a82335b44b32fa76c5a5e870, type: 3}
   - idArmor: 594
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2057d5eef7e36fb418da9f5fd57a9df4, type: 3}
   - idArmor: 598
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2057d5eef7e36fb418da9f5fd57a9df4, type: 3}
   - idArmor: 658
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: e1f1f0bb7a6a5954bb930f999bf7ca3c, type: 3}
   - idArmor: 662
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: e1f1f0bb7a6a5954bb930f999bf7ca3c, type: 3}
   - idArmor: 722
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: a213e0336d4272b41b05d928a9e08ba9, type: 3}
   - idArmor: 726
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: a213e0336d4272b41b05d928a9e08ba9, type: 3}
   - idArmor: 786
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: cd5e3d01045be4c47aabaf62617c9f66, type: 3}
   - idArmor: 790
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: cd5e3d01045be4c47aabaf62617c9f66, type: 3}
   - idArmor: 850
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: c0af54c8397eed54aa8e08e3dd33c8fd, type: 3}
   - idArmor: 854
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: c0af54c8397eed54aa8e08e3dd33c8fd, type: 3}
   headLibraries:
   - idHead: 0
@@ -3106,115 +3050,87 @@ MonoBehaviour:
     headLibrariesAsset: {fileID: 0}
   helmetLibraries:
   - idHelmet: 10
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: db1edd019d9764d418d066a86368391e, type: 3}
     isHiddenHair: 0
   - idHelmet: 14
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: db1edd019d9764d418d066a86368391e, type: 3}
     isHiddenHair: 0
   - idHelmet: 74
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 6271e8a9f7d0e844b9a124891e83a951, type: 3}
     isHiddenHair: 0
   - idHelmet: 78
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 6271e8a9f7d0e844b9a124891e83a951, type: 3}
     isHiddenHair: 0
   - idHelmet: 138
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 79150006cbe157d4fbac809a93986575, type: 3}
     isHiddenHair: 0
   - idHelmet: 142
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 79150006cbe157d4fbac809a93986575, type: 3}
     isHiddenHair: 0
   - idHelmet: 202
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: feb71d7ae68c5a2478b1570997ac29bb, type: 3}
     isHiddenHair: 0
   - idHelmet: 206
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: feb71d7ae68c5a2478b1570997ac29bb, type: 3}
     isHiddenHair: 0
   - idHelmet: 266
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 9b55e8ea3ba9dc349a219279907a14af, type: 3}
     isHiddenHair: 0
   - idHelmet: 270
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 9b55e8ea3ba9dc349a219279907a14af, type: 3}
     isHiddenHair: 0
   - idHelmet: 330
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: c39a510642cb30243b692312d1cd1eef, type: 3}
     isHiddenHair: 0
   - idHelmet: 334
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: c39a510642cb30243b692312d1cd1eef, type: 3}
     isHiddenHair: 0
   - idHelmet: 394
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 865e6203c29b1f543b994b1788b42990, type: 3}
     isHiddenHair: 0
   - idHelmet: 398
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 865e6203c29b1f543b994b1788b42990, type: 3}
     isHiddenHair: 0
   - idHelmet: 458
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b35c5e83617c085499c331190bfad60c, type: 3}
     isHiddenHair: 0
   - idHelmet: 462
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b35c5e83617c085499c331190bfad60c, type: 3}
     isHiddenHair: 0
   - idHelmet: 522
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 23163aee08bc32943a91a2be5739d805, type: 3}
     isHiddenHair: 1
   - idHelmet: 526
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 23163aee08bc32943a91a2be5739d805, type: 3}
     isHiddenHair: 1
   - idHelmet: 586
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 7b30d32b22593af40bb7ea806b6dec91, type: 3}
     isHiddenHair: 1
   - idHelmet: 590
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 7b30d32b22593af40bb7ea806b6dec91, type: 3}
     isHiddenHair: 1
   - idHelmet: 650
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: f6449ddde6f88d3489348d14b87c42f5, type: 3}
     isHiddenHair: 1
   - idHelmet: 654
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: f6449ddde6f88d3489348d14b87c42f5, type: 3}
     isHiddenHair: 1
   - idHelmet: 714
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: ed4050f3f917f14439b42b2fd865aec5, type: 3}
     isHiddenHair: 0
   - idHelmet: 718
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: ed4050f3f917f14439b42b2fd865aec5, type: 3}
     isHiddenHair: 0
   - idHelmet: 778
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 79150006cbe157d4fbac809a93986575, type: 3}
     isHiddenHair: 0
   - idHelmet: 782
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 79150006cbe157d4fbac809a93986575, type: 3}
     isHiddenHair: 0
   - idHelmet: 842
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 9b55e8ea3ba9dc349a219279907a14af, type: 3}
     isHiddenHair: 0
   - idHelmet: 846
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 9b55e8ea3ba9dc349a219279907a14af, type: 3}
     isHiddenHair: 0
   hairLibraries:
@@ -3229,115 +3145,87 @@ MonoBehaviour:
   - hairLibrariesAsset: {fileID: 7108339969198208228, guid: 6e7132e4cd6135c4cab61114e095ed1e, type: 3}
   weaponLibraries:
   - idWeapon: 2
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: e8f066fe234e0824ebc7d04310ab7eed, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 3bcbf45f46baba44c82550e7f7ae8c55, type: 3}
   - idWeapon: 6
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: fb13faa1d1fddd542997a57b711ca6eb, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 5a3403dcd863486468983fbecdacb3ec, type: 3}
   - idWeapon: 66
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: c5ec37e3341f7e74fa0a52fdb046f73f, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 3061e55de27b4bd44814812e06963d3b, type: 3}
   - idWeapon: 70
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 8ab4f9b46c11a424bab632d69f723c77, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: fd2dd5d2eda112d42b8cd2362b4d9422, type: 3}
   - idWeapon: 130
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 89795d55949b99c40911b821898ef240, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 7ccec2a04836d2447b2a1131dd88867f, type: 3}
   - idWeapon: 134
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 2bac0fe893102af43960e683223be52e, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: eab635673fdc297458d51787356590ed, type: 3}
   - idWeapon: 194
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: a8150c191309e04489fb08b1d106d87c, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: a63fe3df93c278449a4b42ac812b456a, type: 3}
   - idWeapon: 198
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 598f5c6b1e8c0e14cbd35de4ad4607fd, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: a94f7af8792f1e1489267f83053e88b6, type: 3}
   - idWeapon: 258
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 3810c01f706669b478b914273cd0a0c7, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 8acaf36536593324a9f6abf0a4c20501, type: 3}
   - idWeapon: 262
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 747c2b8326ad79c4b8e2ecc32e4a21d2, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: b005a49c3e43e184b8c62f214cc04553, type: 3}
   - idWeapon: 322
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 40cfd27d98e2c1445b579f3d74857d3c, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 750e723ddd1932945bf0b93ef29b6188, type: 3}
   - idWeapon: 326
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: e18083b003dd5b242bc50493970d5e70, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 8847c7a315b6bdb43b6c782ff4a1e1b8, type: 3}
   - idWeapon: 386
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 9b8fb82fc12bfe3478b2cc76675db3ba, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 306235acbab764f468aa251c2d97054a, type: 3}
   - idWeapon: 390
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 0c0034b177c6dfc48893653fbd9295db, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 3687002a493a30b418206540eb7e12c1, type: 3}
   - idWeapon: 450
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: a16c805539fbbda47ba214c6ee0a55ec, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: d6f722d1aaca32d49ba591e37cbada95, type: 3}
   - idWeapon: 454
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: aaa8187a6ab5cf8438442424f11a1a47, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: b0dab7c4818cd124f9c6c261791c0a31, type: 3}
   - idWeapon: 514
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 200a6064bdf5d7844ba85f566b2baccf, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 8ce365edc7a116b449c5712661892106, type: 3}
   - idWeapon: 518
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 36221cf8e5a5a6648afce4d8ff9d1b0f, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 2a6c6595890d3ba4b9dd22f46907d03a, type: 3}
   - idWeapon: 578
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: db8ea6c7bb7d242428aa87deb4b362b0, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 0f50ed1940c17504685898140bb89248, type: 3}
   - idWeapon: 582
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: db8ea6c7bb7d242428aa87deb4b362b0, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 0f50ed1940c17504685898140bb89248, type: 3}
   - idWeapon: 642
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 4098c8eda30ba7949bd8a788cc520997, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 8dd4798281c9de64285f5e8cfa4e6959, type: 3}
   - idWeapon: 646
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 4098c8eda30ba7949bd8a788cc520997, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 8dd4798281c9de64285f5e8cfa4e6959, type: 3}
   - idWeapon: 706
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 238920945d5653243b2ad79e32a3ec04, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: cdd7ad3b76113b74bab58bfdfb7f2fc8, type: 3}
   - idWeapon: 710
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 238920945d5653243b2ad79e32a3ec04, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: cdd7ad3b76113b74bab58bfdfb7f2fc8, type: 3}
   - idWeapon: 770
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 4c3f860c5ccc8e84ab433afb897867a9, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: c9d86ba1a1bb30b44ad70d497adaf355, type: 3}
   - idWeapon: 774
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 50d1eecb2fbdd0946905d4abe45f498b, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: f86fe047aadc8984cae1bc343e055add, type: 3}
   - idWeapon: 834
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: d38b03196c9cc48469180c99a46a6288, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1cad20b3fb6ac7c4d87d4b66094029b1, type: 3}
   - idWeapon: 838
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: d38b03196c9cc48469180c99a46a6288, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1cad20b3fb6ac7c4d87d4b66094029b1, type: 3}
 --- !u!50 &650625041
@@ -6840,173 +6728,117 @@ MonoBehaviour:
   - {fileID: 2102765360}
   legArmorLibraries:
   - idLegArmor: 25
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 6eaccffb954bf624d87afd37b4a96f0a, type: 3}
   - idLegArmor: 29
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 6eaccffb954bf624d87afd37b4a96f0a, type: 3}
   - idLegArmor: 89
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 9df1dde97cfb12741b7dc83fef1c7f80, type: 3}
   - idLegArmor: 93
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 9df1dde97cfb12741b7dc83fef1c7f80, type: 3}
   - idLegArmor: 153
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 5fff3a24a789f9547b2ab9586c413226, type: 3}
   - idLegArmor: 157
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 5fff3a24a789f9547b2ab9586c413226, type: 3}
   - idLegArmor: 217
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: f4076866e59c702428c6ae829fe0d7df, type: 3}
   - idLegArmor: 221
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: f4076866e59c702428c6ae829fe0d7df, type: 3}
   - idLegArmor: 281
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 960f502980296b541b588571feb01061, type: 3}
   - idLegArmor: 285
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 960f502980296b541b588571feb01061, type: 3}
   - idLegArmor: 345
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 4636376885b00bf4da3cddb2a011b9f9, type: 3}
   - idLegArmor: 349
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 4636376885b00bf4da3cddb2a011b9f9, type: 3}
   - idLegArmor: 409
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 9b26f468053885142ab2b66cb638cd33, type: 3}
   - idLegArmor: 413
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 9b26f468053885142ab2b66cb638cd33, type: 3}
   - idLegArmor: 473
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: b6a6f650101482b4ca50704655dfb6cd, type: 3}
   - idLegArmor: 477
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: b6a6f650101482b4ca50704655dfb6cd, type: 3}
   - idLegArmor: 537
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: a05efd87f87d45a4c82b7a2326b63b0f, type: 3}
   - idLegArmor: 541
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: a05efd87f87d45a4c82b7a2326b63b0f, type: 3}
   - idLegArmor: 601
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 46d7c9fe7f672944481e03573710b1a2, type: 3}
   - idLegArmor: 605
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 46d7c9fe7f672944481e03573710b1a2, type: 3}
   - idLegArmor: 665
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: c83ecac4b9985c64dac61189efe4ebc5, type: 3}
   - idLegArmor: 669
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: c83ecac4b9985c64dac61189efe4ebc5, type: 3}
   - idLegArmor: 729
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: d0f1e4026865ca9479d5294309df6837, type: 3}
   - idLegArmor: 733
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: d0f1e4026865ca9479d5294309df6837, type: 3}
   - idLegArmor: 793
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 5fff3a24a789f9547b2ab9586c413226, type: 3}
   - idLegArmor: 797
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 5fff3a24a789f9547b2ab9586c413226, type: 3}
   - idLegArmor: 857
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: f4076866e59c702428c6ae829fe0d7df, type: 3}
   - idLegArmor: 861
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: f4076866e59c702428c6ae829fe0d7df, type: 3}
   armorLibraries:
   - idArmor: 17
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2b1308565b40b264d9d7d78c983b0b42, type: 3}
   - idArmor: 21
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2b1308565b40b264d9d7d78c983b0b42, type: 3}
   - idArmor: 81
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 271758b1d6382334e921e86791fe9e89, type: 3}
   - idArmor: 85
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 271758b1d6382334e921e86791fe9e89, type: 3}
   - idArmor: 145
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: f1db4b5f64051dd4cb4648d31b2507f2, type: 3}
   - idArmor: 149
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: f1db4b5f64051dd4cb4648d31b2507f2, type: 3}
   - idArmor: 209
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2fe7e10430dcf2f4c985db096e0bc93f, type: 3}
   - idArmor: 213
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2fe7e10430dcf2f4c985db096e0bc93f, type: 3}
   - idArmor: 273
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 5ce3423b8d25789488b85feb1384baf5, type: 3}
   - idArmor: 277
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 5ce3423b8d25789488b85feb1384baf5, type: 3}
   - idArmor: 337
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 3db270526b4de3c4982f0ede006cf27e, type: 3}
   - idArmor: 341
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 3db270526b4de3c4982f0ede006cf27e, type: 3}
   - idArmor: 401
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: a6d47f7047bc2b048a8710438724f663, type: 3}
   - idArmor: 405
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: a6d47f7047bc2b048a8710438724f663, type: 3}
   - idArmor: 465
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: adbf8521c7a4d804f9b357dfc059a503, type: 3}
   - idArmor: 469
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: adbf8521c7a4d804f9b357dfc059a503, type: 3}
   - idArmor: 529
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: ae91d3c845362d346913dc8e751563be, type: 3}
   - idArmor: 533
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: ae91d3c845362d346913dc8e751563be, type: 3}
   - idArmor: 593
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: f9fbe54f6941c414ab9b375a68e89f01, type: 3}
   - idArmor: 597
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: f9fbe54f6941c414ab9b375a68e89f01, type: 3}
   - idArmor: 657
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 942e6211de3f36f48895fe5d40c1fb38, type: 3}
   - idArmor: 661
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 942e6211de3f36f48895fe5d40c1fb38, type: 3}
   - idArmor: 721
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 4736e5bc8369b504a9f37b7593511e53, type: 3}
   - idArmor: 725
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 4736e5bc8369b504a9f37b7593511e53, type: 3}
   - idArmor: 785
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: f1db4b5f64051dd4cb4648d31b2507f2, type: 3}
   - idArmor: 789
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: f1db4b5f64051dd4cb4648d31b2507f2, type: 3}
   - idArmor: 849
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2fe7e10430dcf2f4c985db096e0bc93f, type: 3}
   - idArmor: 853
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2fe7e10430dcf2f4c985db096e0bc93f, type: 3}
   headLibraries:
   - idHead: 0
@@ -7015,115 +6847,87 @@ MonoBehaviour:
     headLibrariesAsset: {fileID: 0}
   helmetLibraries:
   - idHelmet: 9
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 838bcd55809d9024dbf2eba482cf0227, type: 3}
     isHiddenHair: 0
   - idHelmet: 13
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 838bcd55809d9024dbf2eba482cf0227, type: 3}
     isHiddenHair: 0
   - idHelmet: 73
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 3715a32dbbfb6e54e98d2a4ee195227d, type: 3}
     isHiddenHair: 0
   - idHelmet: 77
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 3715a32dbbfb6e54e98d2a4ee195227d, type: 3}
     isHiddenHair: 0
   - idHelmet: 137
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b0d740b2196b2f545ae3e3042280017d, type: 3}
     isHiddenHair: 0
   - idHelmet: 141
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b0d740b2196b2f545ae3e3042280017d, type: 3}
     isHiddenHair: 0
   - idHelmet: 201
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 118bdc4483488704db7a29f18ca7c2d7, type: 3}
     isHiddenHair: 0
   - idHelmet: 205
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 118bdc4483488704db7a29f18ca7c2d7, type: 3}
     isHiddenHair: 0
   - idHelmet: 265
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 572d51ed533f06147a6447a6cffc71bc, type: 3}
     isHiddenHair: 0
   - idHelmet: 269
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 572d51ed533f06147a6447a6cffc71bc, type: 3}
     isHiddenHair: 0
   - idHelmet: 329
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: e796e58cf8bd5d6489dccff63a12ee9f, type: 3}
     isHiddenHair: 0
   - idHelmet: 333
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: e796e58cf8bd5d6489dccff63a12ee9f, type: 3}
     isHiddenHair: 0
   - idHelmet: 393
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: d71116e2d953c4e4993b8bd4559ab9ee, type: 3}
     isHiddenHair: 0
   - idHelmet: 397
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: d71116e2d953c4e4993b8bd4559ab9ee, type: 3}
     isHiddenHair: 0
   - idHelmet: 457
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: d89e4dbe81fcf214ab9686b152114c9d, type: 3}
     isHiddenHair: 0
   - idHelmet: 461
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: d89e4dbe81fcf214ab9686b152114c9d, type: 3}
     isHiddenHair: 0
   - idHelmet: 521
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 170c92498788f6347a93e6c76f509b17, type: 3}
     isHiddenHair: 1
   - idHelmet: 525
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 170c92498788f6347a93e6c76f509b17, type: 3}
     isHiddenHair: 1
   - idHelmet: 585
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 162fafc789281d5419ed8945eab61e16, type: 3}
     isHiddenHair: 1
   - idHelmet: 589
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 162fafc789281d5419ed8945eab61e16, type: 3}
     isHiddenHair: 1
   - idHelmet: 649
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 298e20b2898740a4dbc52ba412467bbf, type: 3}
     isHiddenHair: 1
   - idHelmet: 653
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 298e20b2898740a4dbc52ba412467bbf, type: 3}
     isHiddenHair: 1
   - idHelmet: 713
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 5fb689cc04b05b844b3aa17a56e4391d, type: 3}
     isHiddenHair: 1
   - idHelmet: 717
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 5fb689cc04b05b844b3aa17a56e4391d, type: 3}
     isHiddenHair: 1
   - idHelmet: 777
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b0d740b2196b2f545ae3e3042280017d, type: 3}
     isHiddenHair: 0
   - idHelmet: 781
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b0d740b2196b2f545ae3e3042280017d, type: 3}
     isHiddenHair: 0
   - idHelmet: 841
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 118bdc4483488704db7a29f18ca7c2d7, type: 3}
     isHiddenHair: 0
   - idHelmet: 845
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 118bdc4483488704db7a29f18ca7c2d7, type: 3}
     isHiddenHair: 0
   hairLibraries:
@@ -7138,115 +6942,87 @@ MonoBehaviour:
   - hairLibrariesAsset: {fileID: 7108339969198208228, guid: c83d38738803d7340aaaa9787d2a702b, type: 3}
   weaponLibraries:
   - idWeapon: 1
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: a96b4172843d2f8489082725e4afe784, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: a960cea00f0e61b42819986484f5899e, type: 3}
   - idWeapon: 5
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 45139502b61bf1d4fbfec359f8f23356, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 15f67a90835aae741889d66607894091, type: 3}
   - idWeapon: 65
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 75da55a25daa0b24082926b33ccc6b4f, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 3891a7f1a21089a439628635cc781a95, type: 3}
   - idWeapon: 69
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 4d71199245cf80941a01124cd7ffcdbc, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 15a1f7e8b212f3c4d897d78c7e546a32, type: 3}
   - idWeapon: 129
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 2ecaeb5e37f42c4448eb5828b92d4a98, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 7104888b3c5072c45bd6b2578da3b78f, type: 3}
   - idWeapon: 133
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: f4bd493bca76b5842904343d90b81cea, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 22a725469258dc3448049c1f92b755f9, type: 3}
   - idWeapon: 193
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: c72c278a0e1c0704e8b1b1287aaa4c30, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: e7f3b2f9a77aa1a4aac12c8578e66e5a, type: 3}
   - idWeapon: 197
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: c32ede224bef87a4d83668fd4463d49b, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 32fc34b2a8a1e664da80d0814a65957f, type: 3}
   - idWeapon: 257
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: d8e2f83251a99014c9cf7bf74e7e1db9, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: d6450e0c11f392846bdedccd58cedb43, type: 3}
   - idWeapon: 261
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 63b6936f398be334dbfe4d276cf474f6, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: c3ab6b41538f22d45a6d2d46c006df32, type: 3}
   - idWeapon: 321
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 944cd3567e9b5c94eb2ae3e38d2cffc2, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1586ab8f3c617b849a84198f94f5daa3, type: 3}
   - idWeapon: 325
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 1839fd593110e374a89014e61d9a80f7, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1579a86c4be8cc5439e5bf35b97d1c9e, type: 3}
   - idWeapon: 385
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 5fade12727889de43adf33d8fec4df72, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: ec6e64996222903449f19ad86985654f, type: 3}
   - idWeapon: 389
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 7bb5a3ce3bac7634e8d35edafae7a2fe, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 4e4bfc684f963e24da582444c9362f18, type: 3}
   - idWeapon: 449
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: fe2af06d3c3c0f04e91937adc7f68149, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1ecd2d44f8c822f4cb2137578fa9f3a2, type: 3}
   - idWeapon: 453
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 63c8ec8c8cc6e3c4c88fed131ba0ffb3, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: e182c9f8aac42e547bd352d9484baf29, type: 3}
   - idWeapon: 513
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 95353a52bf04afe4dbb8cf664849ea28, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 259380531f9703240a7a6c6134e2c794, type: 3}
   - idWeapon: 517
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 4e7e8e90ccd4d7c4dbfc75201cb5e67b, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 0ee57f610aafef84cad8de700e276077, type: 3}
   - idWeapon: 577
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: e4cbb5315b69c8f44be3419d49c53ff2, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: ea7f59e51a148a74ebe85f402ffcc079, type: 3}
   - idWeapon: 581
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: e4cbb5315b69c8f44be3419d49c53ff2, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: ea7f59e51a148a74ebe85f402ffcc079, type: 3}
   - idWeapon: 641
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: fd5af378947b29d4cad73ed10947df66, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 946cac65c8e246c4eb46032f40e7fda2, type: 3}
   - idWeapon: 645
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 9cba10e4053fb6c4784fc5ecb3b0d9f7, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: f968325a57fd6654297010f1b2c69b65, type: 3}
   - idWeapon: 705
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: a58f6d71036a3c147aea2a02bb58410d, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: a65216f486c50cd44ae18340447f4b1f, type: 3}
   - idWeapon: 709
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: a58f6d71036a3c147aea2a02bb58410d, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: a65216f486c50cd44ae18340447f4b1f, type: 3}
   - idWeapon: 769
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 9b7abfa4b8c8b0c4caa7c4a8edc620e9, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: a35df144e096bf349baf09a930acd364, type: 3}
   - idWeapon: 773
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: c5af6cb3145dfbf45a835c384572ace0, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: dbb8ba21d3fd719498d203c8975b897a, type: 3}
   - idWeapon: 833
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 9b7abfa4b8c8b0c4caa7c4a8edc620e9, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: a35df144e096bf349baf09a930acd364, type: 3}
   - idWeapon: 837
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: c5af6cb3145dfbf45a835c384572ace0, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: dbb8ba21d3fd719498d203c8975b897a, type: 3}
 --- !u!61 &1656938724
@@ -7510,173 +7286,117 @@ MonoBehaviour:
   - {fileID: 2136535912}
   legArmorLibraries:
   - idLegArmor: 27
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: d9f3e9dd593e74b47a6209f25c9174fa, type: 3}
   - idLegArmor: 31
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: d9f3e9dd593e74b47a6209f25c9174fa, type: 3}
   - idLegArmor: 91
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 83922b958f1de0c41b085c9cd458525b, type: 3}
   - idLegArmor: 95
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 83922b958f1de0c41b085c9cd458525b, type: 3}
   - idLegArmor: 155
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 310d5529ab8b1844da21d90e9f2c162c, type: 3}
   - idLegArmor: 159
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 310d5529ab8b1844da21d90e9f2c162c, type: 3}
   - idLegArmor: 219
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: dac7b0525b08fde4c8fac1aafd581940, type: 3}
   - idLegArmor: 223
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: dac7b0525b08fde4c8fac1aafd581940, type: 3}
   - idLegArmor: 283
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: e855e1a32f0601d44a9c1c2f132838be, type: 3}
   - idLegArmor: 287
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: e855e1a32f0601d44a9c1c2f132838be, type: 3}
   - idLegArmor: 347
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: e2999ec046d7a1c4baf3d81f769b0fdc, type: 3}
   - idLegArmor: 351
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: e2999ec046d7a1c4baf3d81f769b0fdc, type: 3}
   - idLegArmor: 411
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: c6702bd9a2850fb459bb09248ddb0d22, type: 3}
   - idLegArmor: 415
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: c6702bd9a2850fb459bb09248ddb0d22, type: 3}
   - idLegArmor: 475
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: fef493e38778428498431a3548fb0710, type: 3}
   - idLegArmor: 479
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: fef493e38778428498431a3548fb0710, type: 3}
   - idLegArmor: 539
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 132059aec4eeaf942931a91448297127, type: 3}
   - idLegArmor: 543
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 132059aec4eeaf942931a91448297127, type: 3}
   - idLegArmor: 603
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 5d84584d7294d2e44bb25f797773bc3d, type: 3}
   - idLegArmor: 607
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 5d84584d7294d2e44bb25f797773bc3d, type: 3}
   - idLegArmor: 667
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 6a519f74b08af324ba68e24651d62f15, type: 3}
   - idLegArmor: 671
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 6a519f74b08af324ba68e24651d62f15, type: 3}
   - idLegArmor: 731
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 42adbac216cfde84590142497c66b93b, type: 3}
   - idLegArmor: 735
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 42adbac216cfde84590142497c66b93b, type: 3}
   - idLegArmor: 795
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 310d5529ab8b1844da21d90e9f2c162c, type: 3}
   - idLegArmor: 799
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: 310d5529ab8b1844da21d90e9f2c162c, type: 3}
   - idLegArmor: 859
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: dac7b0525b08fde4c8fac1aafd581940, type: 3}
   - idLegArmor: 863
-    nameLegArmor: 
     legArmorLibrariesAsset: {fileID: 7108339969198208228, guid: dac7b0525b08fde4c8fac1aafd581940, type: 3}
   armorLibraries:
   - idArmor: 19
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 3726e4d76c001eb47b2f8a6cf8c61662, type: 3}
   - idArmor: 23
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 3726e4d76c001eb47b2f8a6cf8c61662, type: 3}
   - idArmor: 83
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 78b41d192cccdb1498fb7400d39a3078, type: 3}
   - idArmor: 87
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 78b41d192cccdb1498fb7400d39a3078, type: 3}
   - idArmor: 147
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: d33cfc00d4e9dad40ad98ec06b256e84, type: 3}
   - idArmor: 151
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: d33cfc00d4e9dad40ad98ec06b256e84, type: 3}
   - idArmor: 211
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: e02c1ed8104b25b4c804774d567e37ab, type: 3}
   - idArmor: 215
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: e02c1ed8104b25b4c804774d567e37ab, type: 3}
   - idArmor: 275
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2f141d340cfdb75448591548372cbe94, type: 3}
   - idArmor: 279
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2f141d340cfdb75448591548372cbe94, type: 3}
   - idArmor: 339
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: bdb9c5b5c9700f84aa16bdeae219fcd6, type: 3}
   - idArmor: 343
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: bdb9c5b5c9700f84aa16bdeae219fcd6, type: 3}
   - idArmor: 403
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2a5404ce235321e42b30c65735dfb178, type: 3}
   - idArmor: 407
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 2a5404ce235321e42b30c65735dfb178, type: 3}
   - idArmor: 467
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 47ad5b9f114a36943b16f4b02a32f3c0, type: 3}
   - idArmor: 471
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 47ad5b9f114a36943b16f4b02a32f3c0, type: 3}
   - idArmor: 531
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: aab178a6722f05f42b132c942e5ad026, type: 3}
   - idArmor: 535
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: aab178a6722f05f42b132c942e5ad026, type: 3}
   - idArmor: 595
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 50e48db5e68898c4885722597902ffa6, type: 3}
   - idArmor: 599
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 50e48db5e68898c4885722597902ffa6, type: 3}
   - idArmor: 659
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: d719c60a9a2f3ab4882621e83892d43f, type: 3}
   - idArmor: 663
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: d719c60a9a2f3ab4882621e83892d43f, type: 3}
   - idArmor: 723
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 20b667a59f12abc4194229198c7cee36, type: 3}
   - idArmor: 727
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: 20b667a59f12abc4194229198c7cee36, type: 3}
   - idArmor: 787
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: d33cfc00d4e9dad40ad98ec06b256e84, type: 3}
   - idArmor: 791
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: d33cfc00d4e9dad40ad98ec06b256e84, type: 3}
   - idArmor: 851
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: e02c1ed8104b25b4c804774d567e37ab, type: 3}
   - idArmor: 855
-    nameArmor: 
     armorLibrariesAsset: {fileID: 7108339969198208228, guid: e02c1ed8104b25b4c804774d567e37ab, type: 3}
   headLibraries:
   - idHead: 0
@@ -7685,115 +7405,87 @@ MonoBehaviour:
     headLibrariesAsset: {fileID: 0}
   helmetLibraries:
   - idHelmet: 11
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 37ee640e3d14e3845acecea62b41ee9b, type: 3}
     isHiddenHair: 0
   - idHelmet: 15
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 37ee640e3d14e3845acecea62b41ee9b, type: 3}
     isHiddenHair: 0
   - idHelmet: 75
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 3d0e24887c3c7a64783ce02c6085d665, type: 3}
     isHiddenHair: 0
   - idHelmet: 79
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 3d0e24887c3c7a64783ce02c6085d665, type: 3}
     isHiddenHair: 0
   - idHelmet: 139
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 4dc92197357161f459c949506574a703, type: 3}
     isHiddenHair: 0
   - idHelmet: 143
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 4dc92197357161f459c949506574a703, type: 3}
     isHiddenHair: 0
   - idHelmet: 203
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: af5f023ca7ba26843a3b992b8c8705ca, type: 3}
     isHiddenHair: 0
   - idHelmet: 207
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: af5f023ca7ba26843a3b992b8c8705ca, type: 3}
     isHiddenHair: 0
   - idHelmet: 267
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b31632366328e4944bb77b18259c2f6a, type: 3}
     isHiddenHair: 0
   - idHelmet: 271
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b31632366328e4944bb77b18259c2f6a, type: 3}
     isHiddenHair: 0
   - idHelmet: 331
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 3329c1f08ba0876419e4fa472bccf43a, type: 3}
     isHiddenHair: 0
   - idHelmet: 335
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 3329c1f08ba0876419e4fa472bccf43a, type: 3}
     isHiddenHair: 0
   - idHelmet: 395
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 07f826b3bb09ded49b972e23e751160b, type: 3}
     isHiddenHair: 0
   - idHelmet: 399
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 07f826b3bb09ded49b972e23e751160b, type: 3}
     isHiddenHair: 0
   - idHelmet: 459
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b8189e4c58407614fb445b682a220f27, type: 3}
     isHiddenHair: 0
   - idHelmet: 463
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: b8189e4c58407614fb445b682a220f27, type: 3}
     isHiddenHair: 0
   - idHelmet: 523
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 63b17275c93bb4943a0bc87dd0cd422a, type: 3}
     isHiddenHair: 0
   - idHelmet: 527
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 63b17275c93bb4943a0bc87dd0cd422a, type: 3}
     isHiddenHair: 0
   - idHelmet: 587
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: f5b7a8b4b8b49ab41a82df9fda9a1726, type: 3}
     isHiddenHair: 0
   - idHelmet: 591
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: f5b7a8b4b8b49ab41a82df9fda9a1726, type: 3}
     isHiddenHair: 0
   - idHelmet: 651
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: e1a24046c1bdb184595f7c1e6f7c7ec6, type: 3}
     isHiddenHair: 0
   - idHelmet: 655
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: e1a24046c1bdb184595f7c1e6f7c7ec6, type: 3}
     isHiddenHair: 0
   - idHelmet: 715
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 706aad3b95b428941ae67931ed9a52ee, type: 3}
     isHiddenHair: 0
   - idHelmet: 719
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 706aad3b95b428941ae67931ed9a52ee, type: 3}
     isHiddenHair: 0
   - idHelmet: 779
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 4dc92197357161f459c949506574a703, type: 3}
     isHiddenHair: 0
   - idHelmet: 783
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: 4dc92197357161f459c949506574a703, type: 3}
     isHiddenHair: 0
   - idHelmet: 843
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: af5f023ca7ba26843a3b992b8c8705ca, type: 3}
     isHiddenHair: 0
   - idHelmet: 847
-    nameHelmet: 
     helmetLibrariesAsset: {fileID: 7108339969198208228, guid: af5f023ca7ba26843a3b992b8c8705ca, type: 3}
     isHiddenHair: 0
   hairLibraries:
@@ -7808,115 +7500,87 @@ MonoBehaviour:
   - hairLibrariesAsset: {fileID: 7108339969198208228, guid: bf1329db5a3b1b44cafe63eedbe8018d, type: 3}
   weaponLibraries:
   - idWeapon: 3
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: f4b0614adef4e6843a7c13453a4e5420, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 7a9d32b25d21a9f44b64de70b783fb5c, type: 3}
   - idWeapon: 7
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 2e5f07d3339645f4ea50cfbfb8b077b3, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 493a489a5d17d5e449559baf2b926efe, type: 3}
   - idWeapon: 67
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: ead0e844ac11e0242896153841dc5b67, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: c96d4d856e8dff845959f5e19f970283, type: 3}
   - idWeapon: 71
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: c847d13ef95ba704ab36952429961bab, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 4676f9edf58879740b885869385e9c76, type: 3}
   - idWeapon: 131
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 47ecc19902eaf834385ee848e4b6a846, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: f4660ad6334a70e4bba04bfdef37d046, type: 3}
   - idWeapon: 135
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 3d9ab29aacca4614f86d9bc1a33f45d3, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 9421d64653c98d049a239dc1a5e8fe91, type: 3}
   - idWeapon: 195
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 9084c13acf54a8f478afe10ec9e5afaa, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 9fa4d0513fbce6a4aac5a2b6771f9fb6, type: 3}
   - idWeapon: 199
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 2c35235f22490ab428d364c8de08a4ac, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 20146c4a56187ef448b3e87a54496547, type: 3}
   - idWeapon: 259
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: d223236ca6700b44881b26d9da013385, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: c701600077ae55b41a15c728fffd0b57, type: 3}
   - idWeapon: 263
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: a74060262c489974db4b43fdf6797347, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 8e4a1b86fd9133d499f03ca46debdd61, type: 3}
   - idWeapon: 323
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: ce3726a7e0dcab843b0df17ce29a7eaa, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 1184e2842aa8ee54b9327e498a7758ca, type: 3}
   - idWeapon: 327
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 2a2aaa0124154854dacd77e2a5fe62f9, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 88533bc17c1784d48902fa2b9f3ba07b, type: 3}
   - idWeapon: 387
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 25bc7c7d870ef9848ae32a08d038877f, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 9ea20a5beda7e7d47b588d74fd1c2831, type: 3}
   - idWeapon: 391
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: efaba3bd13bcd28468d934893856bb11, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: c367be0c1bd15fa4a878457371f11aaf, type: 3}
   - idWeapon: 451
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 97860b2719e88b645b1ed35d246c5260, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 870c1d49073b5014e83904f6a37ba644, type: 3}
   - idWeapon: 455
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 2efae5d0f955fec4ca5f43c53d5286b7, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 0ed6a4c1225a2b54d8d964e6a29511de, type: 3}
   - idWeapon: 515
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 70bf859737512b7478d7f2690f791770, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 202d15d89cdb994459fb10b8653730df, type: 3}
   - idWeapon: 519
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: ee724cce073deaf4cace7e82d78b1051, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 6aa840075bdab944891d1ef5208b34fa, type: 3}
   - idWeapon: 579
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: fa91300eb86b4be46a1da089eb5f9455, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 4048e9b1c1239cd4897116ef4748961f, type: 3}
   - idWeapon: 583
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: fa91300eb86b4be46a1da089eb5f9455, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 4048e9b1c1239cd4897116ef4748961f, type: 3}
   - idWeapon: 643
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 8e3f689fe8d3a634aaeba1745643ce76, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 5705c39a95bac15438194bb211f70fd6, type: 3}
   - idWeapon: 647
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 046eba351b3c82147a340679113e8615, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 94a47d258b75fb648a5b1a54f470cfd0, type: 3}
   - idWeapon: 707
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: b7c49cc654fd71a42bf09dec99e3357f, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: dd9f7392488079d4e960ec3b86f90ca7, type: 3}
   - idWeapon: 775
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: b7c49cc654fd71a42bf09dec99e3357f, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: b7c49cc654fd71a42bf09dec99e3357f, type: 3}
   - idWeapon: 711
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 1913265875eab6a4682554026ad136f9, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 7161b3a00b1c42546983bb1f93554436, type: 3}
   - idWeapon: 835
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: dc4a8248b1747cd43a881606846a1a29, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 225b4fcb8fc5d184db37ce74c0c2619d, type: 3}
   - idWeapon: 771
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: 1913265875eab6a4682554026ad136f9, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 7161b3a00b1c42546983bb1f93554436, type: 3}
   - idWeapon: 839
-    nameWeapon: 
     weaponBackLibraries: {fileID: 7108339969198208228, guid: dc4a8248b1747cd43a881606846a1a29, type: 3}
     weaponFrontLibraries: {fileID: 7108339969198208228, guid: 225b4fcb8fc5d184db37ce74c0c2619d, type: 3}
 --- !u!50 &1678479801
@@ -8788,7 +8452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

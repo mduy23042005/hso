@@ -4,7 +4,6 @@ using UnityEngine.U2D.Animation;
 public class WeaponLibraries
 {
     public int idWeapon;
-    public string nameWeapon;
     public SpriteLibraryAsset weaponBackLibraries;
     public SpriteLibraryAsset weaponFrontLibraries;
 }
@@ -13,7 +12,6 @@ public class WeaponLibraries
 public class HelmetLibraries
 {
     public int idHelmet;
-    public string nameHelmet;
     public SpriteLibraryAsset helmetLibrariesAsset;
     public bool isHiddenHair = false;
 }
@@ -22,7 +20,6 @@ public class HelmetLibraries
 public class ArmorLibraries
 {
     public int idArmor;
-    public string nameArmor;
     public SpriteLibraryAsset armorLibrariesAsset;
 }
 
@@ -37,7 +34,6 @@ public class HeadLibraries
 public class LegArmorLibraries
 {
     public int idLegArmor;
-    public string nameLegArmor;
     public SpriteLibraryAsset legArmorLibrariesAsset;
 }
 

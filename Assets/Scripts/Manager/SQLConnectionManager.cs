@@ -1,6 +1,4 @@
-﻿using HSOEntities.Models;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -35,7 +33,7 @@ public class SQLConnectionManager : MonoBehaviour, IUpdatable
         }
         await Task.Run(() =>
         {
-            _ = data.Accounts.FirstOrDefault(); //Sau này tìm cách load dữ liệu 1 tài khoản đang đăng nhập vào game
+            _ = data.Accounts.FirstOrDefault();
         });
         Debug.Log("Database preloaded.");
     }
