@@ -27,6 +27,8 @@ public class EquipmentController : MonoBehaviour, IUpdatable
     private int idWing;
     private int idSkinWing;
 
+    private int[] idEquipmentSlotsArray = new int[16];
+
     private void Awake()
     {
         db = SQLConnectionManager.GetData();
@@ -45,6 +47,7 @@ public class EquipmentController : MonoBehaviour, IUpdatable
         ReadDatabase();
     }
 
+    // Đọc dữ liệu từ database và hiển thị vào Equipment Slots
     private void ReadDatabase()
     {
         int idAccount = LogInController.GetIDAccount();
@@ -70,7 +73,7 @@ public class EquipmentController : MonoBehaviour, IUpdatable
         idPet = account.Pet ?? 0;
 
         // Danh sách ID tương ứng index
-        int[] ids = new int[]
+        idEquipmentSlotsArray = new int[]
         {
             idWeapon,   //0
             idHelmet,   //1
@@ -90,16 +93,20 @@ public class EquipmentController : MonoBehaviour, IUpdatable
             idPet       //15
         };
 
-        for (int i = 0; i < equipmentSlots.Count && i < ids.Length; i++)
+        for (int i = 0; i < equipmentSlots.Count && i < idEquipmentSlotsArray.Length; i++)
         {
-            if (ids[i] == 0)
+            if (idEquipmentSlotsArray[i] == 0)
             {
                 equipmentSlots[i].sprite = inventoryController.GetItemDefault(i + 1);
             }
             else
             {
-                equipmentSlots[i].sprite = inventoryController.GetItem0(ids[i]);
+                equipmentSlots[i].sprite = inventoryController.GetItem0(idEquipmentSlotsArray[i]);
             }
         }
+    }
+    public int[] GetIDEquipmentSlots()
+    {
+        return idEquipmentSlotsArray;
     }
 }
