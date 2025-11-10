@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.EventSystems;
 
 public class Controller : MonoBehaviour, IUpdatable
@@ -12,7 +13,7 @@ public class Controller : MonoBehaviour, IUpdatable
     private bool isMovingToTarget = false;
     private Animator animator;
     private MenuController menu;
-
+    private bool isBusy = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,7 +42,7 @@ public class Controller : MonoBehaviour, IUpdatable
     public virtual void OnLateUpdate()
     {
 
-    }    
+    }
     public virtual void OnFixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
@@ -87,6 +88,10 @@ public class Controller : MonoBehaviour, IUpdatable
     //Hàm di chuyển có thể override trong Demo.cs
     protected virtual void MoveKeyboard()
     {
+        if (isBusy)
+        {
+            return;
+        }
         if (menu == null || !menu.getIsActive())
         {
             movement.x = Input.GetAxisRaw("Horizontal");
@@ -108,7 +113,7 @@ public class Controller : MonoBehaviour, IUpdatable
     }
     protected virtual void MoveMouse()
     {
-        if ((menu != null && menu.getIsActive()) || EventSystem.current.IsPointerOverGameObject())
+        if ((menu != null && menu.getIsActive()) || EventSystem.current.IsPointerOverGameObject() || isBusy)
         {
             return;
         }
@@ -197,9 +202,27 @@ public class Controller : MonoBehaviour, IUpdatable
         animator.SetFloat("LastHorizontal", lastMove.x);
         animator.SetFloat("LastVertical", lastMove.y);
     }
+
+    private void TriggerAnimation(string anim, float duration)
+    {
+        animator.SetTrigger(anim);
+        isBusy = true;
+        UpdateLastMoveToAnimator();
+        StartCoroutine(ResetBusy(duration));
+    }
+    private IEnumerator ResetBusy(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isBusy = false;
+    }
+
     //Cập nhật animation tạm thời trước khi có hệ thống animation tương tác hoàn chỉnh
     protected virtual void UpdateAnimation()
     {
+        if (isBusy)
+        {
+            return;
+        }
         // Stand
         if (movement.x == 0 && movement.y == 0)
         {
@@ -215,15 +238,13 @@ public class Controller : MonoBehaviour, IUpdatable
         // Atk
         if (Input.GetKeyDown(KeyCode.J))
         {
-            animator.SetTrigger("Atk");
-            animator.SetBool("isMove", false);
+            TriggerAnimation("Atk", 0.2f);
             UpdateLastMoveToAnimator();
         }
         // Injured
         if (Input.GetKeyDown(KeyCode.K))
         {
-            animator.SetTrigger("Injured");
-            animator.SetBool("isMove", false);
+            TriggerAnimation("Injured", 0.3f);
             UpdateLastMoveToAnimator();
         }
     }

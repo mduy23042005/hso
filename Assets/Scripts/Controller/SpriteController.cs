@@ -1,8 +1,10 @@
 ﻿using HSOEntities.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class SpriteController : MonoBehaviour, IUpdatable
 {
@@ -251,12 +253,27 @@ public class SpriteController : MonoBehaviour, IUpdatable
         // Stand
         if (state.IsName("Stand"))
         {
+            float t = state.normalizedTime % 1f;
+
+            float[] moveChangeTimes = { 0.0f, 0.5f }; // Clip dài 0:40 giây, đổi frame ở 0 / 0.4, 0.2 / 0.4
+
+            int frame = GetFrameByTime(t, moveChangeTimes);
+
             if (lastState != "Stand" + direction)
             {
                 lastFrame = -1;
                 lastState = "Stand" + direction;
                 SetAllResolvers("Stand", $"Stand{direction}");
             }
+                foreach (var r in resolvers)
+                {
+                    if (r != null && r.spriteLibrary != null && r.gameObject.name == "4_0_0")
+                    {
+                        r.SetCategoryAndLabel("Stand", $"Stand{direction}Frame{frame}");
+                        r.ResolveSpriteToSpriteRenderer();
+                    }
+                }
+            
         }
         // Move
         if (state.IsName("Move"))
@@ -279,7 +296,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         {
             float t = state.normalizedTime % 1f;
 
-            float[] moveChangeTimes = { 0.0f, 0.6667f }; // Clip dài 0:15 giây, đổi frame ở 0/0.5, 0.1/0.15
+            float[] moveChangeTimes = { 0.0f, 0.6667f }; // Clip dài 0:15 giây, đổi frame ở 0 / 0.15, 0.1 / 0.15
 
             int frame = GetFrameByTime(t, moveChangeTimes);
 
@@ -288,6 +305,29 @@ public class SpriteController : MonoBehaviour, IUpdatable
                 lastFrame = frame;
                 lastState = "Atk" + direction;
                 SetAllResolvers("Atk", $"Atk{direction}Frame{frame}");
+            }
+        }
+        //Injured
+        if (state.IsName("Injured"))
+        {
+            float t = state.normalizedTime % 1f;
+
+            float[] moveChangeTimes = { 0.0f, 0.5f }; // Clip dài 0:20 giây, đổi frame ở 0 / 0.2, 0.1 / 0.2
+
+            int frame = GetFrameByTime(t, moveChangeTimes);
+
+            if (frame != lastFrame || lastState != "Injured" + direction)
+            {
+                lastFrame = frame;
+                lastState = "Injured" + direction;
+                foreach (var r in resolvers)
+                {
+                    if (r != null && r.spriteLibrary != null && r.gameObject.name == "4_0_0")
+                    {
+                        r.SetCategoryAndLabel("Injured", $"Injured{direction}Frame{frame}");
+                        r.ResolveSpriteToSpriteRenderer();
+                    }
+                }
             }
         }
         // Die
