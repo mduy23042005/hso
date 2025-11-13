@@ -105,7 +105,11 @@ public class EquipmentController : MonoBehaviour, IUpdatable
             }
         }
     }
-    public int[] GetIDEquipmentSlots()
+    public void RefreshEquipmentUI()
+    {
+        ReadDatabase(); // Gọi lại logic load item từ database
+    }
+    public int[] GetEquipmentSlotsArray()
     {
         return idEquipmentSlotsArray;
     }

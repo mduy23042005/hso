@@ -238,7 +238,7 @@ public class Controller : MonoBehaviour, IUpdatable
         // Atk
         if (Input.GetKeyDown(KeyCode.J))
         {
-            TriggerAnimation("Atk", 0.2f);
+            TriggerAnimation("Atk", 0.25f);
             UpdateLastMoveToAnimator();
         }
         // Injured
