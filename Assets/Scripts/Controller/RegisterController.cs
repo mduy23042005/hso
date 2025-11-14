@@ -230,6 +230,16 @@ public class RegisterController : MonoBehaviour
                 Skill18 = 0,
                 Skill19 = 0,
                 Skill20 = 0,
+                CateWeapon = 1,
+                CateHelmet = 1,
+                CateArmor = 1,
+                CateLegArmor = 1,
+                CateGloves = 1,
+                CateShoes = 1,
+                CateRing1 = 1,
+                CateRing2 = 1,
+                CateNecklace = 1,
+                CateMedal = 1,
                 #endregion
             });
             db.SaveChanges();

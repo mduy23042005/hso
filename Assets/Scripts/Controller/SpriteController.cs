@@ -341,7 +341,10 @@ public class SpriteController : MonoBehaviour, IUpdatable
             }
         }
     }
-
+    public void RefreshCharacterSprite()
+    {
+        ReadDatabase(); // Gọi lại logic load item từ database
+    }
     private void SetAllResolvers(string category, string label)
     {
         foreach (var r in resolvers)

@@ -25,6 +25,7 @@ public class InventoryController : MonoBehaviour
     [Header("Các ô hành trang")]
     [SerializeField] private List<Image> inventorySlots;
     [SerializeField] private EquipmentController equipmentController;
+    [SerializeField] private List<SpriteController> spriteController;
     [SerializeField] private TMP_Text itemInfo;
 
     private Dictionary<int, Sprite> itemDefaultMap;
@@ -37,7 +38,6 @@ public class InventoryController : MonoBehaviour
     HSOEntities.Models.HSOEntities db;
     List<Account_Item0> inventoryItem0;
     private int idItem = 0;
-    private int idSlot = 0;
     int[] equippedItems;
 
     private void Awake()
@@ -48,12 +48,11 @@ public class InventoryController : MonoBehaviour
         item2Map = ConvertListToMap(item2);
         item3Map = ConvertListToMap(item3);
         item4Map = ConvertListToMap(item4);
-
         db = SQLConnectionManager.GetData();
     }
     private void Start()
     {
-        ReadDataBase();
+        ReadDatabase();
     }
     private Dictionary<int, Sprite> ConvertListToMap(List<Sprite> list)
     {
@@ -96,7 +95,7 @@ public class InventoryController : MonoBehaviour
     }
 
     // Đọc dữ liệu từ database và hiển thị vào Inventory Slots
-    private void ReadDataBase()
+    private void ReadDatabase()
     {
         int idAccount = LogInController.GetIDAccount();
         var account = db.Accounts.FirstOrDefault(acc => acc.IDAccount == idAccount);
@@ -176,11 +175,10 @@ public class InventoryController : MonoBehaviour
         if (idSlot >= 0 && idSlot < inventoryItem0.Count) // nếu id hợp lệ thì lấy idItem từ inventory
         {
             idItem = inventoryItem0[idSlot].IDItem0;
-            this.idSlot = idSlot;
             categoryItem = inventoryItem0[idSlot].Category;
         }
 
-        if (idItem == 0) // Slot trống hoặc ngoài phạm vi
+        if (idItem == 0 || idSlot >= inventoryItem0.Count) // Slot trống hoặc ngoài phạm vi
         {
             Debug.Log("Slot này chưa có item");
             return;
@@ -202,6 +200,24 @@ public class InventoryController : MonoBehaviour
         {
             itemInfo.text += $"{r.Value} {r.AttributeName}\n";
         }
+    }
+
+    // Kiểm tra Item trước khi Equip
+    private bool CheckBeforeEquipItem(int type, int cate)
+    {
+        bool exists = db.Item0.Any(x => x.IDItem0 == type) && cate >= 1 && cate <= 5;
+        if (!exists)
+        {
+            var itemToEquip = inventoryItem0.FirstOrDefault(i => i.IDItem0 == idItem);
+
+            var deleteItemToEquip = inventoryItem0.Where(x => x.IDItem0 == itemToEquip.IDItem0).FirstOrDefault();
+            if (deleteItemToEquip != null)
+            {
+                db.Account_Item0.Remove(deleteItemToEquip);
+            }
+            return exists; // false
+        }
+        return exists; // true
     }
     public void ClickEquipItem()
     {
@@ -229,97 +245,157 @@ public class InventoryController : MonoBehaviour
         switch (inFoItemToEquip.TypeItem0)
         {
             case "Weapon":
-                var typeSupportW = account.Weapon;
-                var cateSupportW = account.CateWeapon;
+                var typeSupportW = account.Weapon.GetValueOrDefault();
+                var cateSupportW = account.CateWeapon.GetValueOrDefault();
                 account.Weapon = itemToEquip.IDItem0;
                 account.CateWeapon = itemToEquip.Category;
-                itemToEquip.IDItem0 = typeSupportW ?? 1;
-                itemToEquip.Category = cateSupportW ?? 1;
+                if (CheckBeforeEquipItem(typeSupportW, cateSupportW))
+                {
+                    itemToEquip.IDItem0 = typeSupportW;
+                    itemToEquip.Category = cateSupportW;
+                    break;
+                }
                 break;
-
             case "Helmet":
-                var typeSupportH = account.Helmet;
-                var cateSupportH = account.CateHelmet;
+                var typeSupportH = account.Helmet.GetValueOrDefault();
+                var cateSupportH = account.CateHelmet.GetValueOrDefault();
                 account.Helmet = itemToEquip.IDItem0;
                 account.CateHelmet = itemToEquip.Category;
-                itemToEquip.IDItem0 = typeSupportH ?? 1;
-                itemToEquip.Category = cateSupportH ?? 1;
+                if (CheckBeforeEquipItem(typeSupportH, cateSupportH))
+                {
+                    itemToEquip.IDItem0 = typeSupportH;
+                    itemToEquip.Category = cateSupportH;
+                    break;
+                }
                 break;
             case "Armor":
-                var typeSupportA = account.Armor;
-                var cateSupportA = account.CateArmor;
+                var typeSupportA = account.Armor.GetValueOrDefault();
+                var cateSupportA = account.CateArmor.GetValueOrDefault();
                 account.Armor = itemToEquip.IDItem0;
                 account.CateArmor = itemToEquip.Category;
-                itemToEquip.IDItem0 = typeSupportA ?? 1;
-                itemToEquip.Category = cateSupportA ?? 1;
+                if (CheckBeforeEquipItem(typeSupportA, cateSupportA))
+                {
+                    itemToEquip.IDItem0 = typeSupportA;
+                    itemToEquip.Category = cateSupportA;
+                    break;
+                }
                 break;
             case "LegArmor":
-                var typeSupportL = account.LegArmor;
-                var cateSupportL = account.CateLegArmor;
+                var typeSupportL = account.LegArmor.GetValueOrDefault();
+                var cateSupportL = account.CateLegArmor.GetValueOrDefault();
                 account.LegArmor = itemToEquip.IDItem0;
                 account.CateLegArmor = itemToEquip.Category;
-                itemToEquip.IDItem0 = typeSupportL ?? 1;
-                itemToEquip.Category = cateSupportL ?? 1;
+                if (CheckBeforeEquipItem(typeSupportL, cateSupportL))
+                {
+                    itemToEquip.IDItem0 = typeSupportL;
+                    itemToEquip.Category = cateSupportL;
+                    break;
+                }
                 break;
             case "Gloves":
-                var typeSupportG = account.Gloves;
-                var cateSupportG = account.CateGloves;
+                var typeSupportG = account.Gloves.GetValueOrDefault();
+                var cateSupportG = account.CateGloves.GetValueOrDefault();
                 account.Gloves = itemToEquip.IDItem0;
                 account.CateGloves = itemToEquip.Category;
-                itemToEquip.IDItem0 = typeSupportG ?? 1;
-                itemToEquip.Category = cateSupportG ?? 1;
+                if (CheckBeforeEquipItem(typeSupportG, cateSupportG))
+                {
+                    itemToEquip.IDItem0 = typeSupportG;
+                    itemToEquip.Category = cateSupportG;
+                    break;
+                }
                 break;
             case "Shoes":
-                var typeSupportS = account.Shoes;
-                var cateSupportS = account.CateShoes;
+                var typeSupportS = account.Shoes.GetValueOrDefault();
+                var cateSupportS = account.CateShoes.GetValueOrDefault();
                 account.Shoes = itemToEquip.IDItem0;
                 account.CateShoes = itemToEquip.Category;
-                itemToEquip.IDItem0 = typeSupportS ?? 1;
-                itemToEquip.Category = cateSupportS ?? 1;
+                if (CheckBeforeEquipItem(typeSupportS, cateSupportS))
+                {
+                    itemToEquip.IDItem0 = typeSupportS;
+                    itemToEquip.Category = cateSupportS;
+                    break;
+                }
                 break;
             case "Ring": // riêng ring từ từ tính =)))
                 // Xác định xem là nhẫn 1 hay nhẫn 2
                 if (account.Ring1 == itemToEquip.IDItem0 || account.CateRing1 == itemToEquip.Category)
                 {
-                    var typeSupportR1 = account.Ring1;
-                    var cateSupportR1 = account.CateRing1;
+                    var typeSupportR1 = account.Ring1.GetValueOrDefault();
+                    var cateSupportR1 = account.CateRing1.GetValueOrDefault();
                     account.Ring1 = itemToEquip.IDItem0;
                     account.CateRing1 = itemToEquip.Category;
-                    itemToEquip.IDItem0 = typeSupportR1 ?? 1;
-                    itemToEquip.Category = cateSupportR1 ?? 1;
+                    if (CheckBeforeEquipItem(typeSupportR1, cateSupportR1))
+                    {
+                        itemToEquip.IDItem0 = typeSupportR1;
+                        itemToEquip.Category = cateSupportR1;
+                        break;
+                    }
                 }
                 else
                 {
-                    var typeSupportR2 = account.Ring2;
-                    var cateSupportR2 = account.CateRing2;
+                    var typeSupportR2 = account.Ring2.GetValueOrDefault();
+                    var cateSupportR2 = account.CateRing2.GetValueOrDefault();
                     account.Ring2 = itemToEquip.IDItem0;
                     account.CateRing2 = itemToEquip.Category;
-                    itemToEquip.IDItem0 = typeSupportR2 ?? 1;
-                    itemToEquip.Category = cateSupportR2 ?? 1;
+                    if (CheckBeforeEquipItem(typeSupportR2, cateSupportR2))
+                    {
+                        itemToEquip.IDItem0 = typeSupportR2;
+                        itemToEquip.Category = cateSupportR2;
+                        break;
+                    }
                 }
                 break;
             case "Necklace":
-                var typeSupportN = account.Necklace;
-                var cateSupportN = account.CateNecklace;
+                var typeSupportN = account.Necklace.GetValueOrDefault();
+                var cateSupportN = account.CateNecklace.GetValueOrDefault();
                 account.Necklace = itemToEquip.IDItem0;
                 account.CateNecklace = itemToEquip.Category;
-                itemToEquip.IDItem0 = typeSupportN ?? 1;
-                itemToEquip.Category = cateSupportN ?? 1;
+                if (CheckBeforeEquipItem(typeSupportN, cateSupportN))
+                {
+                    itemToEquip.IDItem0 = typeSupportN;
+                    itemToEquip.Category = cateSupportN;
+                    break;
+                }
                 break;
             case "Medal":
-                var typeSupportM = account.Medal;
-                var cateSupportM = account.CateMedal;
+                var typeSupportM = account.Medal.GetValueOrDefault();
+                var cateSupportM = account.CateMedal.GetValueOrDefault();
                 account.Medal = itemToEquip.IDItem0;
                 account.CateMedal = itemToEquip.Category;
-                itemToEquip.IDItem0 = typeSupportM ?? 1;
-                itemToEquip.Category = cateSupportM ?? 1;
+                if (CheckBeforeEquipItem(typeSupportM, cateSupportM))
+                {
+                    itemToEquip.IDItem0 = typeSupportM;
+                    itemToEquip.Category = cateSupportM;
+                    break;
+                }
                 break;
-            case "":
+            default:
                 Debug.LogWarning("Item không có loại hợp lệ để trang bị.");
                 break;
         }
         db.SaveChanges();
         equipmentController.RefreshEquipmentUI();
-        ReadDataBase();
+        switch (account.IDSchool)
+        {
+            case 1: // Chiến binh
+                spriteController[0].RefreshCharacterSprite();
+                spriteController[1].RefreshCharacterSprite();
+                break;
+            case 2: // Sát thủ
+                spriteController[2].RefreshCharacterSprite();
+                spriteController[3].RefreshCharacterSprite();
+                break;
+            case 3: // Pháp sư
+                spriteController[4].RefreshCharacterSprite();
+                spriteController[5].RefreshCharacterSprite();
+                break;
+                /*
+            case 4: // Xạ thủ
+                spriteController[6].RefreshCharacterSprite();
+                spriteController[7].RefreshCharacterSprite();
+                break;
+                */
+        }
+        ReadDatabase();
     }
 }
