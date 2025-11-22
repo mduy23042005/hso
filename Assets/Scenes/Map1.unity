@@ -241,7 +241,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -373,7 +373,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -505,7 +505,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -637,12 +637,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 66
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -769,12 +769,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 108
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -901,7 +901,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2128,12 +2128,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 103
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2260,12 +2260,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 117
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2392,12 +2392,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 51
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2524,7 +2524,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2656,12 +2656,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 43
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2788,7 +2788,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3215,12 +3215,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 88
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3347,7 +3347,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3479,12 +3479,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 112
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3611,12 +3611,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 60
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3743,12 +3743,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 107
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4040,12 +4040,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 91
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4172,12 +4172,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 95
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4304,12 +4304,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 45
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4436,7 +4436,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4568,7 +4568,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4700,12 +4700,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 42
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4832,7 +4832,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4964,12 +4964,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 111
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5096,12 +5096,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 104
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5228,7 +5228,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5390,12 +5390,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 98
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5692,12 +5692,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 49
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5913,7 +5913,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6045,12 +6045,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 54
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6192,7 +6192,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6324,7 +6324,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6592,12 +6592,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 44
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6735,12 +6735,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 86
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6867,12 +6867,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 53
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6999,7 +6999,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7378,12 +7378,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 99
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7510,7 +7510,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7653,12 +7653,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 70
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7818,12 +7818,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 123
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7950,12 +7950,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 52
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8082,12 +8082,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 130
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8214,12 +8214,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 125
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8346,7 +8346,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8478,12 +8478,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 85
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8748,12 +8748,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 119
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8880,12 +8880,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 96
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9012,12 +9012,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 63
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9144,12 +9144,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 90
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9276,7 +9276,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9408,12 +9408,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 74
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9540,12 +9540,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 93
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9805,12 +9805,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 48
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9937,12 +9937,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 57
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10069,7 +10069,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10201,12 +10201,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 105
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10500,7 +10500,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10632,7 +10632,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10764,12 +10764,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 120
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10964,12 +10964,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 109
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11096,12 +11096,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 68
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11228,12 +11228,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 101
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11360,12 +11360,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 102
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11608,12 +11608,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 78
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11740,7 +11740,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11950,7 +11950,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12206,12 +12206,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 55
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12338,12 +12338,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 131
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12470,12 +12470,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 122
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12624,12 +12624,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 76
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12756,7 +12756,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12888,7 +12888,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13050,12 +13050,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 77
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13318,7 +13318,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13450,7 +13450,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13604,12 +13604,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 73
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13736,7 +13736,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13868,7 +13868,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14000,12 +14000,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 129
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14132,12 +14132,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 121
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14264,12 +14264,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 82
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14771,7 +14771,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14903,12 +14903,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 94
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15035,12 +15035,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 118
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15167,7 +15167,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15299,7 +15299,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15431,12 +15431,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 127
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15563,12 +15563,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 61
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15695,7 +15695,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15827,12 +15827,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 80
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15959,12 +15959,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 92
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16091,7 +16091,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16223,7 +16223,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16355,7 +16355,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16487,7 +16487,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16619,7 +16619,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16751,12 +16751,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 58
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16883,7 +16883,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17015,12 +17015,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 59
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17147,7 +17147,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17279,7 +17279,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17411,12 +17411,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 71
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17543,12 +17543,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 100
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17675,12 +17675,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 46
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17807,12 +17807,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 124
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17939,7 +17939,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18071,12 +18071,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 41
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -18203,7 +18203,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18335,7 +18335,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18467,7 +18467,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18599,7 +18599,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18731,7 +18731,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18863,7 +18863,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18995,7 +18995,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19127,7 +19127,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19259,12 +19259,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 97
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19391,12 +19391,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 69
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19659,12 +19659,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 84
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -36802,7 +36802,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36934,12 +36934,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 67
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37066,12 +37066,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 89
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37198,12 +37198,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 110
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37330,12 +37330,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 64
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37462,12 +37462,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 50
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37727,7 +37727,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37859,12 +37859,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 106
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37991,12 +37991,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 115
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -38123,12 +38123,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 79
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -38255,12 +38255,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 114
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -38387,12 +38387,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 72
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -38970,12 +38970,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 65
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39132,7 +39132,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39264,12 +39264,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 87
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39396,12 +39396,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 56
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39528,12 +39528,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 128
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39660,7 +39660,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39792,12 +39792,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 113
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39924,7 +39924,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40056,7 +40056,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40188,12 +40188,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 126
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40320,12 +40320,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 62
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40452,12 +40452,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 116
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40584,12 +40584,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 47
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40716,12 +40716,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 75
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40848,12 +40848,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 81
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40980,12 +40980,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInInventory
+        m_MethodName: ClickReadAttributeInInventory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 83
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -41112,7 +41112,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 42086431}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: ReadAttributeInEquipment
+        m_MethodName: ClickReadAttributeInEquipment
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

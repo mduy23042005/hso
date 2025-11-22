@@ -1,0 +1,60 @@
+﻿using Newtonsoft.Json;
+using System.Net.Http;
+using System.Threading.Tasks;
+using UnityEngine;
+
+public class APIManager : MonoBehaviour, IUpdatable
+{
+    private readonly HttpClient client = new HttpClient();
+    private const string apiUrl = "https://localhost:44394";
+
+    private void OnEnable()
+    {
+        GameManager.Instance.Register(this);
+        RegisterDontDestroyOnLoad();
+        _ = TestAPI(); // gọi async load dữ liệu
+    }
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.Unregister(this);
+    }
+    public void OnUpdate() { }
+    public void OnFixedUpdate() { }
+    public void OnLateUpdate() { }
+    public void RegisterDontDestroyOnLoad()
+    {
+        GameManager.Instance.RegisterPersistent(this);
+    }
+
+    public string GetApiUrl()
+    {
+        return apiUrl;
+    }
+    public HttpClient GetHttpClient()
+    {
+        return client;
+    }
+
+    private async Task TestAPI()
+    {
+        try
+        {
+            HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Debug.Log("API: Kết nối Database thành công.");
+            }
+            else
+            {
+                Debug.LogError($"API trả về mã lỗi: {response.StatusCode}");
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("API: Kết nối Database thất bại.");
+        }
+    }
+
+}
