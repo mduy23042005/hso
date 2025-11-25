@@ -1,10 +1,10 @@
-﻿using HSOEntities.Models;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
+using System.Net.Http;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class SpriteController : MonoBehaviour, IUpdatable
 {
@@ -32,7 +32,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
     private int currentHair = 0;
     private int currentWeapon = 0;
 
-    private HSOEntities.Models.HSOEntities db;
+    private APIManager api;
 
     void Awake()
     {
@@ -40,11 +40,11 @@ public class SpriteController : MonoBehaviour, IUpdatable
         resolvers = GetComponentsInChildren<SpriteResolver>().ToList();
         animator = GetComponent<Animator>();
         controller = GetComponent<Controller>();
-        db = SQLConnectionManager.GetData();
+        api = Object.FindFirstObjectByType<APIManager>();
     }
     void Start()
     {
-        ReadDatabase();
+        _ = ReadDatabase();
     }
 
     private void OnEnable()
@@ -68,27 +68,6 @@ public class SpriteController : MonoBehaviour, IUpdatable
         UpdateSprite();
     }
     public void OnFixedUpdate() { }
-
-    public void CheckIncrease()
-    {
-        EquipLegArmor((currentLegArmor + 1) % legArmorLibraries.Count);
-        EquipArmor((currentArmor + 1) % armorLibraries.Count);
-        EquipHelmet((currentHelmet + 1) % helmetLibraries.Count);
-        EquipWeapon((currentWeapon + 1) % weaponLibraries.Count);
-        EquipHair((currentHair + 1) % hairLibraries.Count);
-
-        UpdateDatabase();
-    }
-    public void CheckDecrease()
-    {
-        EquipLegArmor((currentLegArmor - 1 + legArmorLibraries.Count) % legArmorLibraries.Count);
-        EquipArmor((currentArmor - 1 + armorLibraries.Count) % armorLibraries.Count);
-        EquipHelmet((currentHelmet - 1 + helmetLibraries.Count) % helmetLibraries.Count);
-        EquipWeapon((currentWeapon - 1 + weaponLibraries.Count) % weaponLibraries.Count);
-        EquipHair((currentHair - 1 + hairLibraries.Count) % hairLibraries.Count);
-
-        UpdateDatabase();
-    }
 
     public void NextHead()
     {
@@ -140,64 +119,37 @@ public class SpriteController : MonoBehaviour, IUpdatable
         spriteLibrary[6].spriteLibraryAsset = weaponLibraries[weaponIndex].weaponBackLibraries;
     }
 
-    private void UpdateDatabase()
-    {
-        // 1. Lấy item LegArmor theo IDItem0
-        int idLegArmor = legArmorLibraries[currentLegArmor].idLegArmor;
-        int idArmor = armorLibraries[currentArmor].idArmor;
-        int idHelmet = helmetLibraries[currentHelmet].idHelmet;
-        int idWeapon = weaponLibraries[currentWeapon].idWeapon;
-        int idHair = hairLibraries[currentHair] != null ? currentHair : 0;
-
-        var legArmorData = db.Item0.FirstOrDefault(item => item.IDItem0 == idLegArmor);
-        var armorData = db.Item0.FirstOrDefault(item => item.IDItem0 == idArmor);
-        var helmetData = db.Item0.FirstOrDefault(item => item.IDItem0 == idHelmet);
-        var weaponData = db.Item0.FirstOrDefault(item => item.IDItem0 == idWeapon);
-
-        // 2. Lấy account đúng theo IDAccount
-        int idAccount = LogInController.GetIDAccount();
-        var account = db.Accounts.FirstOrDefault(acc => acc.IDAccount == idAccount);
-
-        // 3. Cập nhật cột LegArmor trong bảng Account
-        if (account != null)
-        {
-            account.LegArmor = legArmorData.IDItem0;
-            account.Armor = armorData.IDItem0;
-            account.Helmet = helmetData.IDItem0;
-            account.Weapon = weaponData.IDItem0;
-            account.Hair = idHair;
-            db.SaveChanges();
-            Debug.Log("Cập nhật trang bị nhân vật thành công trong bảng Account.");
-        }
-    }
-    private void ReadDatabase()
+    private async Task ReadDatabase()
     {
         int idAccount = LogInController.GetIDAccount();
-        var account = db.Accounts.FirstOrDefault(acc => acc.IDAccount == idAccount);
-        if (account != null)
+
+        try
         {
-            var legArmorData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.LegArmor);
-            var armorData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.Armor);
-            var helmetData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.Helmet);
-            var weaponData = db.Item0.FirstOrDefault(item => item.IDItem0 == account.Weapon);
+            string urlItems = $"{api.GetApiUrl()}/api/account/{idAccount}/equipment?idAccount={idAccount}";
+            HttpResponseMessage res = await api.GetHttpClient().GetAsync(urlItems);
+            string json = await res.Content.ReadAsStringAsync();
+            List<Account_Equipment> equipment = JsonConvert.DeserializeObject<List<Account_Equipment>>(json);
 
-            currentLegArmor = legArmorLibraries.FindIndex(la => la.idLegArmor == legArmorData.IDItem0);
-            currentArmor = armorLibraries.FindIndex(a => a.idArmor == armorData.IDItem0);
-            currentHelmet = helmetLibraries.FindIndex(h => h.idHelmet == helmetData.IDItem0);
-            currentWeapon = weaponLibraries.FindIndex(w => w.idWeapon == weaponData.IDItem0);
-            if (account.Hair >= 0 && account.Hair < hairLibraries.Count) currentHair = account.Hair ?? 0;
+            var weaponData = equipment[0].IDItem0_1;
+            var helmetData = equipment[1].IDItem0_1;
+            var armorData = equipment[2].IDItem0_1;
+            var legArmorData = equipment[3].IDItem0_1;
 
-            if (currentLegArmor < 0) currentLegArmor = 0;
-            if (currentArmor < 0) currentArmor = 0;
-            if (currentHelmet < 0) currentHelmet = 0;
-            if (currentWeapon < 0) currentWeapon = 0;
-            if (currentHair < 0) currentHair = 0;
+            currentWeapon = weaponLibraries.FindIndex(w => w.idWeapon == weaponData);
+            currentHelmet = helmetLibraries.FindIndex(h => h.idHelmet == helmetData);
+            currentArmor = armorLibraries.FindIndex(a => a.idArmor == armorData);
+            currentLegArmor = legArmorLibraries.FindIndex(la => la.idLegArmor == legArmorData);
 
             EquipLegArmor(currentLegArmor);
             EquipArmor(currentArmor);
             EquipHelmet(currentHelmet);
             EquipWeapon(currentWeapon);
             EquipHair(currentHair);
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"lỗi đọc database cho sprite: {ex.Message}");
+            return;
         }
     }
 
@@ -343,7 +295,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
     }
     public void RefreshCharacterSprite()
     {
-        ReadDatabase(); // Gọi lại logic load item từ database
+        _ = ReadDatabase(); // Gọi lại logic load item từ database
     }
     private void SetAllResolvers(string category, string label)
     {

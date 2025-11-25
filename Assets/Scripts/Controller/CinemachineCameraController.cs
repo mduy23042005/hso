@@ -8,12 +8,9 @@ public class CinemachineCameraController : MonoBehaviour
 {
     [SerializeField] private List<Transform> accountTransform;
     private CinemachineCamera virtualCamera;
-    private HSOEntities.Models.HSOEntities db;
 
     private void Awake()
     {
-        db = SQLConnectionManager.GetData();
-
         virtualCamera = GetComponent<CinemachineCamera>();
     }
     void Start()

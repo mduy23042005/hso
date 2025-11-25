@@ -1,15 +1,17 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using TMPro;
 using UnityEngine;
 
 public class MenuController : MonoBehaviour, IUpdatable
 {
+    [SerializeField] private GameObject itemInfo;
+
     private GameObject playerDemo;
     private GameObject chienBinhDemo;
     private GameObject satThuDemo;
     private GameObject phapSuDemo;
     //private GameObject xaThuDemo;
+
+    private TMP_Text infoText;
 
     private bool isActive = false;
     private void Awake()
@@ -19,6 +21,8 @@ public class MenuController : MonoBehaviour, IUpdatable
         satThuDemo = playerDemo.transform.Find("SatThu").gameObject;
         phapSuDemo = playerDemo.transform.Find("PhapSu").gameObject;
         //xaThuDemo = playerDemo.transform.Find("XaThu").gameObject;
+
+        infoText = itemInfo.GetComponent<TMP_Text>();
     }
     private void Start()
     {
@@ -83,6 +87,9 @@ public class MenuController : MonoBehaviour, IUpdatable
     {
         isActive = false;
         gameObject.SetActive(isActive);
+
+        infoText.text = "";
+        itemInfo.SetActive(false);
     }
     public bool getIsActive()
     {

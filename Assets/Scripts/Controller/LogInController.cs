@@ -16,7 +16,7 @@ public class LogInController : MonoBehaviour
 
     private void Awake()
     {
-        api = FindObjectOfType<APIManager>();
+        api = Object.FindFirstObjectByType<APIManager>();
     }
     public async Task<Account> LoginAsync(string username, string password) 
     { 

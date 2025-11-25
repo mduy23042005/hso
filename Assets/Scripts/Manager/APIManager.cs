@@ -53,8 +53,26 @@ public class APIManager : MonoBehaviour, IUpdatable
         }
         catch (System.Exception ex)
         {
-            Debug.LogError("API: Kết nối Database thất bại.");
+            Debug.LogError("API: Kết nối Database thất bại." + ex.Message);
         }
     }
 
+    public async Task<string> PostAsync(string endpoint)
+    {
+        try
+        {
+            // Sửa cách nối URL: đảm bảo có dấu '/'
+            string url = endpoint.StartsWith("https") ? endpoint : $"{apiUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}";
+
+            HttpResponseMessage response = await client.PostAsync(url, null);
+
+            string result = await response.Content.ReadAsStringAsync();
+            return result;
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("POST API lỗi: " + ex.Message);
+            return null;
+        }
+    }
 }

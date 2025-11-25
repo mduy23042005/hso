@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,7 +36,8 @@ public class RegisterController : MonoBehaviour
     private int[] idHair = new int[4];
     private int idBlessing = 0;
     private string[] nameBlessing;
-    HSOEntities.Models.HSOEntities db;
+
+    private APIManager api;
 
     private void Awake()
     {
@@ -46,6 +49,7 @@ public class RegisterController : MonoBehaviour
             uiPickXaThu = GameObject.Find("UIPickXaThu").GetComponent<Animator>();
         }
         nameBlessing = new string[] { "Ánh sáng", "Bóng tối" };
+        api = Object.FindFirstObjectByType<APIManager>();
     }
     #region ChangeHair
     private bool CheckOptionSchool()
@@ -77,9 +81,9 @@ public class RegisterController : MonoBehaviour
     public void NextHair()
     {
         if (idSchool == 0)
-        {   
+        {
             SendErrorSchool();
-            return; 
+            return;
         }
         idHair[idSchool - 1] = (idHair[idSchool - 1] + 1) % hairLibraries.Count;
         EquipHair(idHair[idSchool - 1]);
@@ -119,7 +123,7 @@ public class RegisterController : MonoBehaviour
     }
     #endregion ChangeBlessing
 
-    public void ClickRegister()
+    public async void ClickRegister()
     {
         idSchool = DemoController.GetIDSchool();
         if (idSchool == 0)
@@ -127,80 +131,38 @@ public class RegisterController : MonoBehaviour
             SendErrorSchool();
             return;
         }
+
         string nameChar = inputNameChar.text.Trim();
         string username = inputUsername.text.Trim();
         string password = inputPassword.text.Trim();
-        int weapon = 0;
-        int helmet = 0;
-        int armor = 0;
-        int legArmor = 0;
         int hair = idHair[idSchool - 1];
         int blessingPoints = idBlessing;
-        db = SQLConnectionManager.GetData();
 
-        bool usernameExists = db.Accounts.Any(a => a.Username == username);
-        if (usernameExists)
-        {
-            textMessageUsername.color = Color.white;
-            textMessageUsername.text = "!";
-            return;
-        }
-
-        bool nameCharExists = db.Accounts.Any(a => a.NameChar == nameChar);
-        if (nameCharExists)
-        {
-            textMessageNameChar.color = Color.white;
-            textMessageNameChar.text = "!";
-            return;
-        }
-
+        int weapon = 0, helmet = 0, armor = 0, legArmor = 0;
         switch (idSchool)
         {
-            case 1:
-                weapon = 1; helmet = 9; armor = 17; legArmor = 25;
-                break;
-            case 2:
-                weapon = 2; helmet = 10; armor = 18; legArmor = 26;
-                break;
-            case 3:
-                weapon = 3; helmet = 11; armor = 19; legArmor = 27;
-                break;
-            case 4:
-                weapon = 4; helmet = 12; armor = 20; legArmor = 28;
-                break;
+            case 1: weapon = 1; helmet = 9; armor = 17; legArmor = 25; break;
+            case 2: weapon = 2; helmet = 10; armor = 18; legArmor = 26; break;
+            case 3: weapon = 3; helmet = 11; armor = 19; legArmor = 27; break;
+            case 4: weapon = 4; helmet = 12; armor = 20; legArmor = 28; break;
         }
 
-        if (CheckAllInfo(idSchool, inputNameChar, inputUsername, inputPassword))
+        if (!CheckAllInfo(idSchool, inputNameChar, inputUsername, inputPassword)) return;
+
+        // Tạo object để gửi lên API
+        var registerData = new
         {
-            db.Accounts.Add(new HSOEntities.Models.Account
+            Account = new Account
             {
-                NameChar = nameChar,
                 Username = username,
                 Password = password,
+                NameChar = nameChar,
                 IDSchool = idSchool,
-                Weapon = weapon,
-                Helmet = helmet,
-                Armor = armor,
-                LegArmor = legArmor,
-                Hair = hair,
-                BlessingPoints = blessingPoints,
-                #region DefaultValueForColumn
                 Level = 1,
                 SkillPoints = 0,
                 StatPoints = 0,
                 Exp = 0,
-                Gloves = 0,
-                Shoes = 0,
-                Ring1 = 0,
-                Ring2 = 0,
-                Necklace = 0,
-                Medal = 0,
-                Cloak = 0,
-                Wing = 0,
-                SkinWing = 0,
-                Mounts = 0,
-                Pet = 0,
-                Skin = 0,
+                Hair = hair,
                 Gold = 20000,
                 Gem = 2000,
                 Point0 = 0,
@@ -230,23 +192,45 @@ public class RegisterController : MonoBehaviour
                 Skill18 = 0,
                 Skill19 = 0,
                 Skill20 = 0,
-                CateWeapon = 1,
-                CateHelmet = 1,
-                CateArmor = 1,
-                CateLegArmor = 1,
-                CateGloves = 1,
-                CateShoes = 1,
-                CateRing1 = 1,
-                CateRing2 = 1,
-                CateNecklace = 1,
-                CateMedal = 1,
-                #endregion
-            });
-            db.SaveChanges();
-            Debug.Log("Đăng ký thành công!");
-            SceneManager.LoadScene("Main");
+                Clan = null,
+                BlessingPoints = blessingPoints
+            },
+            Equipment = new List<Account_Equipment>
+        {
+            new Account_Equipment { IDItem0_1 = weapon, SlotName = "Weapon", Category = 1 },
+            new Account_Equipment { IDItem0_1 = helmet, SlotName = "Helmet", Category = 1 },
+            new Account_Equipment { IDItem0_1 = armor, SlotName = "Armor", Category = 1 },
+            new Account_Equipment { IDItem0_1 = legArmor, SlotName = "LegArmor", Category = 1 }
+        }
+        };
+
+        try
+        {
+
+            string json = JsonConvert.SerializeObject(registerData);
+            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+
+            HttpResponseMessage result = await api.GetHttpClient().PostAsync($"{api.GetApiUrl()}/api/account/register", content);
+
+            if (result.IsSuccessStatusCode)
+            {
+                Debug.Log("Đăng ký thành công!");
+                SceneManager.LoadScene("Main");
+            }
+            else
+            {
+                string errorMsg = await result.Content.ReadAsStringAsync();
+                Debug.LogError($"Đăng ký thất bại: {errorMsg}");
+                // Hiển thị lỗi lên UI nếu cần
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Lỗi khi gọi API: {ex.Message}");
         }
     }
+
+
     private bool CheckAllInfo(int idSchool, TMP_InputField nameChar, TMP_InputField username, TMP_InputField password)
     {
         bool isValid = true;

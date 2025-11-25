@@ -7,10 +7,9 @@
     public int IDSchool;
     public int Level;
     public int SkillPoints;
-    public int Statpoints;
+    public int StatPoints;
     public int Exp;
     public int Hair;
-    public int Weapon;
     public int Gold;
     public int Gem;
     public int Point0;
