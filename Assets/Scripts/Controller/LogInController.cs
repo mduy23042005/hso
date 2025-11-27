@@ -64,7 +64,7 @@ public class LogInController : MonoBehaviour
     {
         return idSchool;
     }
-    public static int GetIDAccount()
+    public static int? GetIDAccount() //nếu bấm vào Đăng ký thì idAccount = 0
     {
         return idAccount;
     }

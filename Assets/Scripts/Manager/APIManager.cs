@@ -61,7 +61,6 @@ public class APIManager : MonoBehaviour, IUpdatable
     {
         try
         {
-            // Sửa cách nối URL: đảm bảo có dấu '/'
             string url = endpoint.StartsWith("https") ? endpoint : $"{apiUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}";
 
             HttpResponseMessage response = await client.PostAsync(url, null);
@@ -75,4 +74,24 @@ public class APIManager : MonoBehaviour, IUpdatable
             return null;
         }
     }
+    public async Task<string> PostAsync(string endpoint, HttpContent content)
+    {
+        try
+        {
+            string url = endpoint.StartsWith("https")
+                ? endpoint
+                : $"{apiUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}";
+
+            HttpResponseMessage response = await client.PostAsync(url, content);
+
+            string result = await response.Content.ReadAsStringAsync();
+            return result;
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("POST API lỗi: " + ex.Message);
+            return null;
+        }
+    }
+
 }

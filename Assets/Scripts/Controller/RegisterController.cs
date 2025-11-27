@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using TMPro;
 using UnityEngine;
@@ -200,13 +199,24 @@ public class RegisterController : MonoBehaviour
             new Account_Equipment { IDItem0_1 = weapon, SlotName = "Weapon", Category = 1 },
             new Account_Equipment { IDItem0_1 = helmet, SlotName = "Helmet", Category = 1 },
             new Account_Equipment { IDItem0_1 = armor, SlotName = "Armor", Category = 1 },
-            new Account_Equipment { IDItem0_1 = legArmor, SlotName = "LegArmor", Category = 1 }
+            new Account_Equipment { IDItem0_1 = legArmor, SlotName = "LegArmor", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Gloves", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Shoes", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Ring1", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Ring2", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Necklace", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Medal", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Cloak", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Wing", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "SkinWing", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Mounts", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Pet", Category = 1 },
+            new Account_Equipment { IDItem0_1 = 0, SlotName = "Skin", Category = 1 },
         }
         };
 
         try
         {
-
             string json = JsonConvert.SerializeObject(registerData);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
@@ -229,7 +239,6 @@ public class RegisterController : MonoBehaviour
             Debug.LogError($"Lỗi khi gọi API: {ex.Message}");
         }
     }
-
 
     private bool CheckAllInfo(int idSchool, TMP_InputField nameChar, TMP_InputField username, TMP_InputField password)
     {
@@ -257,7 +266,7 @@ public class RegisterController : MonoBehaviour
         if (string.IsNullOrEmpty(username.text))
         {
             textMessageUsername.color = Color.red;
-            textMessageNameChar.text = "!";
+            textMessageUsername.text = "!";
             isValid = false;
         }
         else
@@ -268,7 +277,7 @@ public class RegisterController : MonoBehaviour
         if (string.IsNullOrEmpty(password.text))
         {
             textMessagePassword.color = Color.red;
-            textMessageNameChar.text = "!";
+            textMessagePassword.text = "!";
             isValid = false;
         }
         else

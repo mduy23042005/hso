@@ -36,7 +36,7 @@ public class EquipmentController : MonoBehaviour, IUpdatable
     // Đọc dữ liệu từ database và hiển thị vào Equipment Slots
     private async Task ReadDatabase()
     {
-        int idAccount = LogInController.GetIDAccount();
+        int idAccount = LogInController.GetIDAccount() ?? 0;
 
         try
         {
@@ -64,7 +64,7 @@ public class EquipmentController : MonoBehaviour, IUpdatable
     }
     public async void Ring1Ring2Info()
     {
-        int idAccount = LogInController.GetIDAccount();
+        int idAccount = LogInController.GetIDAccount() ?? 0;
 
         try
         {

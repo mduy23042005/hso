@@ -105,7 +105,7 @@ public class InventoryController : MonoBehaviour
     // Đọc dữ liệu từ database và hiển thị vào Inventory Slots
     private async Task ReadDatabase()
     {
-        int idAccount = LogInController.GetIDAccount();
+        int idAccount = LogInController.GetIDAccount() ?? 0;
 
         try
         {
@@ -137,7 +137,7 @@ public class InventoryController : MonoBehaviour
     // Đọc attribute của item trong equipment
     private async Task ReadAttributeInEquipment(int idSlot)
     {
-        int idAccount = LogInController.GetIDAccount();
+        int idAccount = LogInController.GetIDAccount() ?? 0;
         equipmentSlot = equipmentController.GetEquipmentSlotsArray();
 
         idItem0 = equipmentSlot[idSlot].IDItem0_1;
@@ -182,7 +182,7 @@ public class InventoryController : MonoBehaviour
     // Đọc attribute của item trong inventory
     private async Task ReadAttributeInInventory(int idSlot)
     {
-        int idAccount = LogInController.GetIDAccount();
+        int idAccount = LogInController.GetIDAccount() ?? 0;
 
         int categoryItem = 0;
 
@@ -241,7 +241,7 @@ public class InventoryController : MonoBehaviour
     // Trang bị item từ inventory vào equipment
     private async Task EquipItem0()
     {
-        int idAccount = LogInController.GetIDAccount();
+        int idAccount = LogInController.GetIDAccount() ?? 0;
         int idSchool = LogInController.GetIDSchool();
 
         if (idItem0 == 0)

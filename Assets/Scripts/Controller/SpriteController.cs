@@ -121,7 +121,23 @@ public class SpriteController : MonoBehaviour, IUpdatable
 
     private async Task ReadDatabase()
     {
-        int idAccount = LogInController.GetIDAccount();
+        int idAccount = LogInController.GetIDAccount() ?? 0; // Bấm vào nút Đăng ký thì gán idAccount = 0 để chạy PlayerDemo phần chọn School trong Register
+
+        if (idAccount == 0)
+        {
+            currentWeapon = weaponLibraries.FindIndex(w => w.idWeapon == 0);
+            currentHelmet = helmetLibraries.FindIndex(h => h.idHelmet == 0);
+            currentArmor = armorLibraries.FindIndex(a => a.idArmor == 0);
+            currentLegArmor = legArmorLibraries.FindIndex(la => la.idLegArmor == 0);
+
+            EquipLegArmor(currentLegArmor);
+            EquipArmor(currentArmor);
+            EquipHelmet(currentHelmet);
+            EquipWeapon(currentWeapon);
+            EquipHair(currentHair);
+
+            return;
+        }
 
         try
         {
@@ -135,10 +151,16 @@ public class SpriteController : MonoBehaviour, IUpdatable
             var armorData = equipment[2].IDItem0_1;
             var legArmorData = equipment[3].IDItem0_1;
 
+            string urlGetHair = $"{api.GetApiUrl()}/api/account/{idAccount}/getHair?idAccount={idAccount}";
+            res = await api.GetHttpClient().GetAsync(urlGetHair);
+            json = await res.Content.ReadAsStringAsync();
+            int hairData = JsonConvert.DeserializeObject<int>(json);
+
             currentWeapon = weaponLibraries.FindIndex(w => w.idWeapon == weaponData);
             currentHelmet = helmetLibraries.FindIndex(h => h.idHelmet == helmetData);
             currentArmor = armorLibraries.FindIndex(a => a.idArmor == armorData);
             currentLegArmor = legArmorLibraries.FindIndex(la => la.idLegArmor == legArmorData);
+            currentHair = hairData;
 
             EquipLegArmor(currentLegArmor);
             EquipArmor(currentArmor);
@@ -148,7 +170,7 @@ public class SpriteController : MonoBehaviour, IUpdatable
         }
         catch (System.Exception ex)
         {
-            Debug.LogError($"lỗi đọc database cho sprite: {ex.Message}");
+            Debug.LogError($"Lỗi đọc database cho sprite: {ex.Message}");
             return;
         }
     }
